@@ -190,6 +190,7 @@
           "id": "",
           "type": "line",
           "display": true,
+          "follow-expand": "height",
           "description": "",
           "style": {
             "border-color": "#000000",
@@ -197,14 +198,15 @@
             "border-style": "solid"
           },
           "x1": 51.1,
-          "y1": 0,
+          "y1": 50,
           "x2": 51.1,
-          "y2": 50
+          "y2": 0
         },
         {
           "id": "",
           "type": "line",
           "display": true,
+          "follow-expand": "y",
           "description": "",
           "style": {
             "border-color": "#000000",
@@ -220,6 +222,7 @@
           "id": "",
           "type": "line",
           "display": true,
+          "follow-expand": "height",
           "description": "",
           "style": {
             "border-color": "#000000",
