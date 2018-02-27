@@ -1,7 +1,10 @@
 require 'bundler'
+require 'pathname'
 
 Bundler.require
 require_relative 'lib/thinreports'
+
+ROOT = Pathname.new File.expand_path('..', __FILE__)
 
 params = {
   type: :section,
@@ -13,19 +16,19 @@ params = {
         headers: {
           'document-header': {
             items: {
-              text: 'ここはドキュメントヘッダーです'
+              text: 'ここはドキュメントヘッダーです' * 3
             }
           },
           'page-header': {
             items: {
-              text: 'ここはページヘッダーです'
+              image: ROOT.join('examples/dynamic_image/img50x50.png')
             }
           }
         },
-        details: (1...100).map{|i| {
+        details: (1...11).map{|i| {
               id: :detail,
               items: {
-                text: "ここは明細#{i}です"
+                text: "ここは明細#{i}です。ここは明細#{i}です。ここは明細#{i}です。ここは明細#{i}です。"
               }
             }
           },
@@ -36,18 +39,19 @@ params = {
             }
           },
           'summary-2': {
+            display: false,
             items: {
               text: 'ここは合計部2です'
             }
           },
           'summary-3': {
             items: {
-              text: 'ここは合計部3です'
+              text: 'ここは合計部3です' * 3
             }
           },
           'notes': {
             items: {
-              text: 'ここは備考です'
+              text: 'ここは備考1234です'
             }
           },
           'fixed-page-footer': {

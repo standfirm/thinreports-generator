@@ -13,80 +13,50 @@ module Thinreports
 
         def render(report, group)
           doc = pdf.pdf
-          @page_count = 0
 
-
-          page_footers_size = 0
-          group.footers.each do |footer|
-            page_footers_size += footer.schema.height if footer.schema.every_page?
-          end
-          max_page_height = doc.bounds.height - report.schema.page_margin_top - report.schema.page_margin_bottom - page_footers_size
+          max_page_height = doc.bounds.height - report.schema.page_margin_top - report.schema.page_margin_bottom
 
 
           doc.start_new_page
           doc.move_down report.schema.page_margin_top
-          @page_count += 1
           current_page_height = 0
 
           group.headers.each do |header|
-            if header.schema.every_page? || @page_count == 1
-              section_renderer.render(header)
-              current_page_height += header.schema.height
-            end
+            section_renderer.render(header)
+            current_page_height += section_renderer.content_height(header)
           end
 
           group.details.each do |detail|
-            if current_page_height + detail.schema.height > max_page_height
-              group.footers.each do |footer|
-                section_renderer.render(footer) if footer.schema.every_page? && !footer.schema.fixed_bottom?
-              end
-
-              group.footers.each do |footer|
-                doc.move_cursor_to report.schema.page_margin_bottom + footer.schema.height
-                section_renderer.render(footer) if footer.schema.every_page? && footer.schema.fixed_bottom?
-              end
-
+            if current_page_height + section_renderer.content_height(detail) > max_page_height
               doc.start_new_page
               doc.move_down report.schema.page_margin_top
-              @page_count += 1
               current_page_height = 0
 
               group.headers.each do |header|
-                if header.schema.every_page? || @page_count == 1
+                if header.schema.every_page?
                   section_renderer.render(header)
-                  current_page_height += header.schema.height
+                  current_page_height += section_renderer.content_height(header)
                 end
               end
             end
             section_renderer.render(detail)
-            current_page_height += detail.schema.height
+            current_page_height += section_renderer.content_height(detail)
           end
 
           group.footers.each do |footer|
-            section_renderer.render(footer) if !footer.schema.fixed_bottom?
-          end
-
-          group.footers.each do |footer|
-            doc.move_cursor_to report.schema.page_margin_bottom + footer.schema.height
-            section_renderer.render(footer) if footer.schema.fixed_bottom?
+            if current_page_height + section_renderer.content_height(footer) > max_page_height
+              doc.start_new_page
+              doc.move_down report.schema.page_margin_top
+              current_page_height = 0
+            end
+            section_renderer.render(footer)
+            current_page_height += section_renderer.content_height(footer)
           end
         end
 
         private
 
         attr_reader :pdf, :section_renderer
-        #
-        # def setup_new_page
-        #   pdf.start_new_page
-        #
-        #   @page_count += 1
-        #
-        #   group.headers.each do |header|
-        #     section_renderer.render(header) if header.schema.every_page? || @page_count == 1
-        #   end
-        #
-        #   group.footers.each { |header| section_renderer.render(header) }
-        # end
       end
     end
   end
