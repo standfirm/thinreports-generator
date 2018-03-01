@@ -16,7 +16,13 @@ params = {
         headers: {
           'document-header': {
             items: {
-              text: 'ここはドキュメントヘッダーです' * 3
+              text: 'ここはドキュメントヘッダーです' * 3,
+              'header-line': {
+                styles: {
+                  border_color: '#ff0000',
+                  border_width: 30
+                }
+              }
             }
           },
           'page-header': {

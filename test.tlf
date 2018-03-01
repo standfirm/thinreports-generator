@@ -37,7 +37,7 @@
           "y2": 50
         },
         {
-          "id": "",
+          "id": "header-line",
           "type": "line",
           "display": true,
           "description": "",
