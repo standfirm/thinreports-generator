@@ -33,6 +33,12 @@ params = {
                   border_color: '#00ff00',
                   border_width: 10,
                 }
+              },
+              'header-ellipse': {
+                styles: {
+                  border_color: 'red',
+                  border_width: 10,
+                }
               }
             }
           }
