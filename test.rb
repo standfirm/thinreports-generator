@@ -16,7 +16,10 @@ params = {
         headers: {
           'document-header': {
             items: {
-              text: 'ここはドキュメントヘッダーです' * 3,
+              'header-dynamic-text': {
+                value: 'ここはドキュメントヘッダーです' * 3,
+                styles: {}
+              },
               'header-line': {
                 styles: {
                   border_color: '#ff0000',

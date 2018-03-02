@@ -67,7 +67,7 @@
           "y2": 50
         },
         {
-          "id": "text",
+          "id": "header-dynamic-text",
           "type": "text-block",
           "display": true,
           "description": "",
