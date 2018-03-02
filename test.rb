@@ -19,7 +19,8 @@ params = {
               'header-dynamic-text': {
                 value: 'ここはドキュメントヘッダーです' * 3,
                 styles: {
-                  color: '#00ffff'
+                  color: '#00ffff',
+                  bold: true
                 }
               },
               'header-line': {
