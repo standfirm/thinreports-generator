@@ -33,6 +33,11 @@ params = {
                   visible: false
                 }
               },
+              'header-image': {
+                styles: {
+                  visible: false
+                }
+              },
               'header-rect': {
                 styles: {
                   border_color: '#00ff00',
