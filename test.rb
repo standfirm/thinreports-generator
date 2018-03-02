@@ -16,12 +16,51 @@ params = {
         headers: {
           'document-header': {
             items: {
-              text: 'ここはドキュメントヘッダーです' * 3
+              'header-dynamic-text': {
+                value: 'ここはドキュメントヘッダーです' * 3,
+                styles: {
+                  color: '#00ffff',
+                  bold: true
+                }
+              },
+              'header-line': {
+                styles: {
+                  border_color: '#ff0000',
+                  border_width: 30
+                }
+              }
             }
           },
           'page-header': {
             items: {
-              image: ROOT.join('examples/dynamic_image/img50x50.png')
+              'header-image-block': {
+                value: ROOT.join('examples/dynamic_image/img50x50.png'),
+                styles: {
+                  visible: false
+                }
+              },
+              'header-image': {
+                styles: {
+                  visible: false
+                }
+              },
+              'header-rect': {
+                styles: {
+                  border_color: '#00ff00',
+                  border_width: 10,
+                }
+              },
+              'header-ellipse': {
+                styles: {
+                  border_color: 'red',
+                  border_width: 10,
+                }
+              },
+              'static-text': {
+                styles: {
+                  color: '#ffffff'
+                }
+              }
             }
           }
         },
