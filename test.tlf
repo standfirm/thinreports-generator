@@ -108,7 +108,7 @@
       "auto-expand": true,
       "items": [
         {
-          "id": "",
+          "id": "header-rect",
           "type": "rect",
           "display": true,
           "description": "",

@@ -27,7 +27,13 @@ params = {
           },
           'page-header': {
             items: {
-              image: ROOT.join('examples/dynamic_image/img50x50.png')
+              image: ROOT.join('examples/dynamic_image/img50x50.png'),
+              'header-rect': {
+                styles: {
+                  border_color: '#00ff00',
+                  border_width: 10,
+                }
+              }
             }
           }
         },
