@@ -153,7 +153,7 @@
           }
         },
         {
-          "id": "",
+          "id": "static-text",
           "type": "text",
           "display": true,
           "description": "",

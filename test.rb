@@ -49,6 +49,11 @@ params = {
                   border_color: 'red',
                   border_width: 10,
                 }
+              },
+              'static-text': {
+                styles: {
+                  color: '#ffffff'
+                }
               }
             }
           }
