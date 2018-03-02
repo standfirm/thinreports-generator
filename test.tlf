@@ -125,7 +125,7 @@
           "border-radius": 0
         },
         {
-          "id": "",
+          "id": "header-image",
           "type": "image",
           "display": true,
           "description": "",
@@ -139,7 +139,7 @@
           }
         },
         {
-          "id": "image",
+          "id": "header-image-block",
           "type": "image-block",
           "display": true,
           "description": "",

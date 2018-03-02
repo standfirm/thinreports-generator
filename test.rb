@@ -27,7 +27,7 @@ params = {
           },
           'page-header': {
             items: {
-              image: {
+              'header-image-block': {
                 value: ROOT.join('examples/dynamic_image/img50x50.png'),
                 styles: {
                   visible: false
