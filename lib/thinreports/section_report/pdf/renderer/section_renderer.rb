@@ -7,15 +7,16 @@ module Thinreports
         end
 
         def content_height(section)
-          return section.schema.height unless section.schema.auto_expand?
+          height = [section.schema.height, section.min_height || 0].max
+          return height unless section.schema.auto_expand?
 
           text_items = section.items.select do |s|
             s.internal.type_of?(Core::Shape::TextBlock::TYPE_NAME) && s.internal.style.finalized_styles['overflow'] == 'expand'
           end
 
-          return section.schema.height if text_items.empty?
+          return height if text_items.empty?
 
-          [text_items_max_height(section, text_items), section.schema.height].max
+          [text_items_max_height(section, text_items), height].max
         end
 
         def render(section)
@@ -44,13 +45,25 @@ module Thinreports
           elsif shape.type_of?(Core::Shape::ImageBlock::TYPE_NAME)
             @pdf.draw_shape_iblock(shape)
           elsif shape.type_of?('text')
-            @pdf.draw_shape_text(shape)
+            case shape.format.follow_expand
+              when 'height'
+                # セクションにあわせて伸びる
+                @pdf.draw_shape_text(shape, expanded_height)
+              else
+                @pdf.draw_shape_text(shape)
+            end
           elsif shape.type_of?('image')
             @pdf.draw_shape_image(shape)
           elsif shape.type_of?('ellipse')
             @pdf.draw_shape_ellipse(shape)
           elsif shape.type_of?('rect')
-            @pdf.draw_shape_rect(shape)
+            case shape.format.follow_expand
+              when 'height'
+                # セクションにあわせて伸びる
+                @pdf.draw_shape_rect(shape, expanded_height)
+              else
+                @pdf.draw_shape_rect(shape)
+            end
           elsif shape.type_of?('line')
             case shape.format.follow_expand
               when 'height'
