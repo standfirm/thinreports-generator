@@ -4,8 +4,6 @@ module Thinreports
   module SectionReport
     module Renderer
       class GroupRenderer
-        # Page = Struct.new :content_height
-
         def initialize(pdf)
           @pdf = pdf
           @section_renderer = Renderer::SectionRenderer.new(pdf)
