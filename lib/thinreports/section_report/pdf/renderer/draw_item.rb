@@ -5,13 +5,14 @@ module Thinreports
         def draw_item(item, expanded_height = 0)
           shape = item.internal
 
-          # overflow: 'expand' の場合は height が無視されてしまうので、follow-expand: 'height' の時は描画時のみ無視する
+          # Ignore the overflow attribute when the follow-expand attribute is 'height'.
+          # This is because the height attribute is ignored if overflow attribute is 'expand'.
           ignore_overflow = item.internal.format.attributes['follow-expand'] == 'height'
 
           if shape.type_of?(Core::Shape::TextBlock::TYPE_NAME)
             case shape.format.follow_expand
             when 'height'
-              # セクションにあわせて伸びる
+              # Expand height
               pdf.draw_shape_tblock(shape, expanded_height, ignore_overflow: ignore_overflow)
             else
               pdf.draw_shape_tblock(shape, ignore_overflow: ignore_overflow)
@@ -21,7 +22,7 @@ module Thinreports
           elsif shape.type_of?('text')
             case shape.format.follow_expand
             when 'height'
-              # セクションにあわせて伸びる
+              # Expand height
               pdf.draw_shape_text(shape, expanded_height)
             else
               pdf.draw_shape_text(shape)
@@ -33,7 +34,7 @@ module Thinreports
           elsif shape.type_of?('rect')
             case shape.format.follow_expand
             when 'height'
-              # セクションにあわせて伸びる
+              # Expand height
               pdf.draw_shape_rect(shape, expanded_height)
             else
               pdf.draw_shape_rect(shape)
@@ -41,7 +42,7 @@ module Thinreports
           elsif shape.type_of?('line')
             case shape.format.follow_expand
             when 'height'
-              # セクションにあわせて伸びる
+              # Expand height
               y1, y2 = shape.format.attributes.values_at('y1', 'y2')
               if y1 < y2
                 pdf.draw_shape_line(shape, 0, expanded_height)
@@ -49,7 +50,7 @@ module Thinreports
                 pdf.draw_shape_line(shape, expanded_height, 0)
               end
             when 'y'
-              # セクションにあわせて描画位置をずらす
+              # Shift y
               pdf.draw_shape_line(shape, expanded_height, expanded_height)
             else
               pdf.draw_shape_line(shape)
