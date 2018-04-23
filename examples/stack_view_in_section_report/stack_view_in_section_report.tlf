@@ -39,7 +39,7 @@
           "y": 0,
           "width": 555.2,
           "height": 60,
-          "follow-expand": "height",
+          "follow-stretch": "height",
           "style": {
             "border-color": "#000000",
             "border-width": 1,
@@ -123,7 +123,7 @@
                   "y": 0,
                   "width": 200,
                   "height": 70,
-                  "follow-expand": "height",
+                  "follow-stretch": "height",
                   "style": {
                     "border-color": "#000000",
                     "border-width": 1,
@@ -263,7 +263,7 @@
                   "y": 0,
                   "width": 200,
                   "height": 40,
-                  "follow-expand": "height",
+                  "follow-stretch": "height",
                   "style": {
                     "border-color": "#000000",
                     "border-width": 1,
@@ -331,7 +331,7 @@
                   "y": 0,
                   "width": 200,
                   "height": 40,
-                  "follow-expand": "height",
+                  "follow-stretch": "height",
                   "style": {
                     "border-color": "#000000",
                     "border-width": 1,
@@ -383,7 +383,7 @@
                   "y": 0,
                   "width": 200,
                   "height": 60,
-                  "follow-expand": "height",
+                  "follow-stretch": "height",
                   "style": {
                     "border-color": "#000000",
                     "border-width": 1,
@@ -441,7 +441,7 @@
                   "y": 0,
                   "width": 200,
                   "height": 40,
-                  "follow-expand": "height",
+                  "follow-stretch": "height",
                   "style": {
                     "border-color": "#000000",
                     "border-width": 1,
@@ -473,7 +473,7 @@
           "y": 0,
           "width": 555.2,
           "height": 60,
-          "follow-expand": "height",
+          "follow-stretch": "height",
           "style": {
             "border-color": "#000000",
             "border-width": 1,

@@ -32,7 +32,7 @@
           "y": 0,
           "width": 555.2,
           "height": 50,
-          "follow-expand": "height",
+          "follow-stretch": "height",
           "style": {
             "border-color": "#000000",
             "border-width": 1,
@@ -93,7 +93,7 @@
           "y": 0,
           "width": 555.2,
           "height": 80,
-          "follow-expand": "height",
+          "follow-stretch": "height",
           "style": {
             "border-color": "#000000",
             "border-width": 1,
@@ -223,7 +223,7 @@
           "y": 0,
           "width": 555.2,
           "height": 50,
-          "follow-expand": "height",
+          "follow-stretch": "height",
           "style": {
             "border-color": "#000000",
             "border-width": 1,
@@ -277,7 +277,7 @@
           "id": "",
           "type": "line",
           "display": true,
-          "follow-expand": "height",
+          "follow-stretch": "height",
           "description": "",
           "float": true,
           "style": {
@@ -348,7 +348,7 @@
             "fill-color": "#FFFFFF"
           },
           "border-radius": 0,
-          "follow-expand": "height"
+          "follow-stretch": "height"
         },
         {
           "id": "",
@@ -367,7 +367,7 @@
             "fill-color": "#FFFFFF"
           },
           "border-radius": 0,
-          "follow-expand": "height"
+          "follow-stretch": "height"
         },
         {
           "id": "text1",
@@ -400,7 +400,7 @@
             "base": "",
             "type": ""
           },
-          "follow-expand": "height"
+          "follow-stretch": "height"
         },
         {
           "id": "",
@@ -427,7 +427,7 @@
           "texts": [
             "static text"
           ],
-          "follow-expand": "height"
+          "follow-stretch": "height"
         },
         {
           "id": "text2",
@@ -460,7 +460,7 @@
             "base": "",
             "type": ""
           },
-          "follow-expand": "height"
+          "follow-stretch": "height"
         },
         {
           "id": "text3",
@@ -493,7 +493,7 @@
             "base": "",
             "type": ""
           },
-          "follow-expand": "height"
+          "follow-stretch": "height"
         }
       ]
     },
@@ -516,7 +516,7 @@
           "y": 0,
           "width": 555.2,
           "height": 50,
-          "follow-expand": "height",
+          "follow-stretch": "height",
           "style": {
             "border-color": "#000000",
             "border-width": 1,
@@ -578,7 +578,7 @@
           "y": 0,
           "width": 555.2,
           "height": 50,
-          "follow-expand": "height",
+          "follow-stretch": "height",
           "style": {
             "border-color": "#000000",
             "border-width": 1,
@@ -640,7 +640,7 @@
           "y": 0,
           "width": 555.2,
           "height": 50,
-          "follow-expand": "",
+          "follow-stretch": "",
           "style": {
             "border-color": "#000000",
             "border-width": 1,
