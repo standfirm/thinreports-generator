@@ -5,7 +5,9 @@ module Thinreports
         def content_height(section)
           return (section.min_height || section.schema.height) unless section.schema.auto_stretch? && section.items
 
-          item_layouts = section.items.map { |item| item_layout(section, item.internal) }.compact
+          item_layouts = section.items
+                           .select { |item| !item.internal.format.attributes['float'] }
+                           .map { |item| item_layout(section, item.internal) }.compact
 
           padding_bottom =
             if (section.schema.padding_bottom.nil? || section.schema.padding_bottom == '')
@@ -15,9 +17,7 @@ module Thinreports
               section.schema.padding_bottom.to_f
             end
 
-          unfloat_item_layouts = item_layouts.select { |l| !l[:shape].format.attributes['float'] }
-
-          max_content_bottom = unfloat_item_layouts.map { |l| l[:top_margin] + l[:content_height] }.max.to_f
+          max_content_bottom = item_layouts.map { |l| l[:top_margin] + l[:content_height] }.max.to_f
 
           [section.min_height || 0, max_content_bottom + padding_bottom].max
         end
@@ -40,9 +40,8 @@ module Thinreports
           end
         end
 
-        def static_layout(section, shape, y, height)
+        def static_layout(section, _shape, y, height)
           {
-            shape: shape,
             content_height: height,
             top_margin: y,
             bottom_margin: section.schema.height - height - y
@@ -59,7 +58,6 @@ module Thinreports
 
           y, height = shape.format.attributes.values_at('y', 'height')
           {
-            shape: shape,
             content_height: content_height,
             top_margin: y,
             bottom_margin: section.schema.height - height - y
@@ -72,7 +70,6 @@ module Thinreports
 
           y = shape.format.attributes['y']
           {
-            shape: shape,
             content_height: stack_view_renderer.content_height(shape),
             top_margin: y,
             bottom_margin: (section.schema.height - schema_height - y)
