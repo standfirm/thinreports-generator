@@ -3,20 +3,11 @@ module Thinreports
     module Renderer
       module ContentHeight
         def content_height(section)
+          return (section.min_height || section.schema.height) unless section.schema.auto_expand? && section.items
+
           h_array = [section.min_height || 0]
-          h_array << section.schema.height unless section.schema.auto_shrink?
 
-          return h_array.max unless section.schema.auto_expand? && section.items
-
-          text_items = section.items.select do |s|
-            s.internal.type_of?(Core::Shape::TextBlock::TYPE_NAME) && s.internal.style.finalized_styles['overflow'] == 'expand'
-          end
-
-          stack_view_items = section.items.select do |s|
-            s.internal.type_of?(Core::Shape::StackView::TYPE_NAME)
-          end
-
-          layouts = text_items.map {|t| text_layout(section, t)} + stack_view_items.map {|s| stack_view_layout(section, s)}
+          layouts = section.items.map {|item| item_layout(section, item.internal)}.compact
           unless layouts.empty?
             max_content_bottom = layouts.map {|l| l[:top_margin] + l[:content_height]}.max
             min_bottom_margin = layouts.map {|l| l[:bottom_margin]}.min
@@ -26,29 +17,57 @@ module Thinreports
           h_array.max
         end
 
-        def text_layout(section, item)
+        def item_layout(section, shape)
+          if shape.type_of?(Core::Shape::TextBlock::TYPE_NAME)
+            text_layout(section, shape)
+          elsif shape.type_of?(Core::Shape::StackView::TYPE_NAME)
+            stack_view_layout(section, shape)
+          elsif shape.type_of?('ellipse')
+            cy, ry = shape.format.attributes.values_at('cy', 'ry')
+            static_layout(section, cy - ry, ry * 2)
+          elsif shape.type_of?('line')
+            y1, y2 = shape.format.attributes.values_at('y1', 'y2')
+            static_layout(section, [y1, y2].min, (y2 - y1).abs)
+          else
+            y, height = shape.format.attributes.values_at('y', 'height')
+            raise ArgumentError.new("Unknown layout for #{shape}") if height == nil || y == nil
+            static_layout(section, y, height)
+          end
+        end
+
+        def static_layout(section, y, height)
+          {
+            content_height: height,
+            top_margin: y,
+            bottom_margin: section.schema.height - height - y
+          }
+        end
+
+        def text_layout(section, shape)
           content_height = 0
-          pdf.draw_shape_tblock(item.internal) {|array, options|
+          pdf.draw_shape_tblock(shape) {|array, options|
             page_height = pdf.pdf.bounds.height
             modified_options = options.merge(at: [0, page_height], height: page_height)
             content_height = pdf.pdf.height_of_formatted(array, modified_options)
           }
 
+          y, height = shape.format.attributes.values_at('y', 'height')
           {
             content_height: content_height,
-            top_margin: item.internal.format.attributes['y'],
-            bottom_margin:
-              (section.schema.height - item.internal.format.attributes['height'] - item.internal.format.attributes['y'])
+            top_margin: y,
+            bottom_margin: section.schema.height - height - y
           }
         end
 
-        def stack_view_layout(section, stack_view)
+        def stack_view_layout(section, shape)
           schema_height = 0
-          stack_view.internal.format.rows.each {|row| schema_height += row.attributes['height']}
+          shape.format.rows.each {|row| schema_height += row.attributes['height']}
+
+          y = shape.format.attributes['y']
           {
-            content_height: stack_view_renderer.content_height(stack_view.internal),
-            top_margin: stack_view.internal.format.attributes['y'],
-            bottom_margin: (section.schema.height - schema_height - stack_view.internal.format.attributes['y'])
+            content_height: stack_view_renderer.content_height(shape),
+            top_margin: y,
+            bottom_margin: (section.schema.height - schema_height - y)
           }
         end
       end
