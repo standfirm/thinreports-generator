@@ -103,42 +103,26 @@
                     "base": "",
                     "type": ""
                   }
-                },
-                {
-                  "id": "",
-                  "type": "rect",
-                  "display": true,
-                  "description": "",
-                  "x": 0,
-                  "y": 0,
-                  "width": 200,
-                  "height": 40,
-                  "follow-expand": "height",
-                  "style": {
-                    "border-color": "#000000",
-                    "border-width": 1,
-                    "border-style": "solid",
-                    "fill-color": "none"
-                  },
-                  "border-radius": 0
                 }
               ]
             },
             {
               "id": "row2",
-              "height": 40,
+              "height": 70,
               "display": true,
               "auto-expand": true,
+              "padding-bottom": 10,
               "items": [
                 {
                   "id": "",
                   "type": "rect",
                   "display": true,
                   "description": "",
+                  "float": true,
                   "x": 0,
                   "y": 0,
                   "width": 200,
-                  "height": 40,
+                  "height": 70,
                   "follow-expand": "height",
                   "style": {
                     "border-color": "#000000",
@@ -185,6 +169,7 @@
                   "type": "image-block",
                   "display": true,
                   "description": "",
+                  "float": true,
                   "x": 130,
                   "y": 10,
                   "width": 50,
@@ -235,7 +220,6 @@
               "height": 40,
               "display": true,
               "auto-expand": true,
-              "padding-bottom": 10,
               "items": [
                 {
                   "id": "test_text",
@@ -274,6 +258,7 @@
                   "type": "rect",
                   "display": true,
                   "description": "",
+                  "float": true,
                   "x": 0,
                   "y": 0,
                   "width": 200,

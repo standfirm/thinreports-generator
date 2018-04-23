@@ -21,7 +21,7 @@ example :stack_view_in_section_report, 'stack view in section report' do |t|
                     row2: {
                       items: {
                         test_text: "row 2",
-                      child_image: t.resource('img50x50.png')
+                        child_image: t.resource('img50x50.png')
                       }
                     },
                     row3: {
