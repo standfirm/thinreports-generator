@@ -6,6 +6,7 @@ module Thinreports
       module StackView
         class RowFormat < Core::Format::Base
           config_reader :height
+          config_reader padding_bottom: 'padding-bottom'
           config_checker true, :display
           config_checker true, auto_expand: 'auto-expand'
 

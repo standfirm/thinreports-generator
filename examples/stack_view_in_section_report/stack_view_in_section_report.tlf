@@ -235,6 +235,7 @@
               "height": 40,
               "display": true,
               "auto-expand": true,
+              "padding-bottom": 10,
               "items": [
                 {
                   "id": "test_text",

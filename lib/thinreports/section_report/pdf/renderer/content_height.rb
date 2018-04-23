@@ -5,16 +5,24 @@ module Thinreports
         def content_height(section)
           return (section.min_height || section.schema.height) unless section.schema.auto_expand? && section.items
 
-          h_array = [section.min_height || 0]
-
           layouts = section.items.map {|item| item_layout(section, item.internal)}.compact
-          unless layouts.empty?
-            max_content_bottom = layouts.map {|l| l[:top_margin] + l[:content_height]}.max
-            min_bottom_margin = layouts.map {|l| l[:bottom_margin]}.min
-            h_array << max_content_bottom + min_bottom_margin
-          end
 
-          h_array.max
+          padding_bottom =
+            if (section.schema.padding_bottom.nil? || section.schema.padding_bottom == '') && !layouts.empty?
+              # min bottom margin
+              layouts.map { |l| l[:bottom_margin] }.min
+            else
+              section.schema.padding_bottom.to_f
+            end
+
+          max_content_bottom =
+            unless layouts.empty?
+              layouts.map { |l| l[:top_margin] + l[:content_height] }.max
+            else
+              0
+            end
+
+          [section.min_height || 0, max_content_bottom + padding_bottom].max
         end
 
         def item_layout(section, shape)
