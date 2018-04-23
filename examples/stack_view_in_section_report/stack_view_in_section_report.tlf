@@ -57,7 +57,6 @@
       "height": 250.0,
       "every-page": false,
       "auto-expand": true,
-      "auto-shrink": true,
       "items": [
         {
           "id": "stack_view_left",
