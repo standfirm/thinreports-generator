@@ -20,7 +20,7 @@
       "height": 50.0,
       "display": true,
       "every-page": false,
-      "auto-expand": false,
+      "auto-stretch": false,
       "items": [
         {
           "id": "",
@@ -81,7 +81,7 @@
       "height": 80.0,
       "display": true,
       "every-page": true,
-      "auto-expand": true,
+      "auto-stretch": true,
       "items": [
         {
           "id": "",
@@ -211,7 +211,7 @@
       "type": "detail",
       "height": 50.0,
       "display": true,
-      "auto-expand": true,
+      "auto-stretch": true,
       "items": [
         {
           "id": "",
@@ -271,7 +271,7 @@
       "type": "detail",
       "height": 100.0,
       "display": true,
-      "auto-expand": true,
+      "auto-stretch": true,
       "items": [
         {
           "id": "",
@@ -329,7 +329,7 @@
       "type": "detail",
       "height": 80.0,
       "every-page": true,
-      "auto-expand": true,
+      "auto-stretch": true,
       "items": [
         {
           "id": "",
@@ -504,7 +504,7 @@
       "display": true,
       "every-page": false,
       "fixed-bottom": false,
-      "auto-expand": true,
+      "auto-stretch": true,
       "items": [
         {
           "id": "",
@@ -566,7 +566,7 @@
       "display": true,
       "every-page": false,
       "fixed-bottom": false,
-      "auto-expand": true,
+      "auto-stretch": true,
       "items": [
         {
           "id": "",
@@ -628,7 +628,7 @@
       "display": true,
       "every-page": false,
       "fixed-bottom": false,
-      "auto-expand": true,
+      "auto-stretch": true,
       "items": [
         {
           "id": "",

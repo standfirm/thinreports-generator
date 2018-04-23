@@ -7,7 +7,7 @@ module Thinreports
           config_reader :height
           config_reader padding_bottom: 'padding-bottom'
           config_checker true, :display
-          config_checker true, auto_expand: 'auto-expand'
+          config_checker true, auto_stretch: 'auto-stretch'
 
           attr_reader :items, :item_ids
 

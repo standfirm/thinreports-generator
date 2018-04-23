@@ -3,7 +3,7 @@ module Thinreports
     module Renderer
       module ContentHeight
         def content_height(section)
-          return (section.min_height || section.schema.height) unless section.schema.auto_expand? && section.items
+          return (section.min_height || section.schema.height) unless section.schema.auto_stretch? && section.items
 
           item_layouts = section.items.map { |item| item_layout(section, item.internal) }.compact
 

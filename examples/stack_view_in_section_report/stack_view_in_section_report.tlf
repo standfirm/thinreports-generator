@@ -28,7 +28,7 @@
       "display": true,
       "height": 60.0,
       "every-page": true,
-      "auto-expand": true,
+      "auto-stretch": true,
       "items": [
         {
           "id": "",
@@ -56,7 +56,7 @@
       "display": true,
       "height": 250.0,
       "every-page": false,
-      "auto-expand": true,
+      "auto-stretch": true,
       "items": [
         {
           "id": "stack_view_left",
@@ -70,7 +70,7 @@
               "id": "row1",
               "height": 40,
               "display": true,
-              "auto-expand": true,
+              "auto-stretch": true,
               "items": [
                 {
                   "id": "test_text",
@@ -110,7 +110,7 @@
               "id": "row2",
               "height": 70,
               "display": true,
-              "auto-expand": true,
+              "auto-stretch": true,
               "padding-bottom": 10,
               "items": [
                 {
@@ -185,7 +185,7 @@
               "id": "row3",
               "height": 60,
               "display": true,
-              "auto-expand": true,
+              "auto-stretch": true,
               "items": [
                 {
                   "id": "",
@@ -219,7 +219,7 @@
               "id": "row4",
               "height": 40,
               "display": true,
-              "auto-expand": true,
+              "auto-stretch": true,
               "items": [
                 {
                   "id": "test_text",
@@ -288,7 +288,7 @@
               "id": "top_row",
               "height": 40,
               "display": true,
-              "auto-expand": true,
+              "auto-stretch": true,
               "items": [
                 {
                   "id": "test_text",
@@ -346,7 +346,7 @@
               "id": "middle_row",
               "height": 60,
               "display": true,
-              "auto-expand": true,
+              "auto-stretch": true,
               "items": [
                 {
                   "id": "",
@@ -398,7 +398,7 @@
               "id": "bottom_row",
               "height": 40,
               "display": true,
-              "auto-expand": true,
+              "auto-stretch": true,
               "items": [
                 {
                   "id": "test_text",
@@ -462,7 +462,7 @@
       "display": true,
       "height": 60.0,
       "every-page": true,
-      "auto-expand": true,
+      "auto-stretch": true,
       "items": [
         {
           "id": "",
