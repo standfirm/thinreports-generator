@@ -123,7 +123,7 @@
             "line-height-ratio": "",
             "letter-spacing": "",
             "font-style": [],
-            "overflow": "expand",
+            "overflow": "truncate",
             "word-wrap": "none"
           },
           "reference-id": "",

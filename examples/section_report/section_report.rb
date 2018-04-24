@@ -11,13 +11,13 @@ example :section_report, 'section report' do |t|
           headers: {
             'document-header': {
               items: {
-                text: 'ここはドキュメントヘッダーです' * 3
+                text: 'ここはドキュメントヘッダーです。' * 3
               }
             },
             'page-header': {
               items: {
                 image: t.resource('img50x50.png'),
-                text: 'ここはページヘッダーです'
+                text: 'ここはページヘッダーです。' * 10
               }
             }
           },
