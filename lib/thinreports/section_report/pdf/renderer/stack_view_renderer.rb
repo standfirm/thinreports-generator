@@ -11,10 +11,10 @@ module Thinreports
           @row_renderer = Renderer::StackViewRowRenderer.new(pdf)
         end
 
-        def content_height(shape)
+        def section_height(shape)
           sum = 0
           shape.rows.each do |row|
-            sum += row_renderer.content_height(row)
+            sum += row_renderer.section_height(row)
           end
           sum
         end
@@ -23,7 +23,7 @@ module Thinreports
           doc = pdf.pdf
 
           x, y, w = shape.format.attributes.values_at('x', 'y', 'width')
-          doc.bounding_box([x, doc.bounds.height - y], width: w, height: content_height(shape)) do
+          doc.bounding_box([x, doc.bounds.height - y], width: w, height: section_height(shape)) do
             shape.rows.each do |row|
               row_renderer.render(row)
             end

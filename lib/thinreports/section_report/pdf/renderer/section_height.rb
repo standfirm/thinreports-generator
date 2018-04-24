@@ -1,10 +1,10 @@
 module Thinreports
   module SectionReport
     module Renderer
-      module ContentHeight
+      module SectionHeight
         LayoutInfo = Struct.new(:shape, :content_height, :top_margin, :bottom_margin)
 
-        def content_height(section)
+        def section_height(section)
           return (section.min_height || section.schema.height) unless section.schema.auto_stretch? && section.items
 
           item_layouts = section.items.map { |item| item_layout(section, item.internal) }.compact
@@ -66,7 +66,7 @@ module Thinreports
           shape.format.rows.each {|row| schema_height += row.attributes['height']}
 
           y = shape.format.attributes['y']
-          LayoutInfo.new(shape, stack_view_renderer.content_height(shape), y, section.schema.height - schema_height - y)
+          LayoutInfo.new(shape, stack_view_renderer.section_height(shape), y, section.schema.height - schema_height - y)
         end
       end
     end
