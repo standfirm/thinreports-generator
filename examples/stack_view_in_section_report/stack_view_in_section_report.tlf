@@ -162,8 +162,7 @@
                   "format": {
                     "base": "",
                     "type": ""
-                  },
-                  "follow-stretch": "height"
+                  }
                 },
                 {
                   "id": "child_image",
