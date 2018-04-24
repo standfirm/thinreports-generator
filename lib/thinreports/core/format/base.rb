@@ -61,6 +61,17 @@ module Thinreports
           @config
         end
 
+        def content_type
+          case attributes['content-type']
+          when 'float'
+            :float
+          when 'background'
+            :background
+          else
+            :content
+          end
+        end
+
         private
 
         def find(*keys)

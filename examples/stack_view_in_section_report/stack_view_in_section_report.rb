@@ -13,31 +13,23 @@ example :stack_view_in_section_report, 'stack view in section report' do |t|
               items: {
                 stack_view_left: {
                   rows: {
-                    top_row: {
+                    row1: {
                       items: {
-                        test_text: "top row\n" * 15
+                        test_text: "row 1\n" * 15
                       }
                     },
-                    bottom_row: {
+                    row2: {
                       items: {
-                        child_stack_view: {
-                          rows: {
-                            child_top_row: {
-                              items: {
-                                test_text: "child top row"
-                              }
-                            },
-                            child_middle_row: {
-                              display: false
-                            },
-                            child_bottom_row: {
-                              items: {
-                                test_text: "child bottom row\n" * 3
-                              }
-                            }
-                          }
-                        },
+                        test_text: "row 2",
                         child_image: t.resource('img50x50.png')
+                      }
+                    },
+                    row3: {
+                      display: false
+                    },
+                    row4: {
+                      items: {
+                        test_text: "row 4\n" * 3
                       }
                     }
                   }

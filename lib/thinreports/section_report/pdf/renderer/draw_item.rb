@@ -5,12 +5,12 @@ module Thinreports
         def draw_item(item, expanded_height = 0)
           shape = item.internal
 
-          # Ignore the overflow attribute when the follow-expand attribute is 'height'.
+          # Ignore the overflow attribute when the follow-stretch attribute is 'height'.
           # This is because the height attribute is ignored if overflow attribute is 'expand'.
-          ignore_overflow = item.internal.format.attributes['follow-expand'] == 'height'
+          ignore_overflow = item.internal.format.attributes['follow-stretch'] == 'height'
 
           if shape.type_of?(Core::Shape::TextBlock::TYPE_NAME)
-            case shape.format.follow_expand
+            case shape.format.follow_stretch
             when 'height'
               # Expand height
               pdf.draw_shape_tblock(shape, expanded_height, ignore_overflow: ignore_overflow)
@@ -20,7 +20,7 @@ module Thinreports
           elsif shape.type_of?(Core::Shape::ImageBlock::TYPE_NAME)
             pdf.draw_shape_iblock(shape)
           elsif shape.type_of?('text')
-            case shape.format.follow_expand
+            case shape.format.follow_stretch
             when 'height'
               # Expand height
               pdf.draw_shape_text(shape, expanded_height)
@@ -32,7 +32,7 @@ module Thinreports
           elsif shape.type_of?('ellipse')
             pdf.draw_shape_ellipse(shape)
           elsif shape.type_of?('rect')
-            case shape.format.follow_expand
+            case shape.format.follow_stretch
             when 'height'
               # Expand height
               pdf.draw_shape_rect(shape, expanded_height)
@@ -40,7 +40,7 @@ module Thinreports
               pdf.draw_shape_rect(shape)
             end
           elsif shape.type_of?('line')
-            case shape.format.follow_expand
+            case shape.format.follow_stretch
             when 'height'
               # Expand height
               y1, y2 = shape.format.attributes.values_at('y1', 'y2')

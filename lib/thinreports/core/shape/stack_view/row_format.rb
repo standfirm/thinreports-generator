@@ -5,10 +5,10 @@ module Thinreports
     module Shape
       module StackView
         class RowFormat < Core::Format::Base
+          config_reader :id
           config_reader :height
           config_checker true, :display
-          config_checker true, auto_expand: 'auto-expand'
-          config_checker true, auto_shrink: 'auto-shrink'
+          config_checker true, auto_stretch: 'auto-stretch'
 
           attr_reader :shapes
           attr_reader :shapes_by_id
