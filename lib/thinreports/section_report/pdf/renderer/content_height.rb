@@ -2,6 +2,8 @@ module Thinreports
   module SectionReport
     module Renderer
       module ContentHeight
+        LayoutInfo = Struct.new(:content_height, :top_margin, :bottom_margin)
+
         def content_height(section)
           return (section.min_height || section.schema.height) unless section.schema.auto_stretch? && section.items
 
@@ -12,12 +14,12 @@ module Thinreports
           padding_bottom =
             if (section.schema.padding_bottom.nil? || section.schema.padding_bottom == '')
               # min bottom margin
-              item_layouts.map { |l| l[:bottom_margin] }.min.to_f
+              item_layouts.map { |l| l.bottom_margin }.min.to_f
             else
               section.schema.padding_bottom.to_f
             end
 
-          max_content_bottom = item_layouts.map { |l| l[:top_margin] + l[:content_height] }.max.to_f
+          max_content_bottom = item_layouts.map { |l| l.top_margin + l.content_height }.max.to_f
 
           [section.min_height || 0, max_content_bottom + padding_bottom].max
         end
@@ -41,11 +43,7 @@ module Thinreports
         end
 
         def static_layout(section, _shape, y, height)
-          {
-            content_height: height,
-            top_margin: y,
-            bottom_margin: section.schema.height - height - y
-          }
+          LayoutInfo.new(height, y, section.schema.height - height - y)
         end
 
         def text_layout(section, shape)
@@ -60,11 +58,7 @@ module Thinreports
             }
           end
 
-          {
-            content_height: content_height,
-            top_margin: y,
-            bottom_margin: section.schema.height - schema_height - y
-          }
+          LayoutInfo.new(content_height, y, section.schema.height - schema_height - y)
         end
 
         def stack_view_layout(section, shape)
@@ -72,11 +66,7 @@ module Thinreports
           shape.format.rows.each {|row| schema_height += row.attributes['height']}
 
           y = shape.format.attributes['y']
-          {
-            content_height: stack_view_renderer.content_height(shape),
-            top_margin: y,
-            bottom_margin: (section.schema.height - schema_height - y)
-          }
+          LayoutInfo.new(stack_view_renderer.content_height(shape), y, section.schema.height - schema_height - y)
         end
       end
     end
