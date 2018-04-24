@@ -2,26 +2,26 @@ module Thinreports
   module SectionReport
     module Renderer
       module ContentHeight
-        LayoutInfo = Struct.new(:content_height, :top_margin, :bottom_margin)
+        LayoutInfo = Struct.new(:shape, :content_height, :top_margin, :bottom_margin)
 
         def content_height(section)
           return (section.min_height || section.schema.height) unless section.schema.auto_stretch? && section.items
 
-          item_layouts = section.items
-                           .select { |item| !item.internal.format.attributes['float'] }
-                           .map { |item| item_layout(section, item.internal) }.compact
+          item_layouts = section.items.map { |item| item_layout(section, item.internal) }.compact
 
-          padding_bottom =
-            if (section.schema.padding_bottom.nil? || section.schema.padding_bottom == '')
-              # min bottom margin
-              item_layouts.map { |l| l.bottom_margin }.min.to_f
-            else
-              section.schema.padding_bottom.to_f
-            end
+          min_bottom_margin =
+            item_layouts
+              .reject { |l| l.shape.format.content_type == :background }
+              .map { |l| l.bottom_margin }
+              .min.to_f
 
-          max_content_bottom = item_layouts.map { |l| l.top_margin + l.content_height }.max.to_f
+          max_content_bottom =
+            item_layouts
+              .select { |l| l.shape.format.content_type == :content }
+              .map { |l| l.top_margin + l.content_height }
+              .max.to_f
 
-          [section.min_height || 0, max_content_bottom + padding_bottom].max
+          [section.min_height || 0, max_content_bottom + min_bottom_margin].max
         end
 
         def item_layout(section, shape)
@@ -42,8 +42,8 @@ module Thinreports
           end
         end
 
-        def static_layout(section, _shape, y, height)
-          LayoutInfo.new(height, y, section.schema.height - height - y)
+        def static_layout(section, shape, y, height)
+          LayoutInfo.new(shape, height, y, section.schema.height - height - y)
         end
 
         def text_layout(section, shape)
@@ -58,7 +58,7 @@ module Thinreports
             }
           end
 
-          LayoutInfo.new(content_height, y, section.schema.height - schema_height - y)
+          LayoutInfo.new(shape, content_height, y, section.schema.height - schema_height - y)
         end
 
         def stack_view_layout(section, shape)
@@ -66,7 +66,7 @@ module Thinreports
           shape.format.rows.each {|row| schema_height += row.attributes['height']}
 
           y = shape.format.attributes['y']
-          LayoutInfo.new(stack_view_renderer.content_height(shape), y, section.schema.height - schema_height - y)
+          LayoutInfo.new(shape, stack_view_renderer.content_height(shape), y, section.schema.height - schema_height - y)
         end
       end
     end

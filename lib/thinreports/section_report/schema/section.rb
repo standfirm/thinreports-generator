@@ -5,7 +5,6 @@ module Thinreports
         class Base < Core::Shape::Manager::Format
           config_reader :id, :type
           config_reader :height
-          config_reader padding_bottom: 'padding-bottom'
           config_checker true, :display
           config_checker true, auto_stretch: 'auto-stretch'
 
