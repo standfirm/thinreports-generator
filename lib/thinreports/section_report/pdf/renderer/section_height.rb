@@ -50,9 +50,10 @@ module Thinreports
 
         def image_block_layout(section, shape)
           y, height = shape.format.attributes.values_at('y', 'height')
-          if shape.format.attributes['allow-shrink'] && shape.style.finalized_styles['position-y'] == 'top'
+          if shape.style.finalized_styles['position-y'] == 'top'
             dimensions = pdf.shape_iblock_dimenions(shape)
-            return LayoutInfo.new(shape, dimensions[1], y, section.schema.height - height - y) if dimensions
+            content_height = dimensions ? dimensions[1] : 0
+            return LayoutInfo.new(shape, content_height, y, section.schema.height - height - y)
           end
           static_layout(section, shape, y, height)
         end
