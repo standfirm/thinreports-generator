@@ -29,6 +29,8 @@ module Thinreports
             text_layout(section, shape)
           elsif shape.type_of?(Core::Shape::StackView::TYPE_NAME)
             stack_view_layout(section, shape)
+          elsif shape.type_of?(Core::Shape::ImageBlock::TYPE_NAME)
+            image_block_layout(section, shape)
           elsif shape.type_of?('ellipse')
             cy, ry = shape.format.attributes.values_at('cy', 'ry')
             static_layout(section, shape, cy - ry, ry * 2)
@@ -44,6 +46,15 @@ module Thinreports
 
         def static_layout(section, shape, y, height)
           LayoutInfo.new(shape, height, y, section.schema.height - height - y)
+        end
+
+        def image_block_layout(section, shape)
+          y, height = shape.format.attributes.values_at('y', 'height')
+          if shape.format.attributes['allow-shrink'] && shape.style.finalized_styles['position-y'] == 'top'
+            dimensions = pdf.shape_iblock_dimenions(shape)
+            return LayoutInfo.new(shape, dimensions[1], y, section.schema.height - height - y) if dimensions
+          end
+          static_layout(section, shape, y, height)
         end
 
         def text_layout(section, shape)

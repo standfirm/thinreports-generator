@@ -31,6 +31,11 @@ example :stack_view_in_section_report, 'stack view in section report' do |t|
                       items: {
                         test_text: "row 4\n" * 3
                       }
+                    },
+                    row5: {
+                      items: {
+                        child_image: t.resource('1200x200.png')
+                      }
                     }
                   }
                 },

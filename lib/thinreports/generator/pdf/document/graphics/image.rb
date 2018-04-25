@@ -51,6 +51,17 @@ module Thinreports
           end
         end
 
+        def image_dimensions(filename_or_io, x, y, w, h, options = {})
+          w, h = s2f(w, h)
+          # XXX: Calling @private method
+          _pdf_obj, info = pdf.build_image_object(filename_or_io)
+          info.calc_image_dimensions(
+            position: options[:position_x] || :left,
+            vposition: options[:position_y] || :top,
+            auto_fit: [w, h]
+          )
+        end
+
         def clean_temp_images
           temp_image_registry.each_value do |image_path|
             File.delete(image_path) if File.exist?(image_path)

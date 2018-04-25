@@ -54,7 +54,7 @@
       "id": "document-header",
       "type": "header",
       "display": true,
-      "height": 250.0,
+      "height": 320.0,
       "every-page": false,
       "auto-stretch": true,
       "items": [
@@ -104,6 +104,48 @@
                     "type": ""
                   },
                   "follow-stretch": "height"
+                }
+              ]
+            },
+            {
+              "id": "row5",
+              "height": 70,
+              "display": true,
+              "auto-stretch": true,
+              "items": [
+                {
+                  "id": "",
+                  "type": "rect",
+                  "display": true,
+                  "description": "",
+                  "content-type": "background",
+                  "x": 0,
+                  "y": 0,
+                  "width": 200,
+                  "height": 70,
+                  "follow-stretch": "height",
+                  "style": {
+                    "border-color": "#000000",
+                    "border-width": 1,
+                    "border-style": "solid",
+                    "fill-color": "none"
+                  },
+                  "border-radius": 0
+                },
+                {
+                  "id": "child_image",
+                  "type": "image-block",
+                  "display": true,
+                  "description": "",
+                  "allow-shrink": true,
+                  "x": 10,
+                  "y": 10,
+                  "width": 180,
+                  "height": 50,
+                  "style": {
+                    "position-x": "left",
+                    "position-y": "top"
+                  }
                 }
               ]
             },
@@ -281,7 +323,7 @@
           "id": "stack_view_right",
           "type": "stack-view",
           "x": 250,
-          "y": 100,
+          "y": 170,
           "width": 200,
           "display": true,
           "rows": [

@@ -52,6 +52,19 @@ module Thinreports
           )
         end
 
+        def shape_iblock_dimenions(shape)
+          return nil if blank_value?(shape.src)
+
+          x, y, w, h = shape.format.attributes.values_at('x', 'y', 'width', 'height')
+          style = shape.style.finalized_styles
+
+          image_dimensions(
+            shape.src, x, y, w, h,
+            position_x: image_position_x(style['position-x']),
+            position_y: image_position_y(style['position-y'])
+          )
+        end
+
         # @param [Thinreports::Core::Shape::Text::Internal] shape
         def draw_shape_text(shape, dheight = 0)
           x, y, w, h = shape.format.attributes.values_at('x', 'y', 'width', 'height')
