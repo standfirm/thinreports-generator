@@ -24,6 +24,14 @@ module Thinreports
           [section.min_height || 0, max_content_bottom + min_bottom_margin].max
         end
 
+        def calc_height_with_float_content(section)
+          item_layouts = section.items.map { |item| item_layout(section, item.internal) }.compact
+          item_layouts
+            .select { |l| l.shape.format.content_type == :float }
+            .map { |l| l.top_margin + l.content_height }
+            .max.to_f
+        end
+
         def item_layout(section, shape)
           if shape.type_of?(Core::Shape::TextBlock::TYPE_NAME)
             text_layout(section, shape)
