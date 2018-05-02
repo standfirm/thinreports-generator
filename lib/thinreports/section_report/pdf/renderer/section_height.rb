@@ -61,9 +61,11 @@ module Thinreports
           if shape.style.finalized_styles['position-y'] == 'top'
             dimensions = pdf.shape_iblock_dimenions(shape)
             content_height = dimensions ? dimensions[1] : 0
-            return LayoutInfo.new(shape, content_height, y, section.schema.height - height - y)
+
+            LayoutInfo.new(shape, content_height, y, section.schema.height - height - y)
+          else
+            static_layout(section, shape, y, height)
           end
-          static_layout(section, shape, y, height)
         end
 
         def text_layout(section, shape)
