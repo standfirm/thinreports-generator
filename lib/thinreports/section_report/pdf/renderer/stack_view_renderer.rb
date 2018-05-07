@@ -41,9 +41,7 @@ module Thinreports
         attr_reader :pdf, :row_renderer
 
         def build_row_layouts(rows)
-          row_layouts = rows.map do |row|
-            RowLayout.new(row, row_renderer.section_height(row))
-          end
+          row_layouts = rows.map { |row| RowLayout.new(row, row_renderer.section_height(row)) }
 
           row_layouts.inject(0) do |top, row_layout|
             row_layout.top = top
