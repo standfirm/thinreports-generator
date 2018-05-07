@@ -11,12 +11,17 @@ module Thinreports
           @row_renderer = Renderer::StackViewRowRenderer.new(pdf)
         end
 
+        RowLayout = Struct.new(:row, :height, :top)
+
         def section_height(shape)
-          sum = 0
-          shape.rows.each do |row|
-            sum += row_renderer.section_height(row)
-          end
-          sum
+          row_layouts = build_row_layouts(shape.rows)
+
+          total_row_height = row_layouts.sum(0, &:height)
+          float_content_bottom = row_layouts
+            .map { |l| row_renderer.calc_float_content_bottom(l.row) + l.top }
+            .max.to_f
+
+          [total_row_height, float_content_bottom].max
         end
 
         def render(shape)
@@ -34,6 +39,17 @@ module Thinreports
         private
 
         attr_reader :pdf, :row_renderer
+
+        def build_row_layouts(rows)
+          row_layouts = rows.map { |row| RowLayout.new(row, row_renderer.section_height(row)) }
+
+          row_layouts.inject(0) do |top, row_layout|
+            row_layout.top = top
+            top + row_layout.height
+          end
+
+          row_layouts
+        end
       end
     end
   end

@@ -24,6 +24,14 @@ module Thinreports
           [section.min_height || 0, max_content_bottom + min_bottom_margin].max
         end
 
+        def calc_float_content_bottom(section)
+          item_layouts = section.items.map { |item| item_layout(section, item.internal) }.compact
+          item_layouts
+            .select { |l| l.shape.format.content_type == :float }
+            .map { |l| l.top_margin + l.content_height }
+            .max.to_f
+        end
+
         def item_layout(section, shape)
           if shape.type_of?(Core::Shape::TextBlock::TYPE_NAME)
             text_layout(section, shape)
@@ -53,9 +61,11 @@ module Thinreports
           if shape.style.finalized_styles['position-y'] == 'top'
             dimensions = pdf.shape_iblock_dimenions(shape)
             content_height = dimensions ? dimensions[1] : 0
-            return LayoutInfo.new(shape, content_height, y, section.schema.height - height - y)
+
+            LayoutInfo.new(shape, content_height, y, section.schema.height - height - y)
+          else
+            static_layout(section, shape, y, height)
           end
-          static_layout(section, shape, y, height)
         end
 
         def text_layout(section, shape)
