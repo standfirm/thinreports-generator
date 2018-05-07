@@ -24,7 +24,7 @@ module Thinreports
           [section.min_height || 0, max_content_bottom + min_bottom_margin].max
         end
 
-        def calc_height_with_float_content(section)
+        def calc_float_content_bottom(section)
           item_layouts = section.items.map { |item| item_layout(section, item.internal) }.compact
           item_layouts
             .select { |l| l.shape.format.content_type == :float }

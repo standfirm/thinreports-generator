@@ -17,11 +17,11 @@ module Thinreports
           row_layouts = build_row_layouts(shape.rows)
 
           total_row_height = row_layouts.sum(0, &:height)
-          content_bottom = row_layouts
-            .map { |l| row_renderer.calc_height_with_float_content(l.row) + l.top }
+          float_content_bottom = row_layouts
+            .map { |l| row_renderer.calc_float_content_bottom(l.row) + l.top }
             .max.to_f
 
-          [total_row_height, content_bottom].max
+          [total_row_height, float_content_bottom].max
         end
 
         def render(shape)
