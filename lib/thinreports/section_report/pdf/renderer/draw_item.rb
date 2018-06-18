@@ -13,7 +13,9 @@ module Thinreports
             case shape.format.follow_stretch
             when 'height'
               # Expand height
-              pdf.draw_shape_tblock(shape, expanded_height, ignore_overflow: ignore_overflow)
+              pdf.draw_shape_tblock(shape, dheight: expanded_height, ignore_overflow: ignore_overflow)
+            when 'half-y'
+              pdf.draw_shape_tblock(shape, dy: expanded_height.fdiv(2), ignore_overflow: ignore_overflow)
             else
               pdf.draw_shape_tblock(shape, ignore_overflow: ignore_overflow)
             end
