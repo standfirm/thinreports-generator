@@ -66,7 +66,7 @@ module Thinreports
             pdf.draw_shape_tblock(shape) {|array, options|
               page_height = pdf.pdf.bounds.height
               modified_options = options.merge(at: [0, page_height], height: page_height)
-              content_height = [content_height, pdf.pdf.height_of_formatted(array, modified_options)].max
+              content_height = pdf.pdf.height_of_formatted(array, modified_options)
             }
           end
 
