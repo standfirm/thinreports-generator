@@ -10,8 +10,11 @@ example :section_report, 'section report' do |t|
         {
           headers: {
             'document-header': {
+              extra_items: [:extra_item1, :extra_item2],
               items: {
-                text: 'ここはドキュメントヘッダーです。' * 3
+                text: 'ここはドキュメントヘッダーです。' * 3,
+                extra_item1: 'foo',
+                extra_item2: 'bar'
               }
             },
             'page-header': {
