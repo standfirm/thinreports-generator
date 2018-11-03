@@ -71,7 +71,7 @@ module Thinreports
             raise Thinreports::Errors::UnknownItemId.new(key, 'Section') unless schema_ids.include? key
           end
           section_schema.items.each_with_object([]) do |item_schema, items|
-            item = ItemBuilder.new(item_schema).build(items_params[item_schema.id.to_sym])
+            item = ItemBuilder.new(item_schema, section_schema).build(items_params[item_schema.id.to_sym])
             items << item if item.visible?
           end
         end

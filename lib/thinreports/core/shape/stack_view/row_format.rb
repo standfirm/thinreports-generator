@@ -13,6 +13,8 @@ module Thinreports
           attr_reader :shapes
           attr_reader :shapes_by_id
 
+          alias_method :items, :shapes
+
           def initialize(*)
             super
             @shapes = []

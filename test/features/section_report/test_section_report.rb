@@ -40,7 +40,10 @@ class TestSectionReport < FeatureTest
             ] + [
               id: :detail3,
               items: {
-                text1: "bar",
+                text1: -> (parent_schema) {
+                  text3 = parent_schema.items.find { |item| item.id == 'text3' }
+                  { value: "font-size:#{text3.attributes.dig('style', 'font-size')}" }
+                },
                 text2: "foo",
                 text3: "foobar"
               }

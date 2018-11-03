@@ -45,7 +45,7 @@ module Thinreports
           end
 
           row_schema.shapes.each_with_object([]) do |shape, items|
-            item = ItemBuilder.new(shape).build(items_params[shape.id&.to_sym])
+            item = ItemBuilder.new(shape, row_schema).build(items_params[shape.id&.to_sym])
             items << item if item.visible?
           end
         end
@@ -59,4 +59,3 @@ module Thinreports
     end
   end
 end
-
