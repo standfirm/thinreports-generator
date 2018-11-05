@@ -51,7 +51,7 @@ module Thinreports
             items = build_items(
               section_schema,
               section_params[:items] || {},
-              extra_items: section_params[:extra_items] || []
+              optional_item_ids: section_params[:optional_item_ids] || []
             )
             sections << ReportData::Section.new(section_schema, items, section_params[:min_height])
           end
@@ -69,11 +69,11 @@ module Thinreports
           end
         end
 
-        def build_items(section_schema, items_params, extra_items: [])
+        def build_items(section_schema, items_params, optional_item_ids: [])
           schema_ids = section_schema.items.map { |item| item.id&.to_sym }.to_set.subtract([nil, :""])
           item_ids = items_params.keys
 
-          (item_ids - extra_items).each do |id|
+          (item_ids - optional_item_ids).each do |id|
             raise Thinreports::Errors::UnknownItemId.new(id, 'Section') unless schema_ids.include?(id)
           end
 

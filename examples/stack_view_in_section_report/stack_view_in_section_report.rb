@@ -14,10 +14,10 @@ example :stack_view_in_section_report, 'stack view in section report' do |t|
                 stack_view_left: {
                   rows: {
                     row1: {
-                      extra_items: [:extra_item2],
+                      optional_item_ids: [:optional_item2],
                       items: {
                         test_text: "row 1\n" * 15,
-                        extra_item2: 'foo'
+                        optional_item2: 'foo'
                       }
                     },
                     row2: {

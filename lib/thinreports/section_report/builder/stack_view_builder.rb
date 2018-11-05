@@ -27,7 +27,7 @@ module Thinreports
             items = build_row_items(
               row_schema,
               row_params[:items] || {},
-              extra_items: row_params[:extra_items] || []
+              optional_item_ids: row_params[:optional_item_ids] || []
             )
             rows << StackViewData::Row.new(row_schema, items, nil)
           end
@@ -38,11 +38,11 @@ module Thinreports
 
         attr_reader :item
 
-        def build_row_items(row_schema, items_params, extra_items: [])
+        def build_row_items(row_schema, items_params, optional_item_ids: [])
           schema_ids = row_schema.shapes.map {|shape| shape.id&.to_sym}.to_set.subtract([nil, :""])
           item_ids = items_params.keys
 
-          (item_ids - extra_items).each do |id|
+          (item_ids - optional_item_ids).each do |id|
             raise Thinreports::Errors::UnknownItemId.new(id, 'Row') unless schema_ids.include?(id)
           end
 
