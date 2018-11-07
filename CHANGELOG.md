@@ -2,6 +2,13 @@
 
 Bug Fixes:
 
+ * Fixed: corner-radius of Rect is not applied correctly #93
+
+
+## 0.10.2
+
+Bug Fixes:
+
  * Fixed: Prawn::Errors::UnknownFont error occured: "is not a known font" #89
 
 ## 0.10.1
