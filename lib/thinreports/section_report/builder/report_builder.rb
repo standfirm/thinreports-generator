@@ -40,8 +40,9 @@ module Thinreports
             when :footer then schema.footers
             end
 
-          sections_params.each_key do |key|
-            raise Thinreports::Errors::UnknownSectionId.new(section_type, key) unless sections_schemas.has_key? key
+          sections_params.each do |id, params|
+            next if params[:optional]
+            raise Thinreports::Errors::UnknownSectionId.new(section_type, id) unless sections_schemas.key?(id)
           end
 
           sections_schemas.each_with_object([]) do |(section_id, section_schema), sections|
@@ -61,7 +62,10 @@ module Thinreports
             detail_id = detail_params[:id].to_sym
             detail_schema = schema.details[detail_id]
 
-            raise Thinreports::Errors::UnknownSectionId.new(:detail, detail_id) unless detail_schema
+            if detail_schema.nil?
+              next if detail_params[:optional]
+              raise Thinreports::Errors::UnknownSectionId.new(:detail, detail_id)
+            end
 
             items = build_items(detail_schema, detail_params[:items] || {})
             details << ReportData::Section.new(detail_schema, items, detail_params[:min_height])

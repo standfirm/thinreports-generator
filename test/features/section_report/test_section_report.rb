@@ -25,9 +25,16 @@ class TestSectionReport < FeatureTest
                 }
               },
               'page-header': {
+                optional: true,
                 items: {
                   image: path_of('img50x50.png'),
                   text: 'ここはページヘッダーです。' * 10
+                }
+              },
+              optional_header: {
+                optional: true,
+                items: {
+                  text: 'foo'
                 }
               }
             },
@@ -42,6 +49,13 @@ class TestSectionReport < FeatureTest
                 id: :detail2,
                 items: {
                   text: "detail2\ndetail2\ndetail2"
+                }
+              },
+              {
+                id: :optional_detail,
+                optional: true,
+                items: {
+                  text: 'foo'
                 }
               }
             ] + [
