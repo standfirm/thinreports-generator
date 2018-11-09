@@ -14,7 +14,14 @@ class TestSectionReport < FeatureTest
             headers: {
               'document-header': {
                 items: {
-                  text: 'ここはドキュメントヘッダーです。' * 3
+                  text: {
+                    optional: true,
+                    value: 'ここはドキュメントヘッダーです。' * 3
+                  },
+                  optional_item: {
+                    optional: true,
+                    value: 'foo'
+                  }
                 }
               },
               'page-header': {

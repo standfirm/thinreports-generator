@@ -18,7 +18,14 @@ class TestStackView < FeatureTest
                     rows: {
                       row1: {
                         items: {
-                          test_text: "row 1\n" * 15
+                          test_text: {
+                            optional: true,
+                            value: "row 1\n" * 15
+                          },
+                          optional_item: {
+                            optional: true,
+                            value: 'foo'
+                          }
                         }
                       },
                       row2: {
