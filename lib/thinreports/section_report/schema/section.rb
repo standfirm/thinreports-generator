@@ -8,18 +8,25 @@ module Thinreports
           config_checker true, :display
           config_checker true, auto_stretch: 'auto-stretch'
 
-          attr_reader :items, :item_ids
+          attr_reader :items
 
           def initialize(schema_data, items:)
             super(schema_data)
             initialize_items(items)
           end
 
+          def find_item(id)
+            @item_with_ids[id.to_sym]
+          end
+
           private
 
           def initialize_items(items)
             @items = items
-            @item_ids = items.reject { |item| item.id.empty? }.map { |item| item.id.to_sym }
+            @item_with_ids = items.each_with_object({}) do |item, item_with_ids|
+              next if item.id.empty?
+              item_with_ids[item.id.to_sym] = item
+            end
           end
         end
 

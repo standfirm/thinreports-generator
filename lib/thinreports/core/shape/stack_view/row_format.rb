@@ -10,27 +10,28 @@ module Thinreports
           config_checker true, :display
           config_checker true, auto_stretch: 'auto-stretch'
 
-          attr_reader :shapes
-          attr_reader :shapes_by_id
+          attr_reader :items
 
           alias_method :items, :shapes
 
           def initialize(*)
             super
-            @shapes = []
-            @shapes_by_id = {}
+            @items = []
+            @item_with_ids = {}
             initialize_items(attributes['items'])
+          end
+
+          def find_item(id)
+            @item_with_ids[id.to_sym]
           end
 
           private
 
           def initialize_items(item_schemas)
             item_schemas.each do |item_schema|
-              id, type = item_schema.values_at 'id', 'type'
-
-              shape = Core::Shape::Format(type).new(item_schema)
-              shapes << shape
-              @shapes_by_id[id.to_sym] = shape if id
+              item = Core::Shape::Format(item_schema['type']).new(item_schema)
+              @items << item
+              @item_with_ids[item.id.to_sym] = item unless item.id.empty?
             end
           end
         end
