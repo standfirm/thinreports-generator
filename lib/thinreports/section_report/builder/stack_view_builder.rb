@@ -40,7 +40,7 @@ module Thinreports
         def build_row_items(row_schema, items_params)
           items_params.each do |id, params|
             next if params.is_a?(Hash) && params[:optional]
-            raise Thinreports::Errors::UnknownItemId.new(id, 'Row') unless rows_schema.find_item(id)
+            raise Thinreports::Errors::UnknownItemId.new(id, 'Row') unless row_schema.find_item(id)
           end
 
           row_schema.items.each_with_object([]) do |item_schema, items|
