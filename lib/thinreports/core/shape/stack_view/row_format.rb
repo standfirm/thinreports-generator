@@ -15,7 +15,7 @@ module Thinreports
           def initialize(*)
             super
             @items = []
-            @item_with_ids = []
+            @item_with_ids = {}
             initialize_items(attributes['items'])
           end
 
