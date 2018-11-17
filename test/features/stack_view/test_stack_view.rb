@@ -23,8 +23,8 @@ class TestStackView < FeatureTest
                       },
                       row2: {
                         items: {
-                          test_text: -> (schema) {
-                            image = schema.items.find { |item| item.id == 'child_image' }
+                          test_text: -> (context) {
+                            image = context.parent_schema.items.find { |item| item.id == 'child_image' }
                             { value: "width:#{image.attributes['width']}" }
                           },
                           child_image: path_of('img50x50.png')

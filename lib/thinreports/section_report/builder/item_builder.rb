@@ -4,6 +4,8 @@ module Thinreports
   module SectionReport
     module Builder
       class ItemBuilder
+        Context = Struct.new(:parent_schema)
+
         def initialize(item_schema, parent_schema)
           @item = Core::Shape::Interface(nil, item_schema)
           @parent_schema = parent_schema
@@ -34,7 +36,7 @@ module Thinreports
           when Hash
             params
           when Proc
-            params.call(parent_schema)
+            params.call(Context.new(parent_schema))
           else
             { value: params }
           end
