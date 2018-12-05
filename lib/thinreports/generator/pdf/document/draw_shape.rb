@@ -20,9 +20,8 @@ module Thinreports
 
           draw_height = h + dheight
 
-          if attrs[:overflow] == :expand && attrs[:valign] != :top
-            # The height is forcefully expanded to the bounds bottom if `overflow: expand`,
-            # that is inappropriate unless `valign: top`.
+          if attrs[:overflow] == :expand
+            # The height is forcefully expanded to the bounds bottom if `overflow: expand`
             attrs = attrs.merge(overflow: :truncate)
             draw_height = [draw_height, tblock_text_height(shape)].max
           end

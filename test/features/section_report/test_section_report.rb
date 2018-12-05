@@ -14,7 +14,13 @@ class TestSectionReport < FeatureTest
             headers: {
               'document-header': {
                 items: {
-                  text: 'ここはドキュメントヘッダーです。' * 3,
+                  text: "valign: middle\nここはドキュメントヘッダーです。",
+                  unknown_item: 'ignore'
+                }
+              },
+              'document-header2': {
+                items: {
+                  text: "valign: top\nここはドキュメントヘッダーです。",
                   unknown_item: 'ignore'
                 }
               },
