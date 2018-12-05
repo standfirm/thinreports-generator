@@ -9,9 +9,9 @@ module Thinreports
             case shape.format.follow_stretch
             when 'height'
               # Expand height
-              pdf.draw_shape_tblock(shape, expanded_height)
+              pdf.draw_shape_tblock(shape, expanded_height, process_expand: true)
             else
-              pdf.draw_shape_tblock(shape)
+              pdf.draw_shape_tblock(shape, 0, process_expand: true)
             end
           elsif shape.type_of?(Core::Shape::ImageBlock::TYPE_NAME)
             pdf.draw_shape_iblock(shape)

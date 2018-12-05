@@ -5,7 +5,7 @@ module Thinreports
     class PDF
       module DrawShape
         # @param [Thinreports::Core::Shape::TextBlock::Internal] shape
-        def draw_shape_tblock(shape, dheight = 0)
+        def draw_shape_tblock(shape, dheight = 0, process_expand: false)
           x, y, w, h = shape.format.attributes.values_at('x', 'y', 'width', 'height')
 
           content = shape.real_value.to_s
@@ -20,7 +20,7 @@ module Thinreports
 
           draw_height = h + dheight
 
-          if attrs[:overflow] == :expand
+          if process_expand && attrs[:overflow] == :expand
             # The height is forcefully expanded to the bounds bottom if `overflow: expand`
             attrs = attrs.merge(overflow: :truncate)
             draw_height = [draw_height, tblock_text_height(shape)].max
