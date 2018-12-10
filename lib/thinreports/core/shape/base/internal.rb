@@ -18,12 +18,14 @@ module Thinreports
           attr_reader :format
           attr_writer :style
           attr_accessor :states
+          attr_accessor :layout_info
 
           def initialize(parent, format)
             @parent = parent
             @format = format
             @states = {}
             @style = nil
+            @layout_info = nil
 
             @finalized_attributes = nil
           end

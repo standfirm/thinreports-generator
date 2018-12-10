@@ -15,13 +15,15 @@ module Thinreports
         end
 
         def calc_actual_height(section)
+          section.items.each { |item| calc_item_layout(section, item.internal) }
+
           unless section.schema.auto_stretch? && section.items
             section.min_bottom_margin = 0
             section.actual_height = section.min_height || section.schema.height
             return
           end
 
-          item_layouts = section.items.map { |item| item_layout(section, item.internal) }.compact
+          item_layouts = section.items.map { |item| item.internal.layout_info }.compact
 
           min_bottom_margin =
             item_layouts
@@ -47,24 +49,25 @@ module Thinreports
             .max.to_f
         end
 
-        def item_layout(section, shape)
-          if shape.type_of?(Core::Shape::TextBlock::TYPE_NAME)
-            text_layout(section, shape)
-          elsif shape.type_of?(Core::Shape::StackView::TYPE_NAME)
-            stack_view_layout(section, shape)
-          elsif shape.type_of?(Core::Shape::ImageBlock::TYPE_NAME)
-            image_block_layout(section, shape)
-          elsif shape.type_of?('ellipse')
-            cy, ry = shape.format.attributes.values_at('cy', 'ry')
-            static_layout(section, shape, cy - ry, ry * 2)
-          elsif shape.type_of?('line')
-            y1, y2 = shape.format.attributes.values_at('y1', 'y2')
-            static_layout(section, shape, [y1, y2].min, (y2 - y1).abs)
-          else
-            y, height = shape.format.attributes.values_at('y', 'height')
-            raise ArgumentError.new("Unknown layout for #{shape}") if height == nil || y == nil
-            static_layout(section, shape, y, height)
-          end
+        def calc_item_layout(section, shape)
+          shape.layout_info =
+            if shape.type_of?(Core::Shape::TextBlock::TYPE_NAME)
+              text_layout(section, shape)
+            elsif shape.type_of?(Core::Shape::StackView::TYPE_NAME)
+              stack_view_layout(section, shape)
+            elsif shape.type_of?(Core::Shape::ImageBlock::TYPE_NAME)
+              image_block_layout(section, shape)
+            elsif shape.type_of?('ellipse')
+              cy, ry = shape.format.attributes.values_at('cy', 'ry')
+              static_layout(section, shape, cy - ry, ry * 2)
+            elsif shape.type_of?('line')
+              y1, y2 = shape.format.attributes.values_at('y1', 'y2')
+              static_layout(section, shape, [y1, y2].min, (y2 - y1).abs)
+            else
+              y, height = shape.format.attributes.values_at('y', 'height')
+              raise ArgumentError.new("Unknown layout for #{shape}") if height == nil || y == nil
+              static_layout(section, shape, y, height)
+            end
         end
 
         def static_layout(section, shape, y, height)
