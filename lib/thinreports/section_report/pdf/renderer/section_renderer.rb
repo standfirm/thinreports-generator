@@ -17,9 +17,11 @@ module Thinreports
           doc = pdf.pdf
 
           actual_height = section_height(section)
+          min_bottom_margin = min_bottom_margin(section)
           doc.bounding_box([0, doc.cursor], width: doc.bounds.width, height: actual_height) do
             section.items.each do |item|
-              draw_item(item, (actual_height - section.schema.height))
+              puts "section: #{section.schema.id}, shape: #{item.internal.id}, bottom_margin: #{item.internal.layout_info.bottom_margin}, min_bottom_margin: #{min_bottom_margin}"
+              draw_item(item, actual_height - section.schema.height, item.internal.layout_info.bottom_margin - min_bottom_margin)
             end
             # doc.stroke_bounds
           end

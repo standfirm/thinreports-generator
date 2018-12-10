@@ -2,7 +2,7 @@ module Thinreports
   module SectionReport
     module Renderer
       module DrawItem
-        def draw_item(item, expanded_height = 0)
+        def draw_item(item, expanded_height = 0, narrowed_bottom_margin = 0)
           shape = item.internal
 
           # Ignore the overflow attribute when the follow-stretch attribute is 'height'.
@@ -13,7 +13,7 @@ module Thinreports
             case shape.format.follow_stretch
             when 'height'
               # Expand height
-              pdf.draw_shape_tblock(shape, expanded_height, ignore_overflow: ignore_overflow)
+              pdf.draw_shape_tblock(shape, expanded_height + narrowed_bottom_margin, ignore_overflow: ignore_overflow)
             else
               pdf.draw_shape_tblock(shape, ignore_overflow: ignore_overflow)
             end
