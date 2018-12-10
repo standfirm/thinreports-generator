@@ -5,7 +5,21 @@ module Thinreports
         LayoutInfo = Struct.new(:shape, :content_height, :top_margin, :bottom_margin)
 
         def section_height(section)
-          return (section.min_height || section.schema.height) unless section.schema.auto_stretch? && section.items
+          calc_actual_height(section) unless section.actual_height
+          section.actual_height
+        end
+
+        def min_bottom_margin(section)
+          calc_actual_height(section) unless section.actual_height
+          section.min_bottom_margin
+        end
+
+        def calc_actual_height(section)
+          unless section.schema.auto_stretch? && section.items
+            section.min_bottom_margin = 0
+            section.actual_height = section.min_height || section.schema.height
+            return
+          end
 
           item_layouts = section.items.map { |item| item_layout(section, item.internal) }.compact
 
@@ -21,7 +35,8 @@ module Thinreports
               .map { |l| l.top_margin + l.content_height }
               .max.to_f
 
-          [section.min_height || 0, max_content_bottom + min_bottom_margin].max
+          section.min_bottom_margin = min_bottom_margin
+          section.actual_height = [section.min_height || 0, max_content_bottom + min_bottom_margin].max
         end
 
         def calc_float_content_bottom(section)
