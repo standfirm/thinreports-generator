@@ -23,7 +23,12 @@ module Thinreports
           rows_schema.each do |row_schema|
             row_params = rows_params[row_schema.id.to_sym] || {}
             next unless row_enabled?(row_schema, row_params)
-            items = build_row_items(row_schema, row_params)
+
+            items = build_row_items(
+              row_schema,
+              row_params[:items] || {}
+            )
+
             rows << StackViewData::Row.new(row_schema, items, nil)
           end
           item.internal.rows = rows
@@ -33,12 +38,7 @@ module Thinreports
 
         attr_reader :item
 
-        def build_row_items(row_schema, row_params)
-          items_params = {}
-          unless row_params.nil?
-            items_params = row_params[:items] || {}
-          end
-
+        def build_row_items(row_schema, items_params)
           items_params.each_key do |item_id|
             raise Thinreports::Errors::UnknownItemId.new(item_id, 'Row') unless row_schema.find_item(item_id)
           end
