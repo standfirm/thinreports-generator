@@ -12,8 +12,6 @@ module Thinreports
 
           attr_reader :items
 
-          alias_method :items, :shapes
-
           def initialize(*)
             super
             @items = []
