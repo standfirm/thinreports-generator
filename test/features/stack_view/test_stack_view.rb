@@ -30,7 +30,7 @@ class TestStackView < FeatureTest
                           child_image: {
                             value: path_of('img50x50.png'),
                             styles: {
-                              offset_x: -100
+                              offset_x: -20
                             }
                           }
                         }
