@@ -4,14 +4,17 @@ module Thinreports
   module SectionReport
     module Builder
       class ItemBuilder
-        def initialize(item_schema)
+        Context = Struct.new(:parent_schema)
+
+        def initialize(item_schema, parent_schema)
           @item = Core::Shape::Interface(nil, item_schema)
+          @parent_schema = parent_schema
         end
 
         def build(item_params)
           return item unless item_params
 
-          params = normalize_params(item_params)
+          params = build_params(item_params)
 
           item.visible(params[:display]) if params.key?(:display)
           item.value(params[:value]) if params.key?(:value)
@@ -26,13 +29,18 @@ module Thinreports
 
         private
 
-        attr_reader :item
+        attr_reader :item, :parent_schema
 
-        def normalize_params(params)
-          params.is_a?(Hash) ? params : { value: params }
+        def build_params(params)
+          case params
+          when Hash
+            params
+          when Proc
+            params.call(Context.new(parent_schema))
+          else
+            { value: params }
+          end
         end
-
-
       end
     end
   end
