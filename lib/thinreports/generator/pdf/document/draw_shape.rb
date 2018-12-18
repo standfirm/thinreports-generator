@@ -48,7 +48,9 @@ module Thinreports
           image_box(
             shape.src, x, y, w, h,
             position_x: image_position_x(style['position-x']),
-            position_y: image_position_y(style['position-y'])
+            position_y: image_position_y(style['position-y']),
+            offset_x: style['offset-x'],
+            offset_y: style['offset-y']
           )
         end
 
