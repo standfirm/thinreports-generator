@@ -29,6 +29,8 @@
       "height": 60.0,
       "every-page": true,
       "auto-stretch": true,
+      "padding-bottom": "",
+      "min-height": "",
       "items": [
         {
           "id": "",
@@ -57,6 +59,8 @@
       "height": 320.0,
       "every-page": false,
       "auto-stretch": true,
+      "padding-bottom": "auto",
+      "min-height": "auto",
       "items": [
         {
           "id": "stack_view_left",
@@ -261,6 +265,8 @@
               "height": 40,
               "display": true,
               "auto-stretch": true,
+              "padding-bottom": "auto",
+              "min-height": "auto",
               "items": [
                 {
                   "id": "test_text",
@@ -331,6 +337,8 @@
               "height": 40,
               "display": true,
               "auto-stretch": true,
+              "padding-bottom": "auto",
+              "min-height": "auto",
               "items": [
                 {
                   "id": "test_text",
@@ -390,6 +398,8 @@
               "height": 60,
               "display": true,
               "auto-stretch": true,
+              "padding-bottom": "auto",
+              "min-height": "auto",
               "items": [
                 {
                   "id": "",
@@ -442,6 +452,8 @@
               "height": 40,
               "display": true,
               "auto-stretch": true,
+              "padding-bottom": "auto",
+              "min-height": "auto",
               "items": [
                 {
                   "id": "test_text",
