@@ -5,31 +5,49 @@ module Thinreports
         LayoutInfo = Struct.new(:shape, :content_height, :top_margin, :bottom_margin)
 
         def section_height(section)
-          return (section.min_height || section.schema.height) unless section.schema.auto_stretch? && section.items
+          return (section.min_height || section.schema.height) unless section.schema.auto_stretch?
 
           item_layouts = section.items.map { |item| item_layout(section, item.internal) }.compact
 
-          min_bottom_margin =
-            item_layouts
-              .reject { |l| l.shape.format.content_type == :background }
-              .map { |l| l.bottom_margin }
-              .min.to_f
+          content_height = calc_content_height(section, item_layouts)
+          padding_bottom = calc_padding_bottom(section, item_layouts)
 
-          max_content_bottom =
-            item_layouts
-              .select { |l| l.shape.format.content_type == :content }
-              .map { |l| l.top_margin + l.content_height }
-              .max.to_f
+          min_height =
+            if section.schema.min_height == :schema_height
+              [section.min_height || 0, section.schema.height].max
+            else
+              section.min_height || 0
+            end
 
-          [section.min_height || 0, max_content_bottom + min_bottom_margin].max
+          [min_height, content_height + padding_bottom].max
         end
 
+        # NOTE: StackViewRenderer で使われる
         def calc_float_content_bottom(section)
           item_layouts = section.items.map { |item| item_layout(section, item.internal) }.compact
           item_layouts
             .select { |l| l.shape.format.content_type == :float }
             .map { |l| l.top_margin + l.content_height }
             .max.to_f
+        end
+
+        def calc_content_height(section, item_layouts)
+          item_layouts
+            .select { |l| l.shape.format.content_type == :content }
+            .map { |l| l.top_margin + l.content_height }
+            .max.to_f
+        end
+
+        def calc_padding_bottom(section, item_layouts)
+          case section.schema.padding_bottom
+          when :auto
+            item_layouts
+              .reject { |l| l.shape.format.content_type == :background }
+              .map { |l| l.bottom_margin }
+              .min.to_f
+          when Numeric
+            section.schema.padding_bottom
+          end
         end
 
         def item_layout(section, shape)
