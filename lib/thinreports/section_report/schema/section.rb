@@ -8,28 +8,6 @@ module Thinreports
           config_checker true, :display
           config_checker true, auto_stretch: 'auto-stretch'
 
-          def padding_bottom
-            case read('padding-bottom')
-            when '', 'auto'
-              :auto
-            when Numeric
-              read('padding-bottom')
-            else
-              :auto
-            end
-          end
-
-          def min_height
-            case read('min-height')
-            when '', 'auto'
-              :auto
-            when 'schema-height'
-              :schema_height
-            else
-              :auto
-            end
-          end
-
           attr_reader :items
 
           def initialize(schema_data, items:)

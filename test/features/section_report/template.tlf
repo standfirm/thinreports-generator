@@ -21,8 +21,6 @@
       "display": true,
       "every-page": false,
       "auto-stretch": false,
-      "padding-bottom": "",
-      "min-height": "",
       "items": [
         {
           "id": "",
@@ -85,8 +83,6 @@
       "display": true,
       "every-page": true,
       "auto-stretch": true,
-      "padding-bottom": "",
-      "min-height": "",
       "items": [
         {
           "id": "",
@@ -513,8 +509,6 @@
       "every-page": false,
       "fixed-bottom": false,
       "auto-stretch": true,
-      "padding-bottom": "",
-      "min-height": "",
       "items": [
         {
           "id": "",
@@ -578,8 +572,6 @@
       "every-page": false,
       "fixed-bottom": false,
       "auto-stretch": true,
-      "padding-bottom": "",
-      "min-height": "",
       "items": [
         {
           "id": "",
@@ -643,8 +635,6 @@
       "every-page": false,
       "fixed-bottom": false,
       "auto-stretch": true,
-      "padding-bottom": "auto",
-      "min-height": "auto",
       "items": [
         {
           "id": "",
