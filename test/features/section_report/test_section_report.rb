@@ -14,7 +14,8 @@ class TestSectionReport < FeatureTest
             headers: {
               'document-header': {
                 items: {
-                  text: 'ここはドキュメントヘッダーです。' * 3
+                  text: 'ここはドキュメントヘッダーです。' * 3,
+                  unknown_item: 'ignore'
                 }
               },
               'page-header': {
@@ -27,7 +28,8 @@ class TestSectionReport < FeatureTest
             details: (1...11).map { |i| {
               id: :detail,
               items: {
-                text: "ここは明細#{i}です。ここは明細#{i}です。ここは明細#{i}です。ここは明細#{i}です。"
+                text: "ここは明細#{i}です。ここは明細#{i}です。ここは明細#{i}です。ここは明細#{i}です。",
+                unknown_item: 'ignore'
               }
             }
             } + [
@@ -67,7 +69,8 @@ class TestSectionReport < FeatureTest
             footers: {
               'summary-1': {
                 items: {
-                  text: 'ここは合計部1です'
+                  text: 'ここは合計部1です',
+                  unknown_item: 'ignore'
                 }
               },
               'summary-2': {

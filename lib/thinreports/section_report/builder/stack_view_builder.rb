@@ -39,10 +39,6 @@ module Thinreports
         attr_reader :item
 
         def build_row_items(row_schema, items_params)
-          items_params.each_key do |item_id|
-            raise Thinreports::Errors::UnknownItemId.new(item_id, 'Row') unless row_schema.find_item(item_id)
-          end
-
           row_schema.items.each_with_object([]) do |item_schema, items|
             item = ItemBuilder.new(item_schema, row_schema).build(items_params[item_schema.id&.to_sym])
             items << item if item.visible?

@@ -18,7 +18,8 @@ class TestStackView < FeatureTest
                     rows: {
                       row1: {
                         items: {
-                          test_text: "row 1\n" * 15
+                          test_text: "row 1\n" * 15,
+                          unknown_item: 'ignore'
                         }
                       },
                       row2: {
