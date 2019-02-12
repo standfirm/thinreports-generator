@@ -29,7 +29,7 @@ module Thinreports
               row_params[:items] || {}
             )
 
-            rows << StackViewData::Row.new(row_schema, items, nil)
+            rows << StackViewData::Row.new(row_schema, items, row_params[:min_height])
           end
           item.internal.rows = rows
         end

@@ -59,6 +59,7 @@ class TestStackView < FeatureTest
                         }
                       },
                       bottom_row: {
+                        min_height: 60,
                         items: {
                           test_text: 'bottom row'
                         }
