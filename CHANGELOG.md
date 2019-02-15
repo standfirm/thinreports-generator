@@ -1,9 +1,19 @@
 ## master
 
+Breaking Changes:
+
+ * Now formatter also works with a text-block with multiple-line #95
+ * Drop support ruby2.1 and 2.2
+
+Bug Fixes:
+
+ * Fixed: thousands separation is applied to decimal part #95
+
+## 0.10.3
+
 Bug Fixes:
 
  * Fixed: corner-radius of Rect is not applied correctly #93
-
 
 ## 0.10.2
 

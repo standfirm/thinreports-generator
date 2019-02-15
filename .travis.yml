@@ -1,12 +1,12 @@
 language: ruby
 sudo: false
 rvm:
-  - 2.1.10
-  - 2.2.9
   - 2.3.8
   - 2.4.5
   - 2.5.3
-  - jruby-9.2.0.0
+  - 2.6.1
+  - ruby-head
+  - jruby-9.2.5.0
 
 before_script:
   # Setup diff-pdf command (See https://github.com/vslavik/diff-pdf)
