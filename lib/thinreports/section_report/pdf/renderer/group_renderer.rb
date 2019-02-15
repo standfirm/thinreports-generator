@@ -10,8 +10,6 @@ module Thinreports
         end
 
         def render(report, group)
-          doc = pdf.pdf
-
           pdf.start_new_page_for_section_report report.schema
           current_page_height = 0
 
