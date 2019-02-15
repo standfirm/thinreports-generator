@@ -28,7 +28,7 @@ module Thinreports
           return {} if section_schema_datas.nil?
 
           section_schema_datas.each_with_object({}) do |section_schema_data, section_schemas|
-            id, type = section_schema_data.values_at 'id', 'type'
+            id = section_schema_data['id']
             section_schemas[id.to_sym] = parse_section(section_type, section_schema_data)
           end
         end

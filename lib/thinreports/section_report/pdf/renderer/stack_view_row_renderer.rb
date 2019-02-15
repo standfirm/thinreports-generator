@@ -1,4 +1,3 @@
-require_relative 'stack_view_renderer'
 require_relative 'section_height'
 require_relative 'draw_item'
 
