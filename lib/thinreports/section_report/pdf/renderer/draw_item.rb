@@ -5,17 +5,21 @@ module Thinreports
         def draw_item(item, expanded_height = 0)
           shape = item.internal
 
-          # Ignore the overflow attribute when the follow-stretch attribute is 'height'.
-          # This is because the height attribute is ignored if overflow attribute is 'expand'.
-          ignore_overflow = item.internal.format.attributes['follow-stretch'] == 'height'
-
           if shape.type_of?(Core::Shape::TextBlock::TYPE_NAME)
             case shape.format.follow_stretch
             when 'height'
               # Expand height
-              pdf.draw_shape_tblock(shape, expanded_height, ignore_overflow: ignore_overflow)
+              computed_height = shape.format.attributes['height'] + expanded_height
+
+              if shape.style.finalized_styles['overflow'] == 'expand'
+                # Overflow attribute is overwitten to :truncate when the follow-strecth attribute is height
+                # and the overflow attribute is expand.
+                pdf.draw_shape_tblock(shape, height: [computed_height, calc_text_block_height(shape)].max, overflow: :truncate)
+              else
+                pdf.draw_shape_tblock(shape, height: computed_height)
+              end
             else
-              pdf.draw_shape_tblock(shape, ignore_overflow: ignore_overflow)
+              pdf.draw_shape_tblock(shape)
             end
           elsif shape.type_of?(Core::Shape::ImageBlock::TYPE_NAME)
             pdf.draw_shape_iblock(shape)

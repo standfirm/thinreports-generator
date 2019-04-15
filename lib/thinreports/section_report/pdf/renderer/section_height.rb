@@ -68,16 +68,23 @@ module Thinreports
           end
         end
 
+        def calc_text_block_height(shape)
+          height = 0
+
+          pdf.draw_shape_tblock(shape) do |array, options|
+            modified_options = options.merge(at: [0, 1_000], height: 1_000)
+            height = pdf.pdf.height_of_formatted(array, modified_options)
+          end
+          height
+        end
+
         def text_layout(section, shape)
           y, schema_height = shape.format.attributes.values_at('y', 'height')
 
-          content_height = schema_height
-          if shape.style.finalized_styles['overflow'] == 'expand'
-            pdf.draw_shape_tblock(shape) {|array, options|
-              page_height = pdf.pdf.bounds.height
-              modified_options = options.merge(at: [0, page_height], height: page_height)
-              content_height = [content_height, pdf.pdf.height_of_formatted(array, modified_options)].max
-            }
+          content_height = if shape.style.finalized_styles['overflow'] == 'expand'
+            [schema_height, calc_text_block_height(shape)].max
+          else
+            schema_height
           end
 
           LayoutInfo.new(shape, content_height, y, section.schema.height - schema_height - y)
