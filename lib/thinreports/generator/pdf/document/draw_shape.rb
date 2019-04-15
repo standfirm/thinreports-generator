@@ -5,7 +5,7 @@ module Thinreports
     class PDF
       module DrawShape
         # @param [Thinreports::Core::Shape::TextBlock::Internal] shape
-        def draw_shape_tblock(shape, dheight = 0, ignore_overflow: false, &block)
+        def draw_shape_tblock(shape, dheight = 0, ignore_overflow: false)
           x, y, w, h = shape.format.attributes.values_at('x', 'y', 'width', 'height')
 
           content = shape.real_value.to_s
@@ -14,6 +14,24 @@ module Thinreports
           attrs = build_text_attributes(shape.style.finalized_styles)
 
           attrs = attrs.merge(overflow: :truncate) if ignore_overflow
+
+          unless shape.multiple?
+            content = content.tr("\n", ' ')
+            attrs[:single] = true
+          end
+
+          text_box(content, x, y, w, h + dheight, attrs)
+        end
+
+        def call_with_shape_tblock(shape, dheight = 0, &block)
+          raise ArgumentError unless block_given?
+
+          x, y, w, h = shape.format.attributes.values_at('x', 'y', 'width', 'height')
+
+          content = shape.real_value.to_s
+          return if content.empty?
+
+          attrs = build_text_attributes(shape.style.finalized_styles)
 
           unless shape.multiple?
             content = content.tr("\n", ' ')
