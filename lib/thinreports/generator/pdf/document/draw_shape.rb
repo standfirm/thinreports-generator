@@ -5,7 +5,7 @@ module Thinreports
     class PDF
       module DrawShape
         # @param [Thinreports::Core::Shape::TextBlock::Internal] shape
-        def draw_shape_tblock(shape, dheight = 0, ignore_overflow: false)
+        def draw_shape_tblock(shape, dheight = 0)
           x, y, w, h = shape.format.attributes.values_at('x', 'y', 'width', 'height')
 
           content = shape.real_value.to_s
@@ -13,14 +13,31 @@ module Thinreports
 
           attrs = build_text_attributes(shape.style.finalized_styles)
 
-          attrs = attrs.merge(overflow: :truncate) if ignore_overflow
-
           unless shape.multiple?
             content = content.tr("\n", ' ')
             attrs[:single] = true
           end
 
-          text_box(content, x, y, w, h + dheight, attrs)
+          draw_height = h + dheight
+
+          if attrs[:overflow] == :expand && attrs[:valign] != :top
+            # The height is forcefully expanded to the bounds bottom if `overflow: expand`,
+            # that is inappropriate unless `valign: top`.
+            attrs = attrs.merge(overflow: :truncate)
+            draw_height = [draw_height, tblock_text_height(shape)].max
+          end
+
+          text_box(content, x, y, w, draw_height, attrs)
+        end
+
+        def tblock_text_height(shape)
+          result = shape.format.attributes['height']
+          call_with_shape_tblock(shape) {|array, options|
+            page_height = 100_000_000
+            modified_options = options.merge(at: [0, page_height], height: page_height)
+            result = [result, pdf.height_of_formatted(array, modified_options)].max
+          }
+          result
         end
 
         def call_with_shape_tblock(shape, dheight = 0, &block)

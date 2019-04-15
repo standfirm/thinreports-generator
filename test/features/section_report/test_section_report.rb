@@ -83,6 +83,11 @@ class TestSectionReport < FeatureTest
                 items: {
                   text: 'ここは合計部3です' * 3
                 }
+              },
+              'summary-4': {
+                items: {
+                  text: 'ここは合計部4です' * 3
+                }
               }
             }
           }
