@@ -5,22 +5,26 @@ module Thinreports
     class PDF
       module DrawShape
         # @param [Thinreports::Core::Shape::TextBlock::Internal] shape
-        def draw_shape_tblock(shape, dheight = 0, ignore_overflow: false, &block)
-          x, y, w, h = shape.format.attributes.values_at('x', 'y', 'width', 'height')
+        # @param [Numeric] height (nil) It will be used as rendering height if present.
+        #   Otherwise, the rendering height is the height of schema.
+        # @param [:truncate, :shrink_to_fit, :expand] overflow (nil) It will be set the overflow attribute if present.
+        def draw_shape_tblock(shape, height: nil, overflow: nil, &block)
+          x, y, w = shape.format.attributes.values_at('x', 'y', 'width')
+
+          h = height || shape.format.attributes['height']
 
           content = shape.real_value.to_s
           return if content.empty?
 
           attrs = build_text_attributes(shape.style.finalized_styles)
-
-          attrs = attrs.merge(overflow: :truncate) if ignore_overflow
+          attrs[:overflow] = overflow if overflow
 
           unless shape.multiple?
             content = content.tr("\n", ' ')
             attrs[:single] = true
           end
 
-          text_box(content, x, y, w, h + dheight, attrs, &block)
+          text_box(content, x, y, w, h, attrs, &block)
         end
 
         def draw_shape_pageno(shape, page_no, page_count)
