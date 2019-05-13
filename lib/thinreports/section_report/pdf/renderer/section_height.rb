@@ -72,7 +72,7 @@ module Thinreports
           height = 0
 
           pdf.draw_shape_tblock(shape) do |array, options|
-            modified_options = options.merge(at: [0, 1_000], height: 1_000)
+            modified_options = options.merge(at: [0, 10_000], height: 10_000)
             height = pdf.pdf.height_of_formatted(array, modified_options)
           end
           height
