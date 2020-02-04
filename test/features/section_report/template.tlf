@@ -332,7 +332,6 @@
       "id": "detail3",
       "type": "detail",
       "height": 80.0,
-      "every-page": true,
       "auto-stretch": true,
       "items": [
         {
@@ -506,8 +505,6 @@
       "type": "footer",
       "height": 50.0,
       "display": true,
-      "every-page": false,
-      "fixed-bottom": false,
       "auto-stretch": true,
       "items": [
         {
@@ -569,8 +566,6 @@
       "type": "footer",
       "height": 50.0,
       "display": true,
-      "every-page": false,
-      "fixed-bottom": false,
       "auto-stretch": true,
       "items": [
         {
@@ -632,8 +627,6 @@
       "type": "footer",
       "height": 50.0,
       "display": true,
-      "every-page": false,
-      "fixed-bottom": false,
       "auto-stretch": true,
       "items": [
         {
