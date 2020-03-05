@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'report_data'
 require_relative 'item_builder'
 

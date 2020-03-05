@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'section_height'
 require_relative 'draw_item'
 

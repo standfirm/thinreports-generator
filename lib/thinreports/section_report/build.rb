@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'schema/loader'
 require_relative 'builder/report_builder'
 
