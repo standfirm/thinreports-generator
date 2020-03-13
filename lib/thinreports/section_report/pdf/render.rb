@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'renderer/group_renderer'
 
 module Thinreports
