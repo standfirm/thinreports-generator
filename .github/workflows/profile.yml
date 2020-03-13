@@ -1,0 +1,44 @@
+name: Profile
+
+on: push
+
+jobs:
+  profile:
+    name: Profile
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - uses: actions/setup-ruby@v1
+      with:
+        ruby-version: '2.7'
+
+    - name: Setup
+      run: |
+        gem install bundler
+        bundle install --jobs 4 --retry 3
+
+    - name: Profile - Benchmark
+      run: bundle exec ruby script/profile.rb benchmark
+
+    - name: Profile - CPU Time
+      run: bundle exec ruby script/profile.rb cpu-time
+
+    - name: Upload profile data to artifacts
+      uses: actions/upload-artifact@v1
+      with:
+        name: stackprof-profile-cpu.dump
+        path: stackprof-profile-cpu.dump
+
+    - name: Profile - Object Allocation
+      run: bundle exec ruby script/profile.rb object-allocation
+
+    - name: Upload profile data to artifacts
+      uses: actions/upload-artifact@v1
+      with:
+        name: stackprof-profile-object.dump
+        path: stackprof-profile-object.dump
+
+    - name: Profile - Object Memory Size
+      run: bundle exec ruby script/profile.rb object-size
+
