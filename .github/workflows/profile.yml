@@ -15,6 +15,8 @@ jobs:
 
     - name: Setup
       run: |
+        echo "gem 'memory_profiler', '>= 0.9.14'" >> Gemfile
+        echo "gem 'stackprof', '>= 0.2.15'" >> Gemfile
         gem install bundler
         bundle install --jobs 4 --retry 3
 
