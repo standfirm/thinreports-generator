@@ -4,14 +4,20 @@ on: push
 
 jobs:
   test:
-    name: Test on ruby ${{ matrix.ruby_version }}
+    name: Test against ${{ matrix.ruby }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        ruby_version:
-          - 2.7.x
+        ruby:
+          - 2.4
+          - 2.5
+          - 2.6
+          - 2.7
+          - jruby
+
     steps:
     - uses: actions/checkout@v1
+
     - name: Set up diff-pdf
       run: |
         sudo apt-get update
@@ -19,10 +25,12 @@ jobs:
         git clone https://github.com/vslavik/diff-pdf.git -b v0.4.1 --depth 1 /tmp/diff-pdf-src
         cd /tmp/diff-pdf-src
         ./bootstrap && ./configure && make && sudo make install
-    - name: Set up Ruby ${{ matrix.ruby_version }}
-      uses: actions/setup-ruby@v1
+
+    - name: Set up Ruby ${{ matrix.ruby }}
+      uses: ruby/setup-ruby@v1
       with:
-        ruby-version: ${{ matrix.ruby_version }}
+        ruby-version: ${{ matrix.ruby }}
+
     - name: Build and test with Rake
       run: |
         gem install bundler
