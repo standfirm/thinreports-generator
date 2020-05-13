@@ -23,11 +23,7 @@ module Thinreports
             section.items.each do |item|
               draw_item(item, (actual_height - section.schema.height))
             end
-            # doc.stroke_bounds
           end
-
-          # After executing bounding_box method, the position of doc.cursor moves to the bottom of the box.
-          # https://github.com/prawnpdf/prawn/blob/master/lib/prawn/document/bounding_box.rb#L44
         end
 
         private

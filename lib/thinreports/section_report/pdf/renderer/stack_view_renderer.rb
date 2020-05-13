@@ -32,7 +32,6 @@ module Thinreports
             shape.rows.each do |row|
               row_renderer.render(row)
             end
-            # doc.stroke_bounds
           end
         end
 

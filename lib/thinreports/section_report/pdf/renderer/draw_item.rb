@@ -10,12 +10,9 @@ module Thinreports
           if shape.type_of?(Core::Shape::TextBlock::TYPE_NAME)
             case shape.format.follow_stretch
             when 'height'
-              # Expand height
               computed_height = shape.format.attributes['height'] + expanded_height
 
               if shape.style.finalized_styles['overflow'] == 'expand'
-                # Overflow attribute is overwitten to :truncate when the follow-strecth attribute is height
-                # and the overflow attribute is expand.
                 pdf.draw_shape_tblock(shape, height: [computed_height, calc_text_block_height(shape)].max, overflow: :truncate)
               else
                 pdf.draw_shape_tblock(shape, height: computed_height)
@@ -28,7 +25,6 @@ module Thinreports
           elsif shape.type_of?('text')
             case shape.format.follow_stretch
             when 'height'
-              # Expand height
               pdf.draw_shape_text(shape, expanded_height)
             else
               pdf.draw_shape_text(shape)
@@ -40,7 +36,6 @@ module Thinreports
           elsif shape.type_of?('rect')
             case shape.format.follow_stretch
             when 'height'
-              # Expand height
               pdf.draw_shape_rect(shape, expanded_height)
             else
               pdf.draw_shape_rect(shape)
@@ -48,7 +43,6 @@ module Thinreports
           elsif shape.type_of?('line')
             case shape.format.follow_stretch
             when 'height'
-              # Expand height
               y1, y2 = shape.format.attributes.values_at('y1', 'y2')
               if y1 < y2
                 pdf.draw_shape_line(shape, 0, expanded_height)
@@ -56,7 +50,6 @@ module Thinreports
                 pdf.draw_shape_line(shape, expanded_height, 0)
               end
             when 'y'
-              # Shift y
               pdf.draw_shape_line(shape, expanded_height, expanded_height)
             else
               pdf.draw_shape_line(shape)
