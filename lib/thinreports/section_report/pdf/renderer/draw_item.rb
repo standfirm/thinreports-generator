@@ -13,8 +13,6 @@ module Thinreports
               computed_height = shape.format.attributes['height'] + expanded_height
 
               if shape.style.finalized_styles['overflow'] == 'expand'
-                # Overflow attribute is overwitten to :truncate when the follow-strecth attribute is height
-                # and the overflow attribute is expand.
                 pdf.draw_shape_tblock(shape, height: [computed_height, calc_text_block_height(shape)].max, overflow: :truncate)
               else
                 pdf.draw_shape_tblock(shape, height: computed_height)

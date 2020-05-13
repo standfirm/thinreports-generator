@@ -24,9 +24,6 @@ module Thinreports
               draw_item(item, (actual_height - section.schema.height))
             end
           end
-
-          # After executing bounding_box method, the position of doc.cursor moves to the bottom of the box.
-          # https://github.com/prawnpdf/prawn/blob/a8b0ceabd8fc281c62fc3a02dd2b64ee1e3b515c/lib/prawn/document/bounding_box.rb#L46
         end
 
         private

@@ -10,7 +10,6 @@ module Thinreports
           @group_renderer = Renderer::GroupRenderer.new(pdf)
         end
 
-        # @param [SectionReport::Builder::ReportData::Main] report
         def call!(report)
           report.groups.each { |group| group_renderer.render(report, group) }
         end
