@@ -13,6 +13,14 @@ module Thinreports
               computed_height = shape.format.attributes['height'] + expanded_height
 
               if shape.style.finalized_styles['overflow'] == 'expand'
+                # - When 'overflow: expand', the 'height' is ignored and is expanded to the bottom of the bounding box.
+                #   That causes a position shift problem if 'vertical-align: middle' or 'vertical-align: bottom'.
+                #   Thus we overwrite to 'overflow: truncate' at drawing.
+                # - The 'computed_height' may be less than the text height.
+                #   To draw the full text, we pass the greater value of the both as a text height here.
+                #   (Note that if the bottom margin of the item is not the minimum bottom margin in the section,
+                #   the computed_height is less than the text height when the text overflow occurs,
+                #   even if 'overflow: expand' and 'follow-stretch: height'.)
                 pdf.draw_shape_tblock(shape, height: [computed_height, calc_text_block_height(shape)].max, overflow: :truncate)
               else
                 pdf.draw_shape_tblock(shape, height: computed_height)
