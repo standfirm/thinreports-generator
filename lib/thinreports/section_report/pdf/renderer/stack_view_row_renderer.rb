@@ -30,7 +30,7 @@ module Thinreports
         attr_reader :pdf
 
         def stack_view_renderer
-          @stack_view_renderer ||= Renderer::StackViewRenderer.new(pdf)
+          raise Thinreports::Errors::InvalidLayoutFormat, 'nested StackView does not supported'
         end
       end
     end
