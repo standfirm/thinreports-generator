@@ -15,28 +15,21 @@ class TestSectionReportStackView < FeatureTest
               {
                 id: :detail,
                 items: {
-                  stackview: {
+                  stackview1: {
                     rows: {
-                      row1: {
+                      row2: {
                         items: {
-                          text: 'Section 1'
+                          text: 'text block'
                         }
                       }
                     }
-                  }
-                }
-              },
-              {
-                id: :detail,
-                items: {
-                  stackview: {
+                  },
+                  stackview2: {
                     rows: {
-                      row1: {
-                        items: {
-                          text: 'Section 2'
-                        }
-                      },
                       row2: {
+                        display: false
+                      },
+                      row3: {
                         display: false
                       }
                     }
