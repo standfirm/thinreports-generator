@@ -19,7 +19,7 @@ class TestSectionReportBasic < FeatureTest
             footers: {
               overall: {
                 items: {
-                  number_of_items: @items.count,
+                  number_of_items: @categories.sum { |category| category.items.count },
                   number_of_categories: @categories.count
                 }
               }
@@ -39,11 +39,10 @@ class TestSectionReportBasic < FeatureTest
       details << {
         id: 'item_category',
         items: {
-          category_name: category
+          category_name: category.name
         }
       }
-      category_items = @items.select { |item| item.category == category }
-      category_items.each do |item|
+      category.items.each do |item|
         # Add item row
         details << {
           id: 'item_detail',
@@ -56,43 +55,31 @@ class TestSectionReportBasic < FeatureTest
     end
   end
 
-  Item = Struct.new(:name, :unit_price, :category)
+  Category = Struct.new(:name, :items)
+  Item = Struct.new(:name, :unit_price)
 
   def initialize_data
     @categories = [
-      'Beauty',
-      'Garden',
-      'Tools & Games'
+      Category.new('Beauty', [
+        Item.new('Synergistic Rubber Bag', '1654.0'),
+        Item.new('Incredible Bronze Shirt', '4369.0'),
+        Item.new('Aerodynamic Wool Gloves', '9254.0'),
+        Item.new('Fantastic Iron Pants', '597.0'),
+        Item.new('Fantastic Marble Clock', '3489.0'),
+        Item.new('Mediocre Steel Watch', '5147.0'),
+        Item.new('Gorgeous Granite Plate', '792.0')
+      ]),
+      Category.new('Garden', [
+        Item.new('Intelligent Linen Coat', '8706.0'),
+        Item.new('Sleek Copper Chair', '6810.0')
+      ]),
+      Category.new('Tools & Games', [
+        Item.new('Small Granite Clock', '6731.0'),
+        Item.new('Aerodynamic Leather Bag', '6238.0'),
+        Item.new('Fantastic Rubber Hat', '6198.0'),
+        Item.new('Aerodynamic Marble Shoes', '9603.0')
+      ])
     ]
-
-    @items = []
-
-    # Prepare items in the "Beauty" category
-    @items << [
-      ['Synergistic Rubber Bag', '1654.0'],
-      ['Incredible Bronze Shirt', '4369.0'],
-      ['Aerodynamic Wool Gloves', '9254.0'],
-      ['Fantastic Iron Pants', '597.0'],
-      ['Fantastic Marble Clock', '3489.0'],
-      ['Mediocre Steel Watch', '5147.0'],
-      ['Gorgeous Granite Plate', '792.0'],
-    ].map { |item| Item.new(*item, 'Beauty') }
-
-    # Prepare items in the "Garden" category
-    @items << [
-      ['Intelligent Linen Coat', '8706.0'],
-      ['Sleek Copper Chair', '6810.0']
-    ].map { |item| Item.new(*item, 'Garden') }
-
-    # Prepare items in the "Tools & Games" category
-    @items << [
-      ['Small Granite Clock', '6731.0'],
-      ['Aerodynamic Leather Bag', '6238.0'],
-      ['Fantastic Rubber Hat', '6198.0'],
-      ['Aerodynamic Marble Shoes', '9603.0']
-    ].map { |item| Item.new(*item, 'Tools & Games') }
-
-    @items.flatten!
   end
 end
 
