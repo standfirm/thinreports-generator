@@ -10,8 +10,8 @@ section の自動伸縮が有効のとき、高さの伸縮はそれぞれ以下
 
 ## 拡張
 
-- 描画後の text-block の内容が section を溢れる場合
-- 描画後の stack-view の内容が section を溢れる場合
+- 描画後の text-block の内容が定義した高さよりも大きい場合
+- 描画後の stack-view の内容が定義した高さよりも大きい場合
 
 ## 縮小
 
