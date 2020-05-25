@@ -300,7 +300,7 @@
           "follow-stretch": "none",
           "content-type": "content",
           "texts": [
-            "Number of Item"
+            "Number of Items"
           ],
           "style": {
             "font-family": [
@@ -318,7 +318,7 @@
         },
         {
           "type": "text-block",
-          "id": "number_of_item",
+          "id": "number_of_items",
           "x": 442.64,
           "y": 8.33,
           "width": 95.83,
@@ -353,16 +353,16 @@
         {
           "type": "text",
           "id": "",
-          "x": 304,
+          "x": 294.83,
           "y": 41.66,
-          "width": 127.39,
+          "width": 137.45,
           "height": 25,
           "description": "",
           "display": true,
           "follow-stretch": "none",
           "content-type": "content",
           "texts": [
-            "Number of Category"
+            "Number of Categories"
           ],
           "style": {
             "font-family": [
@@ -380,7 +380,7 @@
         },
         {
           "type": "text-block",
-          "id": "number_of_category",
+          "id": "number_of_categories",
           "x": 442.64,
           "y": 43.33,
           "width": 95.83,

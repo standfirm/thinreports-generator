@@ -19,8 +19,8 @@ class TestSectionReportBasic < FeatureTest
             footers: {
               overall: {
                 items: {
-                  number_of_item: @items.count,
-                  number_of_category: @categories.count
+                  number_of_items: @items.count,
+                  number_of_categories: @categories.count
                 }
               }
             }
