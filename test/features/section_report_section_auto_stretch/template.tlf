@@ -692,22 +692,59 @@
             "border-color": "#aaaaaa",
             "border-style": "solid"
           }
+        }
+      ]
+    },
+    {
+      "id": "footer3",
+      "type": "footer",
+      "height": 50,
+      "display": true,
+      "auto-stretch": false,
+      "items": [
+        {
+          "type": "text",
+          "id": "",
+          "x": 386.81,
+          "y": 13.33,
+          "width": 193.7,
+          "height": 21.67,
+          "description": "",
+          "display": true,
+          "follow-stretch": "none",
+          "content-type": "content",
+          "texts": [
+            "Footer3 (dummy)"
+          ],
+          "style": {
+            "font-family": [
+              "Helvetica"
+            ],
+            "color": "#aaaaaa",
+            "font-style": [],
+            "text-align": "right",
+            "vertical-align": "top",
+            "letter-spacing": "",
+            "font-size": 12,
+            "line-height-ratio": "",
+            "line-height": 13.2
+          }
         },
         {
           "type": "line",
           "id": "",
           "x1": 17.64,
-          "y1": 100,
+          "y1": 1,
           "x2": 581.81,
-          "y2": 100,
+          "y2": 1,
           "description": "",
           "display": true,
           "follow-stretch": "none",
           "content-type": "content",
           "style": {
             "border-width": 1,
-            "border-color": "#ff0000",
-            "border-style": "dashed"
+            "border-color": "#aaaaaa",
+            "border-style": "solid"
           }
         }
       ]
