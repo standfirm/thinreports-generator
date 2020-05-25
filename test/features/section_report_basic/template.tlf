@@ -96,7 +96,7 @@
         {
           "type": "text",
           "id": "",
-          "x": 345.14,
+          "x": 373.47,
           "y": 20.82,
           "width": 84.84,
           "height": 18,
@@ -115,7 +115,7 @@
             "font-style": [
               "bold"
             ],
-            "text-align": "left",
+            "text-align": "right",
             "vertical-align": "top",
             "letter-spacing": "",
             "font-size": 18,
