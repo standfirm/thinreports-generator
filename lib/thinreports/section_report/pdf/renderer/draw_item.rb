@@ -8,23 +8,19 @@ module Thinreports
           shape = item.internal
 
           if shape.type_of?(Core::Shape::TextBlock::TYPE_NAME)
-            case shape.format.follow_stretch
-            when 'height'
-              computed_height = shape.format.attributes['height'] + expanded_height
+            computed_height = shape.format.attributes['height']
+            computed_height += expanded_height if shape.format.follow_stretch == 'height'
 
-              if shape.style.finalized_styles['overflow'] == 'expand'
-                # When overflow is "expand", the value of the height argument is ignored and the shape is expanded to
-                # the bottom of the outer bounding box.
-                # That causes a position shift problem if vertical-align is "middle" or "bottom".
-                # To solve it, we overwrite the overflow to "truncate" when drawing.
-                # To emulate the "expand" behavior in the "truncate" mode,
-                # here we pass the greater value of the computed_height and the text height as text block height.
-                pdf.draw_shape_tblock(shape, height: [computed_height, calc_text_block_height(shape)].max, overflow: :truncate)
-              else
-                pdf.draw_shape_tblock(shape, height: computed_height)
-              end
+            if shape.style.finalized_styles['overflow'] == 'expand'
+              # When overflow is "expand", the value of the height argument is ignored and the shape is expanded to
+              # the bottom of the outer bounding box.
+              # That causes a position shift problem if vertical-align is "middle" or "bottom".
+              # To solve it, we overwrite the overflow to "truncate" when drawing.
+              # To emulate the "expand" behavior in the "truncate" mode,
+              # here we pass the greater value of the computed_height and the text height as text block height.
+              pdf.draw_shape_tblock(shape, height: [computed_height, calc_text_block_height(shape)].max, overflow: :truncate)
             else
-              pdf.draw_shape_tblock(shape)
+              pdf.draw_shape_tblock(shape, height: computed_height)
             end
           elsif shape.type_of?(Core::Shape::ImageBlock::TYPE_NAME)
             pdf.draw_shape_iblock(shape)
