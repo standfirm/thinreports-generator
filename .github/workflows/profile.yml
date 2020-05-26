@@ -1,6 +1,9 @@
 name: Profile
 
-on: push
+on:
+  push:
+    branches:
+      - 'section-report'
 
 jobs:
   profile:
