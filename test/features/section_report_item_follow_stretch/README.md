@@ -7,11 +7,27 @@
 - [Example PDF](expect.pdf)
 
 
-item の `follow-strech` プロパティが…
-- `height` の場合: コンテナの伸縮に応じて、item の高さが伸縮する
-- `y` の場合: コンテナの伸縮に応じて、item が縦にスライドする
-- `none` の場合（デフォルト）: 変化なし
+それぞれのオプションと伸縮による変化は次の通り。
 
-ただし現状では、以下の種類の item のみ、`follow-strech` プロパティをサポートする。
-- `height` の場合: text block, text, rect, line のみ
-- `y` の場合: line のみ
+## 領域伸縮に追従: 高さ `follow-stretch: height`
+
+領域の伸縮によって、item の高さが伸縮する。
+
+以下の item をサポート:
+
+- text-block
+- text
+- rect
+- line
+
+## 領域伸縮に追従: 上位置 `follow-stretch: y`
+
+領域の伸縮によって、item の上位置が移動する。
+
+以下の item をサポート:
+
+- line
+
+## 領域伸縮に追従: なし (デフォルト) `follow-stretch: none`
+
+領域の伸縮の影響を受けない
