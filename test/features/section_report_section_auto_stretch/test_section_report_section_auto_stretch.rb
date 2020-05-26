@@ -53,7 +53,7 @@ class TestSectionReportSectionAutoStretch < FeatureTest
               },
               footer2: {
                 items: {
-                  text_overflow_expand: 'Extended text box height with long text.' * 3
+                  text_overflow_expand: 'Extended text box height with long text.' * 2
                 }
               }
             }
