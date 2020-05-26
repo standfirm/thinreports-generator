@@ -16,9 +16,9 @@
   },
   "sections": [
     {
-      "id": "header",
+      "id": "header1",
       "type": "header",
-      "height": 100,
+      "height": 70,
       "display": true,
       "auto-stretch": true,
       "every-page": false,
@@ -27,15 +27,15 @@
           "type": "text",
           "id": "",
           "x": 31.8,
-          "y": 13.33,
-          "width": 400,
-          "height": 37.8,
+          "y": 10,
+          "width": 332.02,
+          "height": 14,
           "description": "",
           "display": true,
           "follow-stretch": "none",
           "content-type": "content",
           "texts": [
-            "1. Expand height by expanding   height of TextBox"
+            "Expand height by text-block which overflow is expand"
           ],
           "style": {
             "font-family": [
@@ -55,8 +55,8 @@
           "type": "text-block",
           "id": "text_overflow_expand",
           "x": 45.97,
-          "y": 55.83,
-          "width": 271.67,
+          "y": 35,
+          "width": 330,
           "height": 24.17,
           "description": "",
           "reference-id": "",
@@ -80,24 +80,24 @@
             "letter-spacing": "",
             "overflow": "expand",
             "word-wrap": "break-word",
-            "font-size": 18,
+            "font-size": 15,
             "line-height-ratio": "",
-            "line-height": 19.8
+            "line-height": 16.5
           }
         },
         {
           "type": "text",
           "id": "",
-          "x": 447.65,
-          "y": 13.33,
-          "width": 134.17,
+          "x": 434.32,
+          "y": 10,
+          "width": 140.83,
           "height": 21.67,
           "description": "",
           "display": true,
           "follow-stretch": "none",
           "content-type": "content",
           "texts": [
-            "Header (auto-stretch: on)"
+            "Header1 (auto-stretch: on)"
           ],
           "style": {
             "font-family": [
@@ -116,24 +116,141 @@
       ]
     },
     {
+      "id": "header2",
+      "type": "header",
+      "height": 70,
+      "display": true,
+      "auto-stretch": false,
+      "every-page": false,
+      "items": [
+        {
+          "type": "text",
+          "id": "",
+          "x": 31.8,
+          "y": 10,
+          "width": 348.34,
+          "height": 14,
+          "description": "",
+          "display": true,
+          "follow-stretch": "none",
+          "content-type": "content",
+          "texts": [
+            "Does not expand by text-block which overflow is expand"
+          ],
+          "style": {
+            "font-family": [
+              "Helvetica"
+            ],
+            "color": "#000000",
+            "font-style": [],
+            "text-align": "left",
+            "vertical-align": "top",
+            "letter-spacing": "",
+            "font-size": 14,
+            "line-height-ratio": "",
+            "line-height": 15.4
+          }
+        },
+        {
+          "type": "text",
+          "id": "",
+          "x": 440.15,
+          "y": 10,
+          "width": 140.83,
+          "height": 21.67,
+          "description": "",
+          "display": true,
+          "follow-stretch": "none",
+          "content-type": "content",
+          "texts": [
+            "Header2 (auto-stretch: off)"
+          ],
+          "style": {
+            "font-family": [
+              "Helvetica"
+            ],
+            "color": "#aaaaaa",
+            "font-style": [],
+            "text-align": "right",
+            "vertical-align": "top",
+            "letter-spacing": "",
+            "font-size": 12,
+            "line-height-ratio": "",
+            "line-height": 13.2
+          }
+        },
+        {
+          "type": "text-block",
+          "id": "text_overflow_expand",
+          "x": 45.97,
+          "y": 35,
+          "width": 330,
+          "height": 24.17,
+          "description": "",
+          "reference-id": "",
+          "value": "",
+          "multiple-line": true,
+          "display": true,
+          "format": {
+            "base": "",
+            "type": ""
+          },
+          "follow-stretch": "none",
+          "content-type": "content",
+          "style": {
+            "font-family": [
+              "Helvetica"
+            ],
+            "color": "#000000",
+            "font-style": [],
+            "text-align": "left",
+            "vertical-align": "top",
+            "letter-spacing": "",
+            "overflow": "expand",
+            "word-wrap": "break-word",
+            "font-size": 15,
+            "line-height-ratio": "",
+            "line-height": 16.5
+          }
+        },
+        {
+          "type": "line",
+          "id": "",
+          "x1": 17.64,
+          "y1": 1,
+          "x2": 581.81,
+          "y2": 1,
+          "description": "",
+          "display": true,
+          "follow-stretch": "none",
+          "content-type": "content",
+          "style": {
+            "border-width": 1,
+            "border-color": "#aaaaaa",
+            "border-style": "solid"
+          }
+        }
+      ]
+    },
+    {
       "id": "detail1",
       "type": "detail",
-      "height": 150,
+      "height": 110,
       "auto-stretch": true,
       "items": [
         {
           "type": "text",
           "id": "",
           "x": 31.8,
-          "y": 13.33,
-          "width": 411.02,
-          "height": 35,
+          "y": 15,
+          "width": 178.97,
+          "height": 14,
           "description": "",
           "display": true,
           "follow-stretch": "none",
           "content-type": "content",
           "texts": [
-            "2. Expand height by expanding height of StackView"
+            "Expand height by stack-view"
           ],
           "style": {
             "font-family": [
@@ -153,7 +270,7 @@
           "type": "stack-view",
           "id": "stackview",
           "x": 33.47,
-          "y": 51.67,
+          "y": 40,
           "width": 400,
           "description": "",
           "display": true,
@@ -162,7 +279,7 @@
           "rows": [
             {
               "id": "row1",
-              "height": 40,
+              "height": 30,
               "auto-stretch": false,
               "display": true,
               "items": [
@@ -170,7 +287,7 @@
                   "type": "text",
                   "id": "",
                   "x": 15.01,
-                  "y": 13.33,
+                  "y": 5,
                   "width": 71.67,
                   "height": 18,
                   "description": "",
@@ -198,7 +315,7 @@
             },
             {
               "id": "row2",
-              "height": 40,
+              "height": 30,
               "auto-stretch": true,
               "display": true,
               "items": [
@@ -206,7 +323,7 @@
                   "type": "text-block",
                   "id": "text_overflow_expand",
                   "x": 240,
-                  "y": 10.01,
+                  "y": 5,
                   "width": 140,
                   "height": 20,
                   "description": "",
@@ -231,16 +348,16 @@
                     "letter-spacing": "",
                     "overflow": "expand",
                     "word-wrap": "break-word",
-                    "font-size": 18,
+                    "font-size": 16,
                     "line-height-ratio": "",
-                    "line-height": 19.8
+                    "line-height": 17.6
                   }
                 },
                 {
                   "type": "text",
                   "id": "",
                   "x": 15.84,
-                  "y": 10,
+                  "y": 5,
                   "width": 188.05,
                   "height": 18,
                   "description": "",
@@ -272,7 +389,7 @@
           "type": "text",
           "id": "",
           "x": 449.31,
-          "y": 14.16,
+          "y": 10,
           "width": 132.17,
           "height": 21.67,
           "description": "",
@@ -318,7 +435,7 @@
     {
       "id": "detail2",
       "type": "detail",
-      "height": 200,
+      "height": 150,
       "auto-stretch": true,
       "items": [
         {
@@ -326,14 +443,14 @@
           "id": "",
           "x": 31.8,
           "y": 13.33,
-          "width": 398.83,
-          "height": 35,
+          "width": 179.73,
+          "height": 14,
           "description": "",
           "display": true,
           "follow-stretch": "none",
           "content-type": "content",
           "texts": [
-            "3. Reduce height by reducing height of StackView"
+            "Reduce height by stack-view"
           ],
           "style": {
             "font-family": [
@@ -353,7 +470,7 @@
           "type": "stack-view",
           "id": "stackview",
           "x": 33.47,
-          "y": 51.67,
+          "y": 40,
           "width": 280,
           "description": "",
           "display": true,
@@ -362,7 +479,7 @@
           "rows": [
             {
               "id": "row1",
-              "height": 95,
+              "height": 70,
               "auto-stretch": false,
               "display": true,
               "items": [
@@ -370,7 +487,7 @@
                   "type": "text",
                   "id": "",
                   "x": 15.01,
-                  "y": 13.33,
+                  "y": 5,
                   "width": 213.06,
                   "height": 18,
                   "description": "",
@@ -398,7 +515,7 @@
             },
             {
               "id": "row2",
-              "height": 40,
+              "height": 30,
               "auto-stretch": false,
               "display": true,
               "items": [
@@ -406,7 +523,7 @@
                   "type": "text",
                   "id": "",
                   "x": 15.84,
-                  "y": 10,
+                  "y": 5,
                   "width": 71.67,
                   "height": 18,
                   "description": "",
@@ -484,7 +601,7 @@
     {
       "id": "footer1",
       "type": "footer",
-      "height": 180,
+      "height": 140,
       "display": true,
       "auto-stretch": true,
       "items": [
@@ -492,15 +609,15 @@
           "type": "text",
           "id": "",
           "x": 31.8,
-          "y": 13.33,
-          "width": 460.03,
-          "height": 35,
+          "y": 10,
+          "width": 329.67,
+          "height": 14,
           "description": "",
           "display": true,
           "follow-stretch": "none",
           "content-type": "content",
           "texts": [
-            "4. Reduce height by reducing content height of ImageBox"
+            "Reduce height by image-block which position-y is top"
           ],
           "style": {
             "font-family": [
@@ -548,7 +665,7 @@
           "type": "image-block",
           "id": "image200x100",
           "x": 50.98,
-          "y": 58.33,
+          "y": 35,
           "width": 200,
           "height": 100,
           "description": "",
@@ -582,7 +699,7 @@
     {
       "id": "footer2",
       "type": "footer",
-      "height": 100,
+      "height": 140,
       "display": true,
       "auto-stretch": false,
       "items": [
@@ -590,15 +707,15 @@
           "type": "text",
           "id": "",
           "x": 31.8,
-          "y": 13.33,
-          "width": 460.03,
-          "height": 35,
+          "y": 10,
+          "width": 356.45,
+          "height": 14,
           "description": "",
           "display": true,
           "follow-stretch": "none",
           "content-type": "content",
           "texts": [
-            "5. Does not expand height when auto-stretch is off"
+            "Does not reduce by image-block which position-y is top"
           ],
           "style": {
             "font-family": [
@@ -643,37 +760,19 @@
           }
         },
         {
-          "type": "text-block",
-          "id": "text_overflow_expand",
-          "x": 45.97,
-          "y": 55.83,
-          "width": 271.67,
-          "height": 24.17,
+          "type": "image-block",
+          "id": "image200x100",
+          "x": 50.98,
+          "y": 35,
+          "width": 200,
+          "height": 100,
           "description": "",
-          "reference-id": "",
-          "value": "",
-          "multiple-line": true,
           "display": true,
-          "format": {
-            "base": "",
-            "type": ""
-          },
           "follow-stretch": "none",
           "content-type": "content",
           "style": {
-            "font-family": [
-              "Helvetica"
-            ],
-            "color": "#000000",
-            "font-style": [],
-            "text-align": "left",
-            "vertical-align": "top",
-            "letter-spacing": "",
-            "overflow": "expand",
-            "word-wrap": "break-word",
-            "font-size": 18,
-            "line-height-ratio": "",
-            "line-height": 19.8
+            "position-x": "left",
+            "position-y": "top"
           }
         },
         {
@@ -698,10 +797,38 @@
     {
       "id": "footer3",
       "type": "footer",
-      "height": 50,
+      "height": 140,
       "display": true,
-      "auto-stretch": false,
+      "auto-stretch": true,
       "items": [
+        {
+          "type": "text",
+          "id": "",
+          "x": 31.8,
+          "y": 10,
+          "width": 365.45,
+          "height": 14,
+          "description": "",
+          "display": true,
+          "follow-stretch": "none",
+          "content-type": "content",
+          "texts": [
+            "Does not reduce by image-block which position-y is not top"
+          ],
+          "style": {
+            "font-family": [
+              "Helvetica"
+            ],
+            "color": "#000000",
+            "font-style": [],
+            "text-align": "left",
+            "vertical-align": "top",
+            "letter-spacing": "",
+            "font-size": 14,
+            "line-height-ratio": "",
+            "line-height": 15.4
+          }
+        },
         {
           "type": "text",
           "id": "",
@@ -714,7 +841,77 @@
           "follow-stretch": "none",
           "content-type": "content",
           "texts": [
-            "Footer3 (dummy)"
+            "Footer3 (auto-stretch: on)"
+          ],
+          "style": {
+            "font-family": [
+              "Helvetica"
+            ],
+            "color": "#aaaaaa",
+            "font-style": [],
+            "text-align": "right",
+            "vertical-align": "top",
+            "letter-spacing": "",
+            "font-size": 12,
+            "line-height-ratio": "",
+            "line-height": 13.2
+          }
+        },
+        {
+          "type": "line",
+          "id": "",
+          "x1": 17.64,
+          "y1": 1,
+          "x2": 581.81,
+          "y2": 1,
+          "description": "",
+          "display": true,
+          "follow-stretch": "none",
+          "content-type": "content",
+          "style": {
+            "border-width": 1,
+            "border-color": "#aaaaaa",
+            "border-style": "solid"
+          }
+        },
+        {
+          "type": "image-block",
+          "id": "image200x100",
+          "x": 50.98,
+          "y": 35,
+          "width": 200,
+          "height": 100,
+          "description": "",
+          "display": true,
+          "follow-stretch": "none",
+          "content-type": "content",
+          "style": {
+            "position-x": "left",
+            "position-y": "middle"
+          }
+        }
+      ]
+    },
+    {
+      "id": "footer4",
+      "type": "footer",
+      "height": 30,
+      "display": true,
+      "auto-stretch": false,
+      "items": [
+        {
+          "type": "text",
+          "id": "",
+          "x": 386.81,
+          "y": 5,
+          "width": 193.7,
+          "height": 21.67,
+          "description": "",
+          "display": true,
+          "follow-stretch": "none",
+          "content-type": "content",
+          "texts": [
+            "Footer4 (dummy)"
           ],
           "style": {
             "font-family": [

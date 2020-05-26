@@ -11,9 +11,14 @@ class TestSectionReportSectionAutoStretch < FeatureTest
         groups: [
           {
             headers: {
-              header: {
+              header1: {
                 items: {
-                  text_overflow_expand: 'Extended text box height with long text.' * 3
+                  text_overflow_expand: 'Extended text box height with long text. ' * 3
+                }
+              },
+              header2: {
+                items: {
+                  text_overflow_expand: 'Extended text box height with long text. ' * 3
                 }
               }
             },
@@ -25,7 +30,7 @@ class TestSectionReportSectionAutoStretch < FeatureTest
                     rows: {
                       row2: {
                         items: {
-                          text_overflow_expand: 'Extended text box height with long text.' * 2
+                          text_overflow_expand: 'Extended text box height with long text. '
                         }
                       }
                     }
@@ -48,12 +53,17 @@ class TestSectionReportSectionAutoStretch < FeatureTest
             footers: {
               footer1: {
                 items: {
-                  image200x100: StringIO.new(dir.join('50x50.jpg').binread)
+                  image200x100: image50x50
                 }
               },
               footer2: {
                 items: {
-                  text_overflow_expand: 'Extended text box height with long text.' * 2
+                  image200x100: image50x50
+                }
+              },
+              footer3: {
+                items: {
+                  image200x100: image50x50
                 }
               }
             }
@@ -62,6 +72,10 @@ class TestSectionReportSectionAutoStretch < FeatureTest
       }
     }
     assert_pdf Thinreports.generate(params)
+  end
+
+  def image50x50
+    StringIO.new(dir.join('50x50.jpg').binread)
   end
 end
 
