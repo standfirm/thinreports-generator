@@ -28,14 +28,14 @@
           "id": "",
           "x": 31.8,
           "y": 10,
-          "width": 332.02,
+          "width": 336.69,
           "height": 14,
           "description": "",
           "display": true,
           "follow-stretch": "none",
           "content-type": "content",
           "texts": [
-            "Expand height by text-block which overflow is expand"
+            "Expand height by text-block whoes overflow is expand"
           ],
           "style": {
             "font-family": [
@@ -128,14 +128,14 @@
           "id": "",
           "x": 31.8,
           "y": 10,
-          "width": 348.34,
+          "width": 353.03,
           "height": 14,
           "description": "",
           "display": true,
           "follow-stretch": "none",
           "content-type": "content",
           "texts": [
-            "Does not expand by text-block which overflow is expand"
+            "Does not expand by text-block whoes overflow is expand"
           ],
           "style": {
             "font-family": [
@@ -610,14 +610,14 @@
           "id": "",
           "x": 31.8,
           "y": 10,
-          "width": 329.67,
+          "width": 334.34,
           "height": 14,
           "description": "",
           "display": true,
           "follow-stretch": "none",
           "content-type": "content",
           "texts": [
-            "Reduce height by image-block which position-y is top"
+            "Reduce height by image-block whoes position-y is top"
           ],
           "style": {
             "font-family": [
@@ -715,7 +715,7 @@
           "follow-stretch": "none",
           "content-type": "content",
           "texts": [
-            "Does not reduce by image-block which position-y is top"
+            "Does not reduce by image-block whoes position-y is top"
           ],
           "style": {
             "font-family": [
@@ -806,14 +806,14 @@
           "id": "",
           "x": 31.8,
           "y": 10,
-          "width": 365.45,
+          "width": 370.13,
           "height": 14,
           "description": "",
           "display": true,
           "follow-stretch": "none",
           "content-type": "content",
           "texts": [
-            "Does not reduce by image-block which position-y is not top"
+            "Does not reduce by image-block whoes position-y is not top"
           ],
           "style": {
             "font-family": [
