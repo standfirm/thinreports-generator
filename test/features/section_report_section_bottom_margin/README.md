@@ -1,6 +1,6 @@
 # Section Bottom Margin
 
-section の下余白（bottom margin）とは、section に配置された items の下端と、section の下端との間の距離である。
+section の下余白（bottom margin）とは、section に配置された item の下端と、section の下端との間の距離である。
 
 - [Example code](test_ssection_report_section_bottom_margin.rb)
 - [Example template file](template.tlf)
