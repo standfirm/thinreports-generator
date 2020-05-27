@@ -1,14 +1,12 @@
 # Section Bottom Margin
 
-下余白とは、item の下端と section の下端との距離である。
+section の下余白（bottom margin）とは、section に配置された最も下にある item の下端と、section の下端との間の距離である。
 
 - [Example code](test_section_report_section_auto_stretch.rb)
 - [Example template file](template.tlf)
 - [Example PDF](expect.pdf)
 
-sectionに配置された各itemの下余白の中で最小のものを、sectionの最小下余白と呼ぶ。
-
-sectionの自動伸縮が有効のとき、設計時の最小下余白と、描画時の最小下余白が一致するように、sectionの高さが自動的に伸縮する。
+sectionの自動伸縮が有効のとき、描画時のsectionの下余白が、設計時のsectionの下余白と一致するように、sectionの高さが自動的に伸縮する。
 
 ただし、item の要素の種類が `background` の場合、これらの計算からその item は除外される。
 
