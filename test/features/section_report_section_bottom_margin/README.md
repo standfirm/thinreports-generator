@@ -7,7 +7,7 @@ section の下余白（bottom margin）とは、section に配置された items
 - [Example PDF](expect.pdf)
 
 
-要素の種類が `background` である items は、下余白には影響しない。
+要素の種類が `background` である item は、下余白には影響しない。
 
 <img src="bottom-margin-diagram-1.svg" />
 
