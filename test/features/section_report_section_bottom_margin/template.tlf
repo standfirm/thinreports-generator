@@ -44,7 +44,7 @@
           "x": 40,
           "y": 40,
           "width": 100,
-          "height": 50,
+          "height": 20,
           "description": "",
           "reference-id": "",
           "value": "",
@@ -78,7 +78,7 @@
           "x": 200,
           "y": 20,
           "width": 100,
-          "height": 140,
+          "height": 120,
           "border-radius": 0,
           "description": "",
           "display": true,
@@ -96,7 +96,7 @@
           "id": "",
           "x": 360,
           "y": 40,
-          "width": 100,
+          "width": 160,
           "height": 150,
           "border-radius": 0,
           "description": "",
@@ -108,6 +108,35 @@
             "border-style": "dashed",
             "fill-color": "#ffffff",
             "border-width": 1
+          }
+        },
+        {
+          "type": "text",
+          "id": "",
+          "x": 370,
+          "y": 50,
+          "width": 110,
+          "height": 50,
+          "description": "",
+          "display": true,
+          "follow-stretch": "none",
+          "content-type": "content",
+          "texts": [
+            "content-type:",
+            "background"
+          ],
+          "style": {
+            "font-family": [
+              "Helvetica"
+            ],
+            "color": "#000000",
+            "font-style": [],
+            "text-align": "left",
+            "vertical-align": "top",
+            "letter-spacing": "",
+            "font-size": 18,
+            "line-height-ratio": "",
+            "line-height": 19.8
           }
         }
       ]
