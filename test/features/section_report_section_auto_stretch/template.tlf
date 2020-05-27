@@ -35,7 +35,7 @@
           "follow-stretch": "none",
           "content-type": "content",
           "texts": [
-            "Expand height by text-block whoes overflow is expand"
+            "Expand height by text-block whose overflow is expand"
           ],
           "style": {
             "font-family": [
@@ -135,7 +135,7 @@
           "follow-stretch": "none",
           "content-type": "content",
           "texts": [
-            "Does not expand by text-block whoes overflow is expand"
+            "Does not expand by text-block whose overflow is expand"
           ],
           "style": {
             "font-family": [
@@ -617,7 +617,7 @@
           "follow-stretch": "none",
           "content-type": "content",
           "texts": [
-            "Reduce height by image-block whoes position-y is top"
+            "Reduce height by image-block whose position-y is top"
           ],
           "style": {
             "font-family": [
@@ -715,7 +715,7 @@
           "follow-stretch": "none",
           "content-type": "content",
           "texts": [
-            "Does not reduce by image-block whoes position-y is top"
+            "Does not reduce by image-block whose position-y is top"
           ],
           "style": {
             "font-family": [
@@ -813,7 +813,7 @@
           "follow-stretch": "none",
           "content-type": "content",
           "texts": [
-            "Does not reduce by image-block whoes position-y is not top"
+            "Does not reduce by image-block whose position-y is not top"
           ],
           "style": {
             "font-family": [
