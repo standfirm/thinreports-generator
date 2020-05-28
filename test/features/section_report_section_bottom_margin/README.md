@@ -9,7 +9,7 @@ section の下余白（bottom margin）とは、section のコンテンツの下
 
 要素の種類が `background` である item は、下余白には影響しない。
 
-<img src="bottom-margin-diagram-1.svg" />
+![](images/bottom-margin-diagram-1.svg)
 
 上図の例の場合、item3 は要素の種類が `background` なので、下余白には影響しない。
 item1 の下端よりも item2 の下位置の方が下にあるため、item2 の下位置と section の下位置の間の距離が、この section の下余白となる。
