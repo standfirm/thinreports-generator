@@ -25,6 +25,11 @@ class TestSectionReportStackViewRowAutoStretch < FeatureTest
                         items: {
                           text_overflow_expand: 'Extended text box height with long text. ' * 4
                         }
+                      },
+                      row3: {
+                        items: {
+                          text_overflow_expand: 'Extended text box height with long text. ' * 4
+                        }
                       }
                     }
                   }
@@ -46,6 +51,11 @@ class TestSectionReportStackViewRowAutoStretch < FeatureTest
                         }
                       },
                       row3: {
+                        items: {
+                          image200x100: image50x50
+                        }
+                      },
+                      row4: {
                         items: {
                           image200x100: image50x50
                         }

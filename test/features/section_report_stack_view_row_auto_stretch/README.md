@@ -6,13 +6,6 @@
 - [Example template file](template.tlf)
 - [Example PDF](expect.pdf)
 
-row の自動伸縮が有効のとき、高さの伸縮はそれぞれ以下の条件によって発生する。
-また、row の伸縮によって stack-view 自体の高さも伸縮する。
-
-## 拡張
-
-- 描画後の text-block の内容が定義した高さよりも大きい場合
-
-## 縮小
-
-- 描画後の image-block の画像が定義した高さよりも小さい場合 (image-block の縦位置が「上揃え」のときのみ)
+row の伸縮によって stack-view 自体の高さも伸縮する。
+row の伸縮の仕様は section と同様である。詳細は [Section Auto Stretch](../section_report_section_auto_stretch/README.md) を参照。
+ただし、stack-view は入れ子にすることはできないため、stack-view によるrowの伸縮は起こらない。

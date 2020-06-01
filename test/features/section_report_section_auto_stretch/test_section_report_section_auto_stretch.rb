@@ -40,6 +40,12 @@ class TestSectionReportSectionAutoStretch < FeatureTest
               {
                 id: 'detail2',
                 items: {
+                  text_overflow_expand: 'Extended text box height with long text. ' * 3
+                }
+              },
+              {
+                id: 'detail3',
+                items: {
                   stackview: {
                     rows: {
                       row1: {
@@ -64,6 +70,17 @@ class TestSectionReportSectionAutoStretch < FeatureTest
               footer3: {
                 items: {
                   image200x100: image50x50
+                }
+              },
+              footer4: {
+                items: {
+                  stackview: {
+                    rows: {
+                      row2: {
+                        display: false
+                      }
+                    }
+                  }
                 }
               }
             }
