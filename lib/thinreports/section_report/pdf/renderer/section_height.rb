@@ -11,17 +11,13 @@ module Thinreports
 
           item_layouts = section.items.map { |item| item_layout(section, item.internal) }.compact
 
-          min_bottom_margin =
-            item_layouts
-              .reject { |l| l.shape.format.content_type == :background }
-              .map { |l| l.bottom_margin }
-              .min.to_f
+          min_bottom_margin = item_layouts.each_with_object([]) do |l, margins|
+            margins << l.bottom_margin unless l.shape.format.content_type == :background
+          end.min.to_f
 
-          max_content_bottom =
-            item_layouts
-              .select { |l| l.shape.format.content_type == :content }
-              .map { |l| l.top_margin + l.content_height }
-              .max.to_f
+          max_content_bottom = item_layouts.each_with_object([]) do |l, bottoms|
+            bottoms << l.top_margin + l.content_height if l.shape.format.content_type == :content
+          end.max.to_f
 
           [section.min_height || 0, max_content_bottom + min_bottom_margin].max
         end
