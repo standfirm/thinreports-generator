@@ -12,6 +12,6 @@ section の下余白（bottom margin）とは、section のコンテンツの下
 ![](images/bottom-margin-diagram-1.svg)
 
 上図の例の場合、item3 は要素の種類が `background` なので、下余白には影響しない。
-item1 の下位置よりも item2 の下位置の方が下にあるため、item2 の下位置と section の下位置の間の距離が、この section の下余白となる。
+item2 の下位置が「sectionのコンテンツの下位置」となるため、item2の下位置と section の下位置の間（グレーの網掛けの部分）が、この section の下余白となる。
 
 section の自動伸縮が有効のときは、section の下余白を保った状態で section が自動的に伸縮する。詳細は [Section Auto Stretch](../section_report_section_auto_stretch/README.md) を参照
