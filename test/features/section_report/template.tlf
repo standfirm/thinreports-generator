@@ -6,11 +6,19 @@
     "width": 0.0,
     "height": 0.0,
     "orientation": "portrait",
-    "margin": [20.0, 20.0, 20.0, 20.0]
+    "margin": [
+      20.0,
+      20.0,
+      20.0,
+      20.0
+    ]
   },
   "state": {
     "layout-guides": [
-      { "type": "x", "position": 0.0 }
+      {
+        "type": "x",
+        "position": 0.0
+      }
     ]
   },
   "sections": [
@@ -27,7 +35,6 @@
           "type": "rect",
           "display": true,
           "description": "",
-          "content-type": "background",
           "x": 20,
           "y": 0,
           "width": 555.2,
@@ -39,7 +46,8 @@
             "border-style": "solid",
             "fill-color": "none"
           },
-          "border-radius": 0
+          "border-radius": 0,
+          "affect-bottom-margin": false
         },
         {
           "id": "text",
@@ -89,7 +97,6 @@
           "type": "rect",
           "display": true,
           "description": "",
-          "content-type": "background",
           "x": 20,
           "y": 0,
           "width": 555.2,
@@ -101,7 +108,8 @@
             "border-style": "solid",
             "fill-color": "#bfbfbf"
           },
-          "border-radius": 0
+          "border-radius": 0,
+          "affect-bottom-margin": false
         },
         {
           "id": "text",
@@ -220,7 +228,6 @@
           "type": "rect",
           "display": true,
           "description": "",
-          "content-type": "background",
           "x": 20,
           "y": 0,
           "width": 555.2,
@@ -232,7 +239,8 @@
             "border-style": "solid",
             "fill-color": "none"
           },
-          "border-radius": 0
+          "border-radius": 0,
+          "affect-bottom-margin": false
         },
         {
           "id": "text",
@@ -282,7 +290,6 @@
           "display": true,
           "follow-stretch": "height",
           "description": "",
-          "content-type": "background",
           "style": {
             "border-color": "#000000",
             "border-width": 1,
@@ -291,7 +298,8 @@
           "x1": 51,
           "y1": 0,
           "x2": 479.1,
-          "y2": 100
+          "y2": 100,
+          "affect-bottom-margin": false
         },
         {
           "id": "text",
@@ -339,7 +347,6 @@
           "type": "rect",
           "display": true,
           "description": "",
-          "content-type": "background",
           "x": 20,
           "y": 0,
           "width": 555.2,
@@ -351,14 +358,14 @@
             "fill-color": "#FFFFFF"
           },
           "border-radius": 0,
-          "follow-stretch": "height"
+          "follow-stretch": "height",
+          "affect-bottom-margin": false
         },
         {
           "id": "",
           "type": "rect",
           "display": true,
           "description": "",
-          "content-type": "background",
           "x": 25,
           "y": 5,
           "width": 545.2,
@@ -370,7 +377,8 @@
             "fill-color": "#FFFFFF"
           },
           "border-radius": 0,
-          "follow-stretch": "height"
+          "follow-stretch": "height",
+          "affect-bottom-margin": false
         },
         {
           "id": "text1",
@@ -512,7 +520,6 @@
           "type": "rect",
           "display": true,
           "description": "",
-          "content-type": "background",
           "x": 20,
           "y": 0,
           "width": 555.2,
@@ -524,7 +531,8 @@
             "border-style": "solid",
             "fill-color": "none"
           },
-          "border-radius": 0
+          "border-radius": 0,
+          "affect-bottom-margin": false
         },
         {
           "id": "text",
@@ -573,7 +581,6 @@
           "type": "rect",
           "display": true,
           "description": "",
-          "content-type": "background",
           "x": 20,
           "y": 0,
           "width": 555.2,
@@ -585,7 +592,8 @@
             "border-style": "solid",
             "fill-color": "none"
           },
-          "border-radius": 0
+          "border-radius": 0,
+          "affect-bottom-margin": false
         },
         {
           "id": "text",
@@ -634,7 +642,6 @@
           "type": "rect",
           "display": true,
           "description": "",
-          "content-type": "background",
           "x": 20,
           "y": 0,
           "width": 555.2,
@@ -646,7 +653,8 @@
             "border-style": "solid",
             "fill-color": "none"
           },
-          "border-radius": 0
+          "border-radius": 0,
+          "affect-bottom-margin": false
         },
         {
           "id": "text",

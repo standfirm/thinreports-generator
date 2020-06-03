@@ -40,7 +40,6 @@
             "type": ""
           },
           "follow-stretch": "none",
-          "content-type": "content",
           "style": {
             "font-family": [
               "Helvetica"
@@ -55,7 +54,8 @@
             "font-size": 18,
             "line-height-ratio": "",
             "line-height": 19.8
-          }
+          },
+          "affect-bottom-margin": true
         }
       ]
     },
@@ -82,7 +82,6 @@
             "type": ""
           },
           "follow-stretch": "none",
-          "content-type": "content",
           "style": {
             "font-family": [
               "Helvetica"
@@ -97,7 +96,8 @@
             "font-size": 18,
             "line-height-ratio": "",
             "line-height": 19.8
-          }
+          },
+          "affect-bottom-margin": true
         }
       ]
     },
@@ -118,7 +118,6 @@
           "description": "",
           "display": true,
           "follow-stretch": "none",
-          "content-type": "content",
           "texts": [
             "Footer"
           ],
@@ -134,7 +133,8 @@
             "font-size": 18,
             "line-height-ratio": "",
             "line-height": 19.8
-          }
+          },
+          "affect-bottom-margin": true
         }
       ]
     }
