@@ -4,6 +4,8 @@ require 'benchmark'
 
 require_relative 'profile/generate_pdf'
 
+require 'prawn/emoji'
+
 def profile(caption, mode:)
   if ARGV.empty? || ARGV.include?(mode)
     puts '=' * 20
