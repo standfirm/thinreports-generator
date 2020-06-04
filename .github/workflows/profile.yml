@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - 'section-report'
+      - 'benchmark-prawn-3.2'
 
 jobs:
   profile:
