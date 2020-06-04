@@ -4,4 +4,4 @@ source 'https://rubygems.org'
 
 gemspec
 
-gem 'prawn-emoji', '3.2'
+gem 'prawn-emoji', '3.2.0'
