@@ -6,10 +6,12 @@ item を stack-view の row から下にはみ出して配置することがで�
 - [Example template file](template.tlf)
 - [Example PDF](expect.pdf)
 
+stack-view の row からはみ出して配置した場合でも、その状態を保って描画することができる。
+ただし、はみ出す item は「下余白に影響」を無効にしておく必要がある。
 
-item を row から下にはみ出して配置する場合には、通常、そのitemの「下余白に影響」を無効にする。
-（「下余白に影響」が有効のままだと、rowの下余白が負の値になってしまい、意図しない結果となる場合がある）
+「下余白に影響」が有効の場合、row の下余白が負の値となり、意図しない結果となる場合がある。
 
-rowからはみ出したitemが、stack-view の row を積み重ねた高さよりも下にはみ出す場合には、stack-view の高さがその分拡張する。
+また、下図の通り、stack-view の高さは、はみ出した item 全体を含んだ高さとなる。
 
-row の伸縮の仕様は、[StackViewRow Auto Stretch](../section_report_stack_view_row_auto_stretch/README.md) を参照。
+![](images/stack-view-height-with-floting-item.png)
+
