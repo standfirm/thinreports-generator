@@ -18,7 +18,7 @@
     {
       "id": "invoice_header",
       "type": "header",
-      "height": 324.5,
+      "height": 278.2,
       "display": true,
       "every-page": false,
       "auto-stretch": true,
@@ -47,7 +47,6 @@
             "overflow": "truncate",
             "word-wrap": "none"
           },
-          "content-type": "content",
           "follow-stretch": "none",
           "reference-id": "",
           "value": "",
@@ -55,7 +54,8 @@
           "format": {
             "base": "",
             "type": ""
-          }
+          },
+          "affect-bottom-margin": true
         },
         {
           "id": "invoice_number",
@@ -81,7 +81,6 @@
             "overflow": "expand",
             "word-wrap": "none"
           },
-          "content-type": "content",
           "follow-stretch": "none",
           "reference-id": "",
           "value": "",
@@ -89,7 +88,8 @@
           "format": {
             "base": "請求番号: {value}",
             "type": ""
-          }
+          },
+          "affect-bottom-margin": true
         },
         {
           "id": "sender_info",
@@ -99,7 +99,6 @@
           "x": 320,
           "y": 98,
           "width": 240.2,
-          "content-type": "content",
           "follow-stretch": "none",
           "rows": [
             {
@@ -121,15 +120,15 @@
                     "position-x": "left",
                     "position-y": "top"
                   },
-                  "content-type": "content",
-                  "follow-stretch": "height"
+                  "follow-stretch": "height",
+                  "affect-bottom-margin": true
                 }
               ]
             },
             {
               "id": "sender_name_row",
               "display": true,
-              "height": 72,
+              "height": 25.7,
               "auto-stretch": true,
               "items": [
                 {
@@ -145,8 +144,8 @@
                     "position-x": "left",
                     "position-y": "top"
                   },
-                  "content-type": "float",
-                  "follow-stretch": "none"
+                  "follow-stretch": "none",
+                  "affect-bottom-margin": false
                 },
                 {
                   "id": "sender_name",
@@ -172,7 +171,6 @@
                     "overflow": "expand",
                     "word-wrap": "none"
                   },
-                  "content-type": "content",
                   "follow-stretch": "none",
                   "reference-id": "",
                   "value": "",
@@ -180,7 +178,8 @@
                   "format": {
                     "base": "",
                     "type": ""
-                  }
+                  },
+                  "affect-bottom-margin": true
                 }
               ]
             },
@@ -214,7 +213,6 @@
                     "overflow": "truncate",
                     "word-wrap": "none"
                   },
-                  "content-type": "content",
                   "follow-stretch": "none",
                   "reference-id": "",
                   "value": "",
@@ -222,7 +220,8 @@
                   "format": {
                     "base": "",
                     "type": ""
-                  }
+                  },
+                  "affect-bottom-margin": true
                 }
               ]
             },
@@ -256,7 +255,6 @@
                     "overflow": "expand",
                     "word-wrap": "none"
                   },
-                  "content-type": "content",
                   "follow-stretch": "none",
                   "reference-id": "",
                   "value": "",
@@ -264,7 +262,8 @@
                   "format": {
                     "base": "",
                     "type": ""
-                  }
+                  },
+                  "affect-bottom-margin": true
                 }
               ]
             },
@@ -298,7 +297,6 @@
                     "overflow": "fit",
                     "word-wrap": "none"
                   },
-                  "content-type": "content",
                   "follow-stretch": "none",
                   "reference-id": "",
                   "value": "",
@@ -306,7 +304,8 @@
                   "format": {
                     "base": "TEL:{value}",
                     "type": ""
-                  }
+                  },
+                  "affect-bottom-margin": true
                 }
               ]
             },
@@ -340,7 +339,6 @@
                     "overflow": "fit",
                     "word-wrap": "none"
                   },
-                  "content-type": "content",
                   "follow-stretch": "none",
                   "reference-id": "",
                   "value": "",
@@ -348,7 +346,8 @@
                   "format": {
                     "base": "FAX:{value}",
                     "type": ""
-                  }
+                  },
+                  "affect-bottom-margin": true
                 }
               ]
             },
@@ -382,7 +381,6 @@
                     "overflow": "fit",
                     "word-wrap": "none"
                   },
-                  "content-type": "content",
                   "follow-stretch": "none",
                   "reference-id": "",
                   "value": "",
@@ -390,11 +388,13 @@
                   "format": {
                     "base": "",
                     "type": ""
-                  }
+                  },
+                  "affect-bottom-margin": true
                 }
               ]
             }
-          ]
+          ],
+          "affect-bottom-margin": true
         },
         {
           "id": "recipient_info",
@@ -404,7 +404,6 @@
           "x": 35,
           "y": 98,
           "width": 276.1,
-          "content-type": "content",
           "follow-stretch": "none",
           "rows": [
             {
@@ -439,7 +438,6 @@
                     "overflow": "fit",
                     "word-wrap": "none"
                   },
-                  "content-type": "content",
                   "follow-stretch": "none",
                   "reference-id": "",
                   "value": "",
@@ -447,7 +445,8 @@
                   "format": {
                     "base": "",
                     "type": ""
-                  }
+                  },
+                  "affect-bottom-margin": true
                 }
               ]
             },
@@ -481,7 +480,6 @@
                     "overflow": "expand",
                     "word-wrap": "none"
                   },
-                  "content-type": "content",
                   "follow-stretch": "none",
                   "reference-id": "",
                   "value": "",
@@ -489,7 +487,8 @@
                   "format": {
                     "base": "",
                     "type": ""
-                  }
+                  },
+                  "affect-bottom-margin": true
                 }
               ]
             },
@@ -523,7 +522,6 @@
                     "overflow": "expand",
                     "word-wrap": "none"
                   },
-                  "content-type": "content",
                   "follow-stretch": "none",
                   "reference-id": "",
                   "value": "",
@@ -531,7 +529,8 @@
                   "format": {
                     "base": "",
                     "type": ""
-                  }
+                  },
+                  "affect-bottom-margin": true
                 }
               ]
             },
@@ -563,11 +562,11 @@
                     "letter-spacing": "",
                     "font-style": []
                   },
-                  "content-type": "content",
                   "follow-stretch": "none",
                   "texts": [
                     "下記のとおりご請求申し上げます。"
-                  ]
+                  ],
+                  "affect-bottom-margin": true
                 },
                 {
                   "id": "",
@@ -591,11 +590,11 @@
                     "letter-spacing": "",
                     "font-style": []
                   },
-                  "content-type": "content",
                   "follow-stretch": "none",
                   "texts": [
                     "ご請求金額"
-                  ]
+                  ],
+                  "affect-bottom-margin": true
                 },
                 {
                   "id": "total_amount_price",
@@ -621,7 +620,6 @@
                     "overflow": "truncate",
                     "word-wrap": "none"
                   },
-                  "content-type": "content",
                   "follow-stretch": "none",
                   "reference-id": "",
                   "value": "",
@@ -629,7 +627,8 @@
                   "format": {
                     "base": "",
                     "type": ""
-                  }
+                  },
+                  "affect-bottom-margin": true
                 },
                 {
                   "id": "",
@@ -641,12 +640,12 @@
                     "border-width": 1,
                     "border-style": "solid"
                   },
-                  "content-type": "content",
                   "follow-stretch": "none",
                   "x1": 0,
                   "y1": 40,
                   "x2": 230.1,
-                  "y2": 40
+                  "y2": 40,
+                  "affect-bottom-margin": true
                 }
               ]
             },
@@ -680,7 +679,6 @@
                     "overflow": "truncate",
                     "word-wrap": "none"
                   },
-                  "content-type": "content",
                   "follow-stretch": "none",
                   "reference-id": "",
                   "value": "",
@@ -688,11 +686,13 @@
                   "format": {
                     "base": "お支払い期限 : {value}",
                     "type": ""
-                  }
+                  },
+                  "affect-bottom-margin": true
                 }
               ]
             }
-          ]
+          ],
+          "affect-bottom-margin": true
         },
         {
           "id": "invoice_title",
@@ -718,7 +718,6 @@
             "overflow": "fit",
             "word-wrap": "none"
           },
-          "content-type": "content",
           "follow-stretch": "none",
           "reference-id": "",
           "value": "",
@@ -726,7 +725,8 @@
           "format": {
             "base": "",
             "type": ""
-          }
+          },
+          "affect-bottom-margin": true
         }
       ]
     },
@@ -753,9 +753,9 @@
             "border-style": "solid",
             "fill-color": "#d9d8d8"
           },
-          "content-type": "content",
           "follow-stretch": "height",
-          "border-radius": 0
+          "border-radius": 0,
+          "affect-bottom-margin": true
         },
         {
           "id": "",
@@ -781,11 +781,11 @@
               "bold"
             ]
           },
-          "content-type": "content",
           "follow-stretch": "height",
           "texts": [
             "品番・品名"
-          ]
+          ],
+          "affect-bottom-margin": true
         },
         {
           "id": "",
@@ -811,11 +811,11 @@
               "bold"
             ]
           },
-          "content-type": "content",
           "follow-stretch": "height",
           "texts": [
             "数量"
-          ]
+          ],
+          "affect-bottom-margin": true
         },
         {
           "id": "",
@@ -827,12 +827,12 @@
             "border-width": 1,
             "border-style": "solid"
           },
-          "content-type": "content",
           "follow-stretch": "height",
           "x1": 482,
           "y1": 0,
           "x2": 482,
-          "y2": 15
+          "y2": 15,
+          "affect-bottom-margin": true
         },
         {
           "id": "",
@@ -844,12 +844,12 @@
             "border-width": 1,
             "border-style": "solid"
           },
-          "content-type": "content",
           "follow-stretch": "height",
           "x1": 417,
           "y1": 0,
           "x2": 417,
-          "y2": 15
+          "y2": 15,
+          "affect-bottom-margin": true
         },
         {
           "id": "",
@@ -861,12 +861,12 @@
             "border-width": 1,
             "border-style": "solid"
           },
-          "content-type": "content",
           "follow-stretch": "height",
           "x1": 350,
           "y1": 0,
           "x2": 350,
-          "y2": 15
+          "y2": 15,
+          "affect-bottom-margin": true
         },
         {
           "id": "",
@@ -892,11 +892,11 @@
               "bold"
             ]
           },
-          "content-type": "content",
           "follow-stretch": "height",
           "texts": [
             "金額"
-          ]
+          ],
+          "affect-bottom-margin": true
         },
         {
           "id": "",
@@ -922,11 +922,11 @@
               "bold"
             ]
           },
-          "content-type": "content",
           "follow-stretch": "height",
           "texts": [
             "単価"
-          ]
+          ],
+          "affect-bottom-margin": true
         }
       ]
     },
@@ -947,12 +947,12 @@
             "border-width": 1,
             "border-style": "solid"
           },
-          "content-type": "background",
           "follow-stretch": "height",
           "x1": 417,
           "y1": 0,
           "x2": 417,
-          "y2": 13
+          "y2": 13,
+          "affect-bottom-margin": false
         },
         {
           "id": "",
@@ -964,12 +964,12 @@
             "border-width": 1,
             "border-style": "solid"
           },
-          "content-type": "background",
           "follow-stretch": "height",
           "x1": 350,
           "y1": 0,
           "x2": 350,
-          "y2": 13
+          "y2": 13,
+          "affect-bottom-margin": false
         },
         {
           "id": "name",
@@ -995,7 +995,6 @@
             "overflow": "expand",
             "word-wrap": "none"
           },
-          "content-type": "content",
           "follow-stretch": "height",
           "reference-id": "",
           "value": "",
@@ -1003,7 +1002,8 @@
           "format": {
             "base": "",
             "type": ""
-          }
+          },
+          "affect-bottom-margin": true
         },
         {
           "id": "quantity",
@@ -1029,7 +1029,6 @@
             "overflow": "expand",
             "word-wrap": "break-word"
           },
-          "content-type": "content",
           "follow-stretch": "height",
           "reference-id": "",
           "value": "",
@@ -1037,7 +1036,8 @@
           "format": {
             "base": "",
             "type": ""
-          }
+          },
+          "affect-bottom-margin": true
         },
         {
           "id": "unit_price",
@@ -1063,7 +1063,6 @@
             "overflow": "expand",
             "word-wrap": "none"
           },
-          "content-type": "content",
           "follow-stretch": "height",
           "reference-id": "",
           "value": "",
@@ -1071,7 +1070,8 @@
           "format": {
             "base": "",
             "type": ""
-          }
+          },
+          "affect-bottom-margin": true
         },
         {
           "id": "total_amount",
@@ -1097,7 +1097,6 @@
             "overflow": "expand",
             "word-wrap": "none"
           },
-          "content-type": "content",
           "follow-stretch": "height",
           "reference-id": "",
           "value": "",
@@ -1105,7 +1104,8 @@
           "format": {
             "base": "",
             "type": ""
-          }
+          },
+          "affect-bottom-margin": true
         },
         {
           "id": "",
@@ -1122,9 +1122,9 @@
             "border-style": "solid",
             "fill-color": "none"
           },
-          "content-type": "background",
           "follow-stretch": "height",
-          "border-radius": 0
+          "border-radius": 0,
+          "affect-bottom-margin": false
         },
         {
           "id": "",
@@ -1136,12 +1136,12 @@
             "border-width": 1,
             "border-style": "solid"
           },
-          "content-type": "background",
           "follow-stretch": "height",
           "x1": 482,
           "y1": 0,
           "x2": 482,
-          "y2": 13
+          "y2": 13,
+          "affect-bottom-margin": false
         },
         {
           "id": "mark_for_reduced_rate_8",
@@ -1167,11 +1167,11 @@
               "bold"
             ]
           },
-          "content-type": "content",
           "follow-stretch": "height",
           "texts": [
             "※"
-          ]
+          ],
+          "affect-bottom-margin": true
         }
       ]
     },
@@ -1190,7 +1190,6 @@
           "x": 350,
           "y": 0,
           "width": 210,
-          "content-type": "content",
           "follow-stretch": "none",
           "rows": [
             {
@@ -1223,7 +1222,6 @@
                     "overflow": "expand",
                     "word-wrap": "none"
                   },
-                  "content-type": "content",
                   "follow-stretch": "height",
                   "reference-id": "",
                   "value": "",
@@ -1231,7 +1229,8 @@
                   "format": {
                     "base": "",
                     "type": ""
-                  }
+                  },
+                  "affect-bottom-margin": true
                 },
                 {
                   "id": "",
@@ -1255,11 +1254,11 @@
                     "letter-spacing": "",
                     "font-style": []
                   },
-                  "content-type": "content",
                   "follow-stretch": "height",
                   "texts": [
                     "小計"
-                  ]
+                  ],
+                  "affect-bottom-margin": true
                 },
                 {
                   "id": "",
@@ -1271,12 +1270,12 @@
                     "border-width": 1,
                     "border-style": "solid"
                   },
-                  "content-type": "background",
                   "follow-stretch": "height",
                   "x1": 132,
                   "y1": 0,
                   "x2": 132,
-                  "y2": 13
+                  "y2": 13,
+                  "affect-bottom-margin": false
                 },
                 {
                   "id": "",
@@ -1293,9 +1292,9 @@
                     "border-style": "solid",
                     "fill-color": "none"
                   },
-                  "content-type": "background",
                   "follow-stretch": "height",
-                  "border-radius": 0
+                  "border-radius": 0,
+                  "affect-bottom-margin": false
                 }
               ]
             },
@@ -1329,7 +1328,6 @@
                     "overflow": "expand",
                     "word-wrap": "none"
                   },
-                  "content-type": "content",
                   "follow-stretch": "height",
                   "reference-id": "",
                   "value": "",
@@ -1337,7 +1335,8 @@
                   "format": {
                     "base": "",
                     "type": ""
-                  }
+                  },
+                  "affect-bottom-margin": true
                 },
                 {
                   "id": "tax_label",
@@ -1363,7 +1362,6 @@
                     "overflow": "expand",
                     "word-wrap": "none"
                   },
-                  "content-type": "content",
                   "follow-stretch": "height",
                   "reference-id": "",
                   "value": "",
@@ -1371,7 +1369,8 @@
                   "format": {
                     "base": "消費税 {value}",
                     "type": ""
-                  }
+                  },
+                  "affect-bottom-margin": true
                 },
                 {
                   "id": "",
@@ -1383,12 +1382,12 @@
                     "border-width": 1,
                     "border-style": "solid"
                   },
-                  "content-type": "background",
                   "follow-stretch": "height",
                   "x1": 132,
                   "y1": 0,
                   "x2": 132,
-                  "y2": 13
+                  "y2": 13,
+                  "affect-bottom-margin": false
                 },
                 {
                   "id": "",
@@ -1405,9 +1404,9 @@
                     "border-style": "solid",
                     "fill-color": "none"
                   },
-                  "content-type": "background",
                   "follow-stretch": "height",
-                  "border-radius": 0
+                  "border-radius": 0,
+                  "affect-bottom-margin": false
                 }
               ]
             },
@@ -1441,7 +1440,6 @@
                     "overflow": "expand",
                     "word-wrap": "none"
                   },
-                  "content-type": "content",
                   "follow-stretch": "height",
                   "reference-id": "",
                   "value": "",
@@ -1449,7 +1447,8 @@
                   "format": {
                     "base": "",
                     "type": ""
-                  }
+                  },
+                  "affect-bottom-margin": true
                 },
                 {
                   "id": "",
@@ -1473,11 +1472,11 @@
                     "letter-spacing": "",
                     "font-style": []
                   },
-                  "content-type": "content",
                   "follow-stretch": "height",
                   "texts": [
                     "源泉徴収税"
-                  ]
+                  ],
+                  "affect-bottom-margin": true
                 },
                 {
                   "id": "",
@@ -1489,12 +1488,12 @@
                     "border-width": 1,
                     "border-style": "solid"
                   },
-                  "content-type": "background",
                   "follow-stretch": "height",
                   "x1": 132,
                   "y1": 0,
                   "x2": 132,
-                  "y2": 13
+                  "y2": 13,
+                  "affect-bottom-margin": false
                 },
                 {
                   "id": "",
@@ -1511,9 +1510,9 @@
                     "border-style": "solid",
                     "fill-color": "none"
                   },
-                  "content-type": "background",
                   "follow-stretch": "height",
-                  "border-radius": 0
+                  "border-radius": 0,
+                  "affect-bottom-margin": false
                 }
               ]
             },
@@ -1547,7 +1546,6 @@
                     "overflow": "expand",
                     "word-wrap": "none"
                   },
-                  "content-type": "content",
                   "follow-stretch": "height",
                   "reference-id": "",
                   "value": "",
@@ -1555,7 +1553,8 @@
                   "format": {
                     "base": "",
                     "type": ""
-                  }
+                  },
+                  "affect-bottom-margin": true
                 },
                 {
                   "id": "",
@@ -1579,11 +1578,11 @@
                     "letter-spacing": "",
                     "font-style": []
                   },
-                  "content-type": "content",
                   "follow-stretch": "height",
                   "texts": [
                     "合計"
-                  ]
+                  ],
+                  "affect-bottom-margin": true
                 },
                 {
                   "id": "",
@@ -1595,12 +1594,12 @@
                     "border-width": 1,
                     "border-style": "solid"
                   },
-                  "content-type": "background",
                   "follow-stretch": "height",
                   "x1": 132,
                   "y1": 0,
                   "x2": 132,
-                  "y2": 13
+                  "y2": 13,
+                  "affect-bottom-margin": false
                 },
                 {
                   "id": "",
@@ -1617,13 +1616,14 @@
                     "border-style": "solid",
                     "fill-color": "none"
                   },
-                  "content-type": "background",
                   "follow-stretch": "height",
-                  "border-radius": 0
+                  "border-radius": 0,
+                  "affect-bottom-margin": false
                 }
               ]
             }
-          ]
+          ],
+          "affect-bottom-margin": true
         },
         {
           "id": "",
@@ -1635,12 +1635,12 @@
             "border-width": 1,
             "border-style": "solid"
           },
-          "content-type": "background",
           "follow-stretch": "y",
           "x1": 350,
           "y1": 52,
           "x2": 560,
-          "y2": 52
+          "y2": 52,
+          "affect-bottom-margin": false
         },
         {
           "id": "desc_for_reduced_tax_8",
@@ -1664,11 +1664,11 @@
             "letter-spacing": "",
             "font-style": []
           },
-          "content-type": "content",
           "follow-stretch": "none",
           "texts": [
             "※は軽減税率対象です。"
-          ]
+          ],
+          "affect-bottom-margin": true
         }
       ]
     },
@@ -1687,7 +1687,6 @@
           "x": 282,
           "y": 8,
           "width": 278,
-          "content-type": "content",
           "follow-stretch": "none",
           "rows": [
             {
@@ -1720,7 +1719,6 @@
                     "overflow": "truncate",
                     "word-wrap": "none"
                   },
-                  "content-type": "content",
                   "follow-stretch": "height",
                   "reference-id": "",
                   "value": "",
@@ -1728,7 +1726,8 @@
                   "format": {
                     "base": "",
                     "type": ""
-                  }
+                  },
+                  "affect-bottom-margin": true
                 },
                 {
                   "id": "",
@@ -1745,9 +1744,9 @@
                     "border-style": "solid",
                     "fill-color": "none"
                   },
-                  "content-type": "background",
                   "follow-stretch": "height",
-                  "border-radius": 0
+                  "border-radius": 0,
+                  "affect-bottom-margin": false
                 },
                 {
                   "id": "price",
@@ -1773,7 +1772,6 @@
                     "overflow": "expand",
                     "word-wrap": "none"
                   },
-                  "content-type": "content",
                   "follow-stretch": "height",
                   "reference-id": "",
                   "value": "",
@@ -1781,7 +1779,8 @@
                   "format": {
                     "base": "",
                     "type": ""
-                  }
+                  },
+                  "affect-bottom-margin": true
                 },
                 {
                   "id": "tax_price",
@@ -1807,7 +1806,6 @@
                     "overflow": "expand",
                     "word-wrap": "none"
                   },
-                  "content-type": "content",
                   "follow-stretch": "height",
                   "reference-id": "",
                   "value": "",
@@ -1815,7 +1813,8 @@
                   "format": {
                     "base": "",
                     "type": ""
-                  }
+                  },
+                  "affect-bottom-margin": true
                 },
                 {
                   "id": "",
@@ -1839,11 +1838,11 @@
                     "letter-spacing": "",
                     "font-style": []
                   },
-                  "content-type": "content",
                   "follow-stretch": "height",
                   "texts": [
                     "消費税"
-                  ]
+                  ],
+                  "affect-bottom-margin": true
                 },
                 {
                   "id": "",
@@ -1855,12 +1854,12 @@
                     "border-width": 1,
                     "border-style": "dashed"
                   },
-                  "content-type": "background",
                   "follow-stretch": "height",
                   "x1": 200,
                   "y1": 0,
                   "x2": 200,
-                  "y2": 13
+                  "y2": 13,
+                  "affect-bottom-margin": false
                 },
                 {
                   "id": "",
@@ -1872,12 +1871,12 @@
                     "border-width": 1,
                     "border-style": "solid"
                   },
-                  "content-type": "background",
                   "follow-stretch": "height",
                   "x1": 159,
                   "y1": 0,
                   "x2": 159,
-                  "y2": 13
+                  "y2": 13,
+                  "affect-bottom-margin": false
                 },
                 {
                   "id": "",
@@ -1889,12 +1888,12 @@
                     "border-width": 1,
                     "border-style": "dashed"
                   },
-                  "content-type": "background",
                   "follow-stretch": "height",
                   "x1": 81,
                   "y1": 0,
                   "x2": 81,
-                  "y2": 13
+                  "y2": 13,
+                  "affect-bottom-margin": false
                 }
               ]
             },
@@ -1928,7 +1927,6 @@
                     "overflow": "truncate",
                     "word-wrap": "none"
                   },
-                  "content-type": "content",
                   "follow-stretch": "height",
                   "reference-id": "",
                   "value": "",
@@ -1936,7 +1934,8 @@
                   "format": {
                     "base": "",
                     "type": ""
-                  }
+                  },
+                  "affect-bottom-margin": true
                 },
                 {
                   "id": "",
@@ -1953,9 +1952,9 @@
                     "border-style": "solid",
                     "fill-color": "none"
                   },
-                  "content-type": "background",
                   "follow-stretch": "height",
-                  "border-radius": 0
+                  "border-radius": 0,
+                  "affect-bottom-margin": false
                 },
                 {
                   "id": "price",
@@ -1981,7 +1980,6 @@
                     "overflow": "expand",
                     "word-wrap": "none"
                   },
-                  "content-type": "content",
                   "follow-stretch": "height",
                   "reference-id": "",
                   "value": "",
@@ -1989,7 +1987,8 @@
                   "format": {
                     "base": "",
                     "type": ""
-                  }
+                  },
+                  "affect-bottom-margin": true
                 },
                 {
                   "id": "tax_price",
@@ -2015,7 +2014,6 @@
                     "overflow": "expand",
                     "word-wrap": "none"
                   },
-                  "content-type": "content",
                   "follow-stretch": "height",
                   "reference-id": "",
                   "value": "",
@@ -2023,7 +2021,8 @@
                   "format": {
                     "base": "",
                     "type": ""
-                  }
+                  },
+                  "affect-bottom-margin": true
                 },
                 {
                   "id": "",
@@ -2047,11 +2046,11 @@
                     "letter-spacing": "",
                     "font-style": []
                   },
-                  "content-type": "content",
                   "follow-stretch": "height",
                   "texts": [
                     "消費税"
-                  ]
+                  ],
+                  "affect-bottom-margin": true
                 },
                 {
                   "id": "",
@@ -2063,12 +2062,12 @@
                     "border-width": 1,
                     "border-style": "dashed"
                   },
-                  "content-type": "background",
                   "follow-stretch": "height",
                   "x1": 200,
                   "y1": 0,
                   "x2": 200,
-                  "y2": 13
+                  "y2": 13,
+                  "affect-bottom-margin": false
                 },
                 {
                   "id": "",
@@ -2080,12 +2079,12 @@
                     "border-width": 1,
                     "border-style": "solid"
                   },
-                  "content-type": "background",
                   "follow-stretch": "height",
                   "x1": 159,
                   "y1": 0,
                   "x2": 159,
-                  "y2": 13
+                  "y2": 13,
+                  "affect-bottom-margin": false
                 },
                 {
                   "id": "",
@@ -2097,12 +2096,12 @@
                     "border-width": 1,
                     "border-style": "dashed"
                   },
-                  "content-type": "background",
                   "follow-stretch": "height",
                   "x1": 81,
                   "y1": 0,
                   "x2": 81,
-                  "y2": 13
+                  "y2": 13,
+                  "affect-bottom-margin": false
                 }
               ]
             },
@@ -2136,7 +2135,6 @@
                     "overflow": "truncate",
                     "word-wrap": "none"
                   },
-                  "content-type": "content",
                   "follow-stretch": "height",
                   "reference-id": "",
                   "value": "",
@@ -2144,7 +2142,8 @@
                   "format": {
                     "base": "",
                     "type": ""
-                  }
+                  },
+                  "affect-bottom-margin": true
                 },
                 {
                   "id": "",
@@ -2161,9 +2160,9 @@
                     "border-style": "solid",
                     "fill-color": "none"
                   },
-                  "content-type": "background",
                   "follow-stretch": "height",
-                  "border-radius": 0
+                  "border-radius": 0,
+                  "affect-bottom-margin": false
                 },
                 {
                   "id": "price",
@@ -2189,7 +2188,6 @@
                     "overflow": "expand",
                     "word-wrap": "none"
                   },
-                  "content-type": "content",
                   "follow-stretch": "height",
                   "reference-id": "",
                   "value": "",
@@ -2197,7 +2195,8 @@
                   "format": {
                     "base": "",
                     "type": ""
-                  }
+                  },
+                  "affect-bottom-margin": true
                 },
                 {
                   "id": "tax_price",
@@ -2223,7 +2222,6 @@
                     "overflow": "expand",
                     "word-wrap": "none"
                   },
-                  "content-type": "content",
                   "follow-stretch": "height",
                   "reference-id": "",
                   "value": "",
@@ -2231,7 +2229,8 @@
                   "format": {
                     "base": "",
                     "type": ""
-                  }
+                  },
+                  "affect-bottom-margin": true
                 },
                 {
                   "id": "",
@@ -2255,11 +2254,11 @@
                     "letter-spacing": "",
                     "font-style": []
                   },
-                  "content-type": "content",
                   "follow-stretch": "height",
                   "texts": [
                     "消費税"
-                  ]
+                  ],
+                  "affect-bottom-margin": true
                 },
                 {
                   "id": "",
@@ -2271,12 +2270,12 @@
                     "border-width": 1,
                     "border-style": "dashed"
                   },
-                  "content-type": "background",
                   "follow-stretch": "height",
                   "x1": 200,
                   "y1": 0,
                   "x2": 200,
-                  "y2": 13
+                  "y2": 13,
+                  "affect-bottom-margin": false
                 },
                 {
                   "id": "",
@@ -2288,12 +2287,12 @@
                     "border-width": 1,
                     "border-style": "solid"
                   },
-                  "content-type": "background",
                   "follow-stretch": "height",
                   "x1": 159,
                   "y1": 0,
                   "x2": 159,
-                  "y2": 13
+                  "y2": 13,
+                  "affect-bottom-margin": false
                 },
                 {
                   "id": "",
@@ -2305,12 +2304,12 @@
                     "border-width": 1,
                     "border-style": "dashed"
                   },
-                  "content-type": "background",
                   "follow-stretch": "height",
                   "x1": 81,
                   "y1": 0,
                   "x2": 81,
-                  "y2": 13
+                  "y2": 13,
+                  "affect-bottom-margin": false
                 }
               ]
             },
@@ -2344,7 +2343,6 @@
                     "overflow": "truncate",
                     "word-wrap": "none"
                   },
-                  "content-type": "content",
                   "follow-stretch": "height",
                   "reference-id": "",
                   "value": "",
@@ -2352,7 +2350,8 @@
                   "format": {
                     "base": "",
                     "type": ""
-                  }
+                  },
+                  "affect-bottom-margin": true
                 },
                 {
                   "id": "",
@@ -2369,9 +2368,9 @@
                     "border-style": "solid",
                     "fill-color": "none"
                   },
-                  "content-type": "background",
                   "follow-stretch": "height",
-                  "border-radius": 0
+                  "border-radius": 0,
+                  "affect-bottom-margin": false
                 },
                 {
                   "id": "price",
@@ -2397,7 +2396,6 @@
                     "overflow": "expand",
                     "word-wrap": "none"
                   },
-                  "content-type": "content",
                   "follow-stretch": "height",
                   "reference-id": "",
                   "value": "",
@@ -2405,7 +2403,8 @@
                   "format": {
                     "base": "",
                     "type": ""
-                  }
+                  },
+                  "affect-bottom-margin": true
                 },
                 {
                   "id": "tax_price",
@@ -2431,7 +2430,6 @@
                     "overflow": "expand",
                     "word-wrap": "none"
                   },
-                  "content-type": "content",
                   "follow-stretch": "height",
                   "reference-id": "",
                   "value": "",
@@ -2439,7 +2437,8 @@
                   "format": {
                     "base": "",
                     "type": ""
-                  }
+                  },
+                  "affect-bottom-margin": true
                 },
                 {
                   "id": "",
@@ -2463,11 +2462,11 @@
                     "letter-spacing": "",
                     "font-style": []
                   },
-                  "content-type": "content",
                   "follow-stretch": "height",
                   "texts": [
                     "消費税"
-                  ]
+                  ],
+                  "affect-bottom-margin": true
                 },
                 {
                   "id": "",
@@ -2479,12 +2478,12 @@
                     "border-width": 1,
                     "border-style": "dashed"
                   },
-                  "content-type": "background",
                   "follow-stretch": "height",
                   "x1": 200,
                   "y1": 0,
                   "x2": 200,
-                  "y2": 13
+                  "y2": 13,
+                  "affect-bottom-margin": false
                 },
                 {
                   "id": "",
@@ -2496,12 +2495,12 @@
                     "border-width": 1,
                     "border-style": "solid"
                   },
-                  "content-type": "background",
                   "follow-stretch": "height",
                   "x1": 159,
                   "y1": 0,
                   "x2": 159,
-                  "y2": 13
+                  "y2": 13,
+                  "affect-bottom-margin": false
                 },
                 {
                   "id": "",
@@ -2513,12 +2512,12 @@
                     "border-width": 1,
                     "border-style": "dashed"
                   },
-                  "content-type": "background",
                   "follow-stretch": "height",
                   "x1": 81,
                   "y1": 0,
                   "x2": 81,
-                  "y2": 13
+                  "y2": 13,
+                  "affect-bottom-margin": false
                 }
               ]
             },
@@ -2552,7 +2551,6 @@
                     "overflow": "truncate",
                     "word-wrap": "none"
                   },
-                  "content-type": "content",
                   "follow-stretch": "height",
                   "reference-id": "",
                   "value": "",
@@ -2560,7 +2558,8 @@
                   "format": {
                     "base": "",
                     "type": ""
-                  }
+                  },
+                  "affect-bottom-margin": true
                 },
                 {
                   "id": "",
@@ -2577,9 +2576,9 @@
                     "border-style": "solid",
                     "fill-color": "none"
                   },
-                  "content-type": "background",
                   "follow-stretch": "height",
-                  "border-radius": 0
+                  "border-radius": 0,
+                  "affect-bottom-margin": false
                 },
                 {
                   "id": "price",
@@ -2605,7 +2604,6 @@
                     "overflow": "expand",
                     "word-wrap": "none"
                   },
-                  "content-type": "content",
                   "follow-stretch": "height",
                   "reference-id": "",
                   "value": "",
@@ -2613,7 +2611,8 @@
                   "format": {
                     "base": "",
                     "type": ""
-                  }
+                  },
+                  "affect-bottom-margin": true
                 },
                 {
                   "id": "tax_price",
@@ -2639,7 +2638,6 @@
                     "overflow": "expand",
                     "word-wrap": "none"
                   },
-                  "content-type": "content",
                   "follow-stretch": "height",
                   "reference-id": "",
                   "value": "",
@@ -2647,7 +2645,8 @@
                   "format": {
                     "base": "",
                     "type": ""
-                  }
+                  },
+                  "affect-bottom-margin": true
                 },
                 {
                   "id": "",
@@ -2671,11 +2670,11 @@
                     "letter-spacing": "",
                     "font-style": []
                   },
-                  "content-type": "content",
                   "follow-stretch": "height",
                   "texts": [
                     "消費税"
-                  ]
+                  ],
+                  "affect-bottom-margin": true
                 },
                 {
                   "id": "",
@@ -2687,12 +2686,12 @@
                     "border-width": 1,
                     "border-style": "dashed"
                   },
-                  "content-type": "background",
                   "follow-stretch": "height",
                   "x1": 200,
                   "y1": 0,
                   "x2": 200,
-                  "y2": 13
+                  "y2": 13,
+                  "affect-bottom-margin": false
                 },
                 {
                   "id": "",
@@ -2704,12 +2703,12 @@
                     "border-width": 1,
                     "border-style": "solid"
                   },
-                  "content-type": "background",
                   "follow-stretch": "height",
                   "x1": 159,
                   "y1": 0,
                   "x2": 159,
-                  "y2": 13
+                  "y2": 13,
+                  "affect-bottom-margin": false
                 },
                 {
                   "id": "",
@@ -2721,16 +2720,17 @@
                     "border-width": 1,
                     "border-style": "dashed"
                   },
-                  "content-type": "background",
                   "follow-stretch": "height",
                   "x1": 81,
                   "y1": 0,
                   "x2": 81,
-                  "y2": 13
+                  "y2": 13,
+                  "affect-bottom-margin": false
                 }
               ]
             }
-          ]
+          ],
+          "affect-bottom-margin": true
         }
       ]
     },
@@ -2765,7 +2765,6 @@
             "overflow": "expand",
             "word-wrap": "none"
           },
-          "content-type": "content",
           "follow-stretch": "none",
           "reference-id": "",
           "value": "",
@@ -2773,7 +2772,8 @@
           "format": {
             "base": "",
             "type": ""
-          }
+          },
+          "affect-bottom-margin": true
         }
       ]
     },
@@ -2808,7 +2808,6 @@
             "overflow": "expand",
             "word-wrap": "none"
           },
-          "content-type": "content",
           "follow-stretch": "none",
           "reference-id": "",
           "value": "",
@@ -2816,7 +2815,8 @@
           "format": {
             "base": "",
             "type": ""
-          }
+          },
+          "affect-bottom-margin": true
         },
         {
           "id": "",
@@ -2842,11 +2842,11 @@
               "bold"
             ]
           },
-          "content-type": "content",
           "follow-stretch": "none",
           "texts": [
             "お振込先："
-          ]
+          ],
+          "affect-bottom-margin": true
         }
       ]
     }

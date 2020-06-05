@@ -12,11 +12,11 @@ module Thinreports
           item_layouts = section.items.map { |item| item_layout(section, item.internal) }.compact
 
           min_bottom_margin = item_layouts.each_with_object([]) do |l, margins|
-            margins << l.bottom_margin unless l.shape.format.content_type == :background
+            margins << l.bottom_margin if l.shape.format.affect_bottom_margin?
           end.min.to_f
 
           max_content_bottom = item_layouts.each_with_object([]) do |l, bottoms|
-            bottoms << l.top_margin + l.content_height if l.shape.format.content_type == :content
+            bottoms << l.top_margin + l.content_height if l.shape.format.affect_bottom_margin?
           end.max.to_f
 
           [section.min_height || 0, max_content_bottom + min_bottom_margin].max
@@ -25,7 +25,6 @@ module Thinreports
         def calc_float_content_bottom(section)
           item_layouts = section.items.map { |item| item_layout(section, item.internal) }.compact
           item_layouts
-            .select { |l| l.shape.format.content_type == :float }
             .map { |l| l.top_margin + l.content_height }
             .max.to_f
         end

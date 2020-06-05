@@ -118,7 +118,6 @@
                   "type": "rect",
                   "display": true,
                   "description": "",
-                  "content-type": "background",
                   "x": 0,
                   "y": 0,
                   "width": 200,
@@ -130,7 +129,8 @@
                     "border-style": "solid",
                     "fill-color": "none"
                   },
-                  "border-radius": 0
+                  "border-radius": 0,
+                  "affect-bottom-margin": false
                 },
                 {
                   "id": "child_image",
@@ -150,7 +150,7 @@
             },
             {
               "id": "row2",
-              "height": 70,
+              "height": 41,
               "display": true,
               "auto-stretch": true,
               "items": [
@@ -159,11 +159,10 @@
                   "type": "rect",
                   "display": true,
                   "description": "",
-                  "content-type": "background",
                   "x": 0,
                   "y": 0,
                   "width": 200,
-                  "height": 70,
+                  "height": 41,
                   "follow-stretch": "height",
                   "style": {
                     "border-color": "#000000",
@@ -171,7 +170,8 @@
                     "border-style": "solid",
                     "fill-color": "none"
                   },
-                  "border-radius": 0
+                  "border-radius": 0,
+                  "affect-bottom-margin": false
                 },
                 {
                   "id": "test_text",
@@ -210,7 +210,6 @@
                   "type": "image-block",
                   "display": true,
                   "description": "",
-                  "content-type": "float",
                   "x": 130,
                   "y": 10,
                   "width": 50,
@@ -218,7 +217,8 @@
                   "style": {
                     "position-x": "left",
                     "position-y": "top"
-                  }
+                  },
+                  "affect-bottom-margin": false
                 }
               ]
             },
@@ -300,7 +300,6 @@
                   "type": "rect",
                   "display": true,
                   "description": "",
-                  "content-type": "background",
                   "x": 0,
                   "y": 0,
                   "width": 200,
@@ -312,7 +311,8 @@
                     "border-style": "solid",
                     "fill-color": "none"
                   },
-                  "border-radius": 0
+                  "border-radius": 0,
+                  "affect-bottom-margin": false
                 }
               ]
             }

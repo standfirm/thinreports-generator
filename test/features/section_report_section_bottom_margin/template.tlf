@@ -31,12 +31,12 @@
           "description": "",
           "display": true,
           "follow-stretch": "none",
-          "content-type": "content",
           "style": {
             "border-width": 1,
             "border-color": "#000000",
             "border-style": "solid"
-          }
+          },
+          "affect-bottom-margin": true
         },
         {
           "type": "text-block",
@@ -55,7 +55,6 @@
             "type": ""
           },
           "follow-stretch": "none",
-          "content-type": "content",
           "style": {
             "font-family": [
               "Helvetica"
@@ -70,7 +69,8 @@
             "font-size": 18,
             "line-height-ratio": "",
             "line-height": 19.8
-          }
+          },
+          "affect-bottom-margin": true
         },
         {
           "type": "rect",
@@ -83,13 +83,13 @@
           "description": "",
           "display": true,
           "follow-stretch": "none",
-          "content-type": "content",
           "style": {
             "border-color": "#000000",
             "border-style": "solid",
             "fill-color": "#ffffff",
             "border-width": 1
-          }
+          },
+          "affect-bottom-margin": true
         },
         {
           "type": "rect",
@@ -102,13 +102,13 @@
           "description": "",
           "display": true,
           "follow-stretch": "none",
-          "content-type": "background",
           "style": {
             "border-color": "#000000",
             "border-style": "dashed",
             "fill-color": "#ffffff",
             "border-width": 1
-          }
+          },
+          "affect-bottom-margin": false
         },
         {
           "type": "text",
@@ -120,7 +120,6 @@
           "description": "",
           "display": true,
           "follow-stretch": "none",
-          "content-type": "content",
           "texts": [
             "content-type:",
             "background"
@@ -137,7 +136,8 @@
             "font-size": 18,
             "line-height-ratio": "",
             "line-height": 19.8
-          }
+          },
+          "affect-bottom-margin": true
         }
       ]
     },
@@ -158,12 +158,12 @@
           "description": "",
           "display": true,
           "follow-stretch": "none",
-          "content-type": "content",
           "style": {
             "border-width": 1,
             "border-color": "#000000",
             "border-style": "solid"
-          }
+          },
+          "affect-bottom-margin": true
         }
       ]
     }
