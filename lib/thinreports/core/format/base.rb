@@ -61,10 +61,6 @@ module Thinreports
           @config
         end
 
-        def affect_bottom_margin?
-          attributes.fetch('affect-bottom-margin', true)
-        end
-
         private
 
         def find(*keys)
