@@ -46,9 +46,11 @@ module Thinreports
         end
 
         def row_enabled?(row_schema, row_params)
-          return false unless row_schema.display?
-          return false if row_params.key?(:display) && !row_params[:display]
-          true
+          if row_params.key?(:display)
+            row_params[:display]
+          else
+            row_schema.display?
+          end
         end
       end
     end
