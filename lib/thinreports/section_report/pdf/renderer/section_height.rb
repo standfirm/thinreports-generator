@@ -11,7 +11,7 @@ module Thinreports
 
           item_layouts = section.items.map { |item| item_layout(section, item.internal) }.compact
 
-          min_bottom_margin = item_layouts.each_with_object([]) do |l, margins|
+          min_bottom_margin = item_layouts.each_with_object([section.schema.height]) do |l, margins|
             margins << l.bottom_margin if l.shape.format.affect_bottom_margin?
           end.min.to_f
 
