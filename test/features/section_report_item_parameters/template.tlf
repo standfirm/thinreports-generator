@@ -325,8 +325,8 @@
         {
           "type": "text-block",
           "id": "text_block1",
-          "x": 30.85,
-          "y": 14.68,
+          "x": 26,
+          "y": 14.34,
           "width": 116.46,
           "height": 44.32,
           "description": "",
@@ -359,8 +359,8 @@
         {
           "type": "text-block",
           "id": "text_block2",
-          "x": 31.09,
-          "y": 65.14,
+          "x": 26,
+          "y": 65.13,
           "width": 116.46,
           "height": 44.32,
           "description": "",
@@ -393,10 +393,10 @@
         {
           "type": "image-block",
           "id": "image_block1",
-          "x": 194.05,
-          "y": 16.14,
-          "width": 116.87,
-          "height": 75.94,
+          "x": 152,
+          "y": 14.97,
+          "width": 100,
+          "height": 75,
           "description": "",
           "display": true,
           "follow-stretch": "none",
@@ -409,10 +409,10 @@
         {
           "type": "image-block",
           "id": "image_block2",
-          "x": 334.11,
-          "y": 16.48,
-          "width": 116.87,
-          "height": 75.94,
+          "x": 259.95,
+          "y": 15,
+          "width": 100,
+          "height": 75,
           "description": "",
           "display": true,
           "follow-stretch": "none",
@@ -437,6 +437,38 @@
             "border-width": 1,
             "border-color": "#000000",
             "border-style": "solid"
+          }
+        },
+        {
+          "type": "image-block",
+          "id": "image_block3",
+          "x": 366.37,
+          "y": 14.27,
+          "width": 100,
+          "height": 75,
+          "description": "",
+          "display": true,
+          "follow-stretch": "none",
+          "affect-bottom-margin": true,
+          "style": {
+            "position-x": "left",
+            "position-y": "top"
+          }
+        },
+        {
+          "type": "image-block",
+          "id": "image_block4",
+          "x": 473.53,
+          "y": 14.64,
+          "width": 100,
+          "height": 75,
+          "description": "",
+          "display": true,
+          "follow-stretch": "none",
+          "affect-bottom-margin": true,
+          "style": {
+            "position-x": "left",
+            "position-y": "top"
           }
         }
       ]

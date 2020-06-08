@@ -99,7 +99,11 @@ class TestSectionReportItemParameters < FeatureTest
                     value: 'text-block2'
                   },
                   image_block1: image_block_jpg.to_path,
-                  image_block2: {
+                  image_block2: StringIO.new(image_block_jpg.binread),
+                  image_block3: {
+                    value: image_block_jpg.to_path,
+                  },
+                  image_block4: {
                     value: StringIO.new(image_block_jpg.binread)
                   }
                 }

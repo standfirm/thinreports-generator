@@ -54,7 +54,11 @@ text_block_item: 'text value'
 
 ```
 image_block_item: {
-  value: '/path/to/image.png'
+  value: '/path/to/image.jpg'
 },
-image_block_item: StringIO.new('/path/to/image.jpg)
+image_block_item: {
+  value: StringIO.new(File.binread('/path/to/image.jpg'))
+},
+image_block_item: '/path/to/image.png',
+image_block_item: StringIO.new(File.binread('/path/to/image.png'))
 ```
