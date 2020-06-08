@@ -14,8 +14,6 @@ module Thinreports
         end
 
         def build(item_params)
-          return item unless item_params
-
           params = build_params(item_params)
 
           item.visible(params[:display]) if params.key?(:display)
@@ -39,6 +37,8 @@ module Thinreports
             params
           when Proc
             params.call(Context.new(parent_schema))
+          when nil
+            {}
           else
             { value: params }
           end
