@@ -75,9 +75,11 @@ module Thinreports
         end
 
         def section_enabled?(section_schema, section_params)
-          return false unless section_schema.display?
-          return false if section_params.key?(:display) && !section_params[:display]
-          true
+          if section_params.key?(:display)
+            section_params[:display]
+          else
+            section_schema.display?
+          end
         end
       end
     end
