@@ -8,10 +8,11 @@ module Thinreports
 
         def section_height(section)
           return section.schema.height unless section.schema.auto_stretch?
+          return [section.min_height || 0, section.schema.height].max if section.items.empty?
 
           item_layouts = section.items.map { |item| item_layout(section, item.internal) }.compact
 
-          min_bottom_margin = item_layouts.each_with_object([section.schema.height]) do |l, margins|
+          min_bottom_margin = item_layouts.each_with_object([]) do |l, margins|
             margins << l.bottom_margin if l.shape.format.affect_bottom_margin?
           end.min.to_f
 
