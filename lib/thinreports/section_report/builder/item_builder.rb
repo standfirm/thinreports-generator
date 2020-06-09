@@ -32,13 +32,13 @@ module Thinreports
         attr_reader :item, :parent_schema
 
         def build_params(params)
+          return {} unless params
+
           case params
           when Hash
             params
           when Proc
             params.call(Context.new(parent_schema))
-          when nil
-            {}
           else
             { value: params }
           end
