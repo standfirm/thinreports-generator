@@ -14,8 +14,6 @@ module Thinreports
         end
 
         def build(item_params)
-          return item unless item_params
-
           params = build_params(item_params)
 
           item.visible(params[:display]) if params.key?(:display)
@@ -34,6 +32,8 @@ module Thinreports
         attr_reader :item, :parent_schema
 
         def build_params(params)
+          return {} unless params
+
           case params
           when Hash
             params
