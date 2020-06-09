@@ -8,7 +8,6 @@ class TestSectionReportTextBlockVerticalAlign < FeatureTest
       type: :section,
       layout_file: template_path,
       params: {
-        start_page_number: 1,
         groups: [
           {
             details: %i(top middle bottom).flat_map { |id|
