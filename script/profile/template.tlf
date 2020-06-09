@@ -100,6 +100,7 @@
           "y": 98,
           "width": 240.2,
           "follow-stretch": "none",
+          "affect-bottom-margin": true,
           "rows": [
             {
               "id": "logo_image_row",
@@ -393,8 +394,7 @@
                 }
               ]
             }
-          ],
-          "affect-bottom-margin": true
+          ]
         },
         {
           "id": "recipient_info",
@@ -405,6 +405,7 @@
           "y": 98,
           "width": 276.1,
           "follow-stretch": "none",
+          "affect-bottom-margin": true,
           "rows": [
             {
               "id": "recipient_name_row",
@@ -691,8 +692,7 @@
                 }
               ]
             }
-          ],
-          "affect-bottom-margin": true
+          ]
         },
         {
           "id": "invoice_title",
@@ -1191,6 +1191,7 @@
           "y": 0,
           "width": 210,
           "follow-stretch": "none",
+          "affect-bottom-margin": true,
           "rows": [
             {
               "id": "sub_total_price_row",
@@ -1622,8 +1623,7 @@
                 }
               ]
             }
-          ],
-          "affect-bottom-margin": true
+          ]
         },
         {
           "id": "",
@@ -1688,6 +1688,7 @@
           "y": 8,
           "width": 278,
           "follow-stretch": "none",
+          "affect-bottom-margin": true,
           "rows": [
             {
               "id": "row0",
@@ -2729,8 +2730,7 @@
                 }
               ]
             }
-          ],
-          "affect-bottom-margin": true
+          ]
         }
       ]
     },

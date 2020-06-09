@@ -30,6 +30,7 @@
           "description": "",
           "display": true,
           "follow-stretch": "none",
+          "affect-bottom-margin": true,
           "rows": [
             {
               "id": "row1",
@@ -448,8 +449,7 @@
                 }
               ]
             }
-          ],
-          "affect-bottom-margin": true
+          ]
         }
       ]
     },
@@ -468,6 +468,7 @@
           "description": "",
           "display": true,
           "follow-stretch": "none",
+          "affect-bottom-margin": true,
           "rows": [
             {
               "id": "row1",
@@ -929,8 +930,7 @@
                 }
               ]
             }
-          ],
-          "affect-bottom-margin": true
+          ]
         }
       ]
     }
