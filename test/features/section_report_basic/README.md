@@ -42,7 +42,13 @@ params = {
   params: {
     groups: [
       {
-        headers: {},
+        headers: {
+          any_header_id: {
+            items: {
+              logo_image: '/path/to/logo.jpg'
+            }
+          }
+        },
         details: [
           {
             id: 'detail_id',
@@ -69,4 +75,3 @@ PDF データを取得する場合は `filename` を省略する。
 ```ruby
 Thinreports.generate(params) #=> PDF data
 ```
-

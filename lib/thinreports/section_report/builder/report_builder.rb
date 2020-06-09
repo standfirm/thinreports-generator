@@ -14,7 +14,6 @@ module Thinreports
         def build(params)
           ReportData::Main.new(
             schema,
-            params[:start_page_number] || 1,
             build_groups(params[:groups])
           )
         end

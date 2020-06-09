@@ -14,8 +14,7 @@ class TestSectionReportItemParameters < FeatureTest
               {
                 id: :detail1,
                 items: {
-                  image_block: image_block_jpg.to_path,
-                  stackview: {}
+                  image_block: image_block_jpg.to_path
                 }
               },
               {
@@ -45,8 +44,7 @@ class TestSectionReportItemParameters < FeatureTest
                       linethrough: false
                     }
                   },
-                  image_block: image_block_jpg.to_path,
-                  stackview: {}
+                  image_block: image_block_jpg.to_path
                 }
               },
               {
@@ -58,8 +56,7 @@ class TestSectionReportItemParameters < FeatureTest
                       offset_x: 20,
                       offset_y: -20
                     }
-                  },
-                  stackview: {}
+                  }
                 }
               },
               {
