@@ -8,6 +8,7 @@ module Thinreports
 
         def section_height(section)
           return section.schema.height unless section.schema.auto_stretch?
+          return [section.min_height || 0, section.schema.height].max if section.items.empty?
 
           item_layouts = section.items.map { |item| item_layout(section, item.internal) }.compact
 
