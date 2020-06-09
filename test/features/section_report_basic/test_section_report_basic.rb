@@ -14,7 +14,6 @@ class TestSectionReportBasic < FeatureTest
       params: {
         groups: [
           {
-            headers: {},
             details: build_details,
             footers: {
               overall: {
