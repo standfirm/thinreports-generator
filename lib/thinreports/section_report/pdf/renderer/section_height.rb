@@ -7,7 +7,7 @@ module Thinreports
         LayoutInfo = Struct.new(:shape, :content_height, :top_margin, :bottom_margin)
 
         def section_height(section)
-          return (section.min_height || section.schema.height) unless section.schema.auto_stretch? && section.items
+          return section.schema.height unless section.schema.auto_stretch?
 
           item_layouts = section.items.map { |item| item_layout(section, item.internal) }.compact
 
