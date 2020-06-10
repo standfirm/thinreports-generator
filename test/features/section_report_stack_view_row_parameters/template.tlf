@@ -45,14 +45,14 @@
                   "id": "",
                   "x": 15,
                   "y": 15,
-                  "width": 243.13,
+                  "width": 283.06,
                   "height": 23.7,
                   "description": "",
                   "display": true,
                   "follow-stretch": "none",
                   "affect-bottom-margin": true,
                   "texts": [
-                    "Row1 (display: true by default)"
+                    "Row1 (display: true in the template)"
                   ],
                   "style": {
                     "font-family": [
@@ -81,14 +81,14 @@
                   "id": "",
                   "x": 15,
                   "y": 15,
-                  "width": 250.13,
+                  "width": 290.06,
                   "height": 23.7,
                   "description": "",
                   "display": true,
                   "follow-stretch": "none",
                   "affect-bottom-margin": true,
                   "texts": [
-                    "Row2 (display: false by default)"
+                    "Row2 (display: false in the template)"
                   ],
                   "style": {
                     "font-family": [
