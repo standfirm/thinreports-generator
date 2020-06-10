@@ -2,7 +2,7 @@
 
 require 'feature_test'
 
-class TestSectionReportMultipleGroups < FeatureTest
+class TestSectionReportMultipleGroupsFeature < FeatureTest
   feature :section_report_multiple_groups do
     params = {
       type: :section,

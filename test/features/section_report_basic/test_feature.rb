@@ -2,7 +2,7 @@
 
 require 'feature_test'
 
-class TestSectionReportBasic < FeatureTest
+class TestSectionReportBasicFeature < FeatureTest
   def setup
     initialize_data
   end

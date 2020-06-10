@@ -2,7 +2,7 @@
 
 require 'feature_test'
 
-class TestSectionReportStackViewWithFloatingItem < FeatureTest
+class TestSectionReportStackViewWithFloatingItemFeature < FeatureTest
   feature :section_report_stack_view_with_floating_item do
     params = {
       type: :section,
@@ -51,5 +51,3 @@ class TestSectionReportStackViewWithFloatingItem < FeatureTest
     StringIO.new(dir.join('50x50.jpg').binread)
   end
 end
-
-
