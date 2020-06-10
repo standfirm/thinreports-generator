@@ -2,7 +2,7 @@
 
 領域伸縮に追従を有効にすることで、配置された section 又は stack-view-row の伸縮に応じて、item の高さや位置を自動的に変化させることができる。
 
-- [Example code](test_section_report_item_follow_stretch.rb)
+- [Example code](test_feature.rb)
 - [Example template file](template.tlf)
 - [Example PDF](expect.pdf)
 

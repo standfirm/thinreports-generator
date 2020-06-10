@@ -2,7 +2,7 @@
 
 section-report 形式の text-block は `overflow: expand` のときの縦揃え(中央、下揃え)をサポートする。
 
-- [Example code](test_section_report_text_block_vertical_align.rb)
+- [Example code](test_feature.rb)
 - [Example template file](template.tlf)
 - [Example PDF](expect.pdf)
 

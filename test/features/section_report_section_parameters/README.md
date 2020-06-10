@@ -2,7 +2,7 @@
 
 各 section の定義時のプロパティの一部はパラメータで変更することができる。
 
-- [Example code](test_section_report_section_parameters.rb)
+- [Example code](test_feature.rb)
 - [Example template file](template.tlf)
 - [Example PDF](expect.pdf)
 

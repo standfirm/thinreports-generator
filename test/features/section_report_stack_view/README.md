@@ -2,7 +2,7 @@
 
 stack-view によって複数の row を縦に積み重ねたレイアウトを作ることができる。
 
-- [Example code](test_section_report_stack_view.rb)
+- [Example code](test_feature.rb)
 - [Example template file](template.tlf)
 - [Example PDF](expect.pdf)
 

@@ -2,7 +2,7 @@
 
 section の下余白（bottom margin）とは、section のコンテンツの下位置と、section の下位置との間の距離である。
 
-- [Example code](test_section_report_section_bottom_margin.rb)
+- [Example code](test_feature.rb)
 - [Example template file](template.tlf)
 - [Example PDF](expect.pdf)
 
