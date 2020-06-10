@@ -1,6 +1,6 @@
 # StackViewRow Parameter
 
-row の定義時のプロパティはパラメータで変更することができる。
+row の定義時のプロパティの一部はパラメータで変更することができる。
 
 - [Example code](test_section_report_stack_view_row_parameters.rb)
 - [Example template file](template.tlf)
