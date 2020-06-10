@@ -1,6 +1,6 @@
 # Section Parameter
 
-各 section の定義時のプロパティはパラメータで変更することができる。
+各 section の定義時のプロパティの一部はパラメータで変更することができる。
 
 - [Example code](test_section_report_section_parameters.rb)
 - [Example template file](template.tlf)
