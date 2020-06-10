@@ -7,7 +7,7 @@ section の下余白（bottom margin）とは、section のコンテンツの下
 - [Example PDF](expect.pdf)
 
 
-「下余白に影響」が無効の item は、下余白には影響しない。
+「下余白に影響（affect-bottom-margin）」が無効の item は、下余白には影響しない。
 
 ![](images/bottom-margin-diagram-1.png)
 

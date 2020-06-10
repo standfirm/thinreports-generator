@@ -1,6 +1,6 @@
 {
   "schema-version": "1.0",
-  "last-modified-by": "1.0.0-alpha.4",
+  "last-modified-by": "1.0.0-alpha.5",
   "title": "",
   "report": {
     "orientation": "portrait",
@@ -115,14 +115,14 @@
           "id": "",
           "x": 370,
           "y": 50,
-          "width": 110,
-          "height": 50,
+          "width": 112.2,
+          "height": 37.8,
           "description": "",
           "display": true,
           "follow-stretch": "none",
           "texts": [
-            "content-type:",
-            "background"
+            "affect-bottom-",
+            "margin: false"
           ],
           "style": {
             "font-family": [
