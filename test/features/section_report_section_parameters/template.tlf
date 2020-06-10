@@ -28,14 +28,14 @@
           "id": "",
           "x": 23.13,
           "y": 15,
-          "width": 266.16,
+          "width": 303.92,
           "height": 18,
           "description": "",
           "display": true,
           "follow-stretch": "none",
           "affect-bottom-margin": true,
           "texts": [
-            "(header1) display: true by default"
+            "(header1) display: true in the template"
           ],
           "style": {
             "font-family": [
@@ -83,14 +83,14 @@
           "id": "",
           "x": 23.13,
           "y": 15,
-          "width": 273.16,
+          "width": 310.92,
           "height": 18,
           "description": "",
           "display": true,
           "follow-stretch": "none",
           "affect-bottom-margin": true,
           "texts": [
-            "(header2) display: false by default"
+            "(header2) display: false in the template"
           ],
           "style": {
             "font-family": [
@@ -384,14 +384,14 @@
           "id": "footer1",
           "x": 23.13,
           "y": 15,
-          "width": 266.16,
+          "width": 293.91,
           "height": 18,
           "description": "",
           "display": true,
           "follow-stretch": "none",
           "affect-bottom-margin": true,
           "texts": [
-            "(footer1) display: true by default"
+            "(footer1) display: true in the template"
           ],
           "style": {
             "font-family": [
@@ -438,14 +438,14 @@
           "id": "footer2",
           "x": 23.13,
           "y": 15,
-          "width": 266.16,
+          "width": 300.91,
           "height": 18,
           "description": "",
           "display": true,
           "follow-stretch": "none",
           "affect-bottom-margin": true,
           "texts": [
-            "(footer2) display: false by default"
+            "(footer2) display: false in the template"
           ],
           "style": {
             "font-family": [
