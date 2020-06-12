@@ -2,7 +2,7 @@
 
 自動伸縮を有効にすることで、描画後の内容に応じて section の高さを自動的に伸縮させることができる。
 
-- [Example code](test_section_report_section_auto_stretch.rb)
+- [Example code](test_feature.rb)
 - [Example template file](template.tlf)
 - [Example PDF](expect.pdf)
 

@@ -2,7 +2,7 @@
 
 require 'feature_test'
 
-class TestSectionReportItemParameters < FeatureTest
+class TestSectionReportItemParametersFeature < FeatureTest
   feature :section_report_item_parameters do
     params = {
       type: :section,

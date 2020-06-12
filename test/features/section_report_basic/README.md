@@ -2,7 +2,7 @@
 
 section-report 形式では、ヘッダー・フッター・繰り返し行の3つの種類のセクションを複数定義でき、それらを組み合わせた PDF を生成することができる。
 
-- [Example code](test_section_report_basic.rb)
+- [Example code](test_feature.rb)
 - [Example template file](template.tlf)
 - [Example PDF](expected.pdf)
 

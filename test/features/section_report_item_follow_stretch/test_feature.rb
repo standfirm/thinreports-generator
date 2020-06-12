@@ -2,7 +2,7 @@
 
 require 'feature_test'
 
-class TestSectionReportItemFollowStretch < FeatureTest
+class TestSectionReportItemFollowStretchFeature < FeatureTest
   feature :section_report_item_follow_stretch do
     params = {
       type: :section,

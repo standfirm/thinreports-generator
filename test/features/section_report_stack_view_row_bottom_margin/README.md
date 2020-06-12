@@ -2,7 +2,7 @@
 
 row の下余白とは、row のコンテンツの下位置と、row の下位置との間の距離である。
 
-- [Example code](test_section_report_stack_view_row_bottom_margin.rb)
+- [Example code](test_feature.rb)
 - [Example template file](template.tlf)
 - [Example PDF](expect.pdf)
 

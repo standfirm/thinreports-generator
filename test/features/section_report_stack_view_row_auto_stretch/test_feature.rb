@@ -2,7 +2,7 @@
 
 require 'feature_test'
 
-class TestSectionReportStackViewRowAutoStretch < FeatureTest
+class TestSectionReportStackViewRowAutoStretchFeature < FeatureTest
   feature :section_report_stack_view_row_auto_stretch do
     params = {
       type: :section,
@@ -76,5 +76,3 @@ class TestSectionReportStackViewRowAutoStretch < FeatureTest
     StringIO.new(dir.join('50x50.jpg').binread)
   end
 end
-
-

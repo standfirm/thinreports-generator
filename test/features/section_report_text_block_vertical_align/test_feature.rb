@@ -2,7 +2,7 @@
 
 require 'feature_test'
 
-class TestSectionReportTextBlockVerticalAlign < FeatureTest
+class TestSectionReportTextBlockVerticalAlignFeature < FeatureTest
   feature :section_report_text_block_vertical_align do
     params = {
       type: :section,

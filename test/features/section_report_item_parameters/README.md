@@ -2,7 +2,7 @@
 
 各item の定義時のスタイルやプロパティはパラメータで変更することができる。
 
-- [Example code](test_section_report_item_parameters.rb)
+- [Example code](test_feature.rb)
 - [Example template file](template.tlf)
 - [Example PDF](expect.pdf)
 

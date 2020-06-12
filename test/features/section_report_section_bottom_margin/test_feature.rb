@@ -2,7 +2,7 @@
 
 require 'feature_test'
 
-class TestSectionReportSectionBottomMargin < FeatureTest
+class TestSectionReportSectionBottomMarginFeature < FeatureTest
   feature :section_report_section_bottom_margin do
     params = {
       type: :section,

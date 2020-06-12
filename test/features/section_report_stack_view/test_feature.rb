@@ -2,7 +2,7 @@
 
 require 'feature_test'
 
-class TestSectionReportStackView < FeatureTest
+class TestSectionReportStackViewFeature < FeatureTest
   feature :section_report_stack_view do
     params = {
       type: :section,

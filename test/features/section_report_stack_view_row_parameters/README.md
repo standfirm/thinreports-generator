@@ -2,7 +2,7 @@
 
 row の定義時のプロパティの一部はパラメータで変更することができる。
 
-- [Example code](test_section_report_stack_view_row_parameters.rb)
+- [Example code](test_feature.rb)
 - [Example template file](template.tlf)
 - [Example PDF](expect.pdf)
 

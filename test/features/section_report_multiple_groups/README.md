@@ -2,7 +2,7 @@
 
 group によって複数のパラメータを渡すことができ、それらを一つの PDF に描画することができる。
 
-- [Example code](test_section_report_multiple_groups.rb)
+- [Example code](test_feature.rb)
 - [Example template file](template.tlf)
 - [Example PDF](expect.pdf)
 
