@@ -1,19 +1,6 @@
 # SectionReport
 
-## Introduction
-
-便宜上、thinreports の tlf ファイルの元の形式を basic-report 形式と呼称します。
-
-section-report 形式は、その basic-report 形式とは異なる新しいテンプレート形式です。これは次のような特徴を持っています。
-
-- セクションという単位でヘッダーやフッター、繰り返し行を任意の数だけ定義することができる
-- セクションを組み合わせることによって、柔軟なレイアウトの PDF を作ることができる
-
-私たちが実装した section-report 形式の仕様は、 [Thinreports コミュニティの機能コンセプト](https://github.com/thinreports/thinreports/issues/7) をベースにしています。いくつか異なる仕様や独自に追加した仕様もありますが、[コミュニティの機能コンセプト](https://github.com/thinreports/thinreports/issues/7) は、section-report 形式の概要を知るための良い資料です。
-
-## Our Plan
-
-私たちは、この section-report 形式を Thinreports コミュニティに提案し、コミュニティと協力して thinreports-generator に取り込むことを目指します。
+section-report 形式は [Thinreports コミュニティの機能コンセプト](https://github.com/thinreports/thinreports/issues/7) で提案されている新しい tlf ファイルの形式です。
 
 ## Getting Started
 
@@ -73,11 +60,30 @@ Thinreports.generate(params, filename: 'sample.pdf')
 - [StackView with Floating Item](test/features/section_report_stack_view_with_floating_item/README.md)
 - [TextBlock Vertical Align](test/features/section_report_text_block_vertical_align/README.md)
 
-## Limitations & Known Issues
+## Current Status
 
-- item の「領域伸縮に従う」プロパティは一部の item のみサポート
-  - 詳細は [Item Follow Stretch](test/features/section_report_item_follow_stretch/README.md) を参照
-- image-block の定義領域の高さよりも小さな画像が指定された場合の section 又は stack-view-row の縮小は、image-block の「縦位置」プロパティが「上揃え」の場合のみサポート
-  - 領域の縮小については [Section Auto Stretch](test/features/section_report_section_auto_stretch/README.md) 又は [StackViewRow Auto Stretch](test/features/section_report_stack_view_row_auto_stretch/README.md) を参照
-- 位置の移動先を設定する `offset_x` 及び `offset_y` プロパティは image-block のみサポート
+[Thinreports コミュニティの機能コンセプト](https://github.com/thinreports/thinreports/issues/7) を基準とした実装ステータス
+
+### Not Implemented
+
+- フッターの「下部に固定」プロパティ
+- page-number のサポート
+
+### Original Implementation
+
+- stack-view のサポート
+  - 詳細は [StackView](test/features/section_report_stack_view/README.md) を参照
+- 位置の移動先を設定する `offset_x` 及び `offset_y` プロパティのサポート
   - 詳細は [Item Parameter](test/features/section_report_item_parameters/README.md) を参照
+  - ただし、image-block のみサポート
+- 自動拡張に加えて自動縮小のサポート (自動伸縮)
+  - 詳細は [Section Auto Stretch](test/features/section_report_section_auto_stretch/README.md) と [StackViewRow Auto Stretch](test/features/section_report_stack_view_row_auto_stretch/README.md) を参照
+  - ただし、image-block の定義領域の高さよりも小さな画像が指定された場合の section 又は stack-view-row の縮小は、image-block の「縦位置」プロパティが「上揃え」の場合のみサポート
+- section の高さが伸縮したときに item の高さ又は上位置を自動的に変更する「伸縮に追従」プロパティのサポート
+  - 詳細は [Item Follow Stretch](test/features/section_report_item_follow_stretch/README.md) を参照
+  - ただし、一部の item は未サポート
+
+### Known Issues
+
+- パフォーマンスの課題
+  - section 又は stack-view-row の高さ計算は重く、その計算を複数回実行している
