@@ -83,6 +83,8 @@ Thinreports.generate(params, filename: 'sample.pdf')
   - 詳細は [Item Follow Stretch](test/features/section_report_item_follow_stretch/README.md) を参照
 - image-block の定義領域の高さよりも小さな画像が指定された場合の section 又は stack-view-row の縮小は、image-block の「縦位置」プロパティが「上揃え」の場合のみサポート
   - 領域の縮小については [Section Auto Stretch](test/features/section_report_section_auto_stretch/README.md) 又は [StackViewRow Auto Stretch](test/features/section_report_stack_view_row_auto_stretch/README.md) を参照
+- 位置の移動先を設定する `offset_x` 及び `offset_y` プロパティは image-block のみサポート
+  - 詳細は [Item Parameter](test/features/section_report_item_parameters/README.md) を参照
 
 
 ---
