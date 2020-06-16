@@ -9,9 +9,9 @@ A section-report format is a new template file format that is proposed at [the f
 To generate PDF with the section-report format, you need a template (tlf) file for the section-report format.
 You have to use [this new Thinreports Editor](https://github.com/misoca/thinreports-editor) to create a template file for the section-report format.
 
-### Installation
+### Installing
 
-Add the line below to your Gemfile.
+Add this line to your Gemfile:
 
 ```ruby
 gem 'thinreports-generator', github: 'misoca/thinreports-generator', branch: 'section-report'
@@ -61,7 +61,7 @@ See [features/section_report_basic](test/features/section_report_basic/README.md
 - [StackView with Floating Item](test/features/section_report_stack_view_with_floating_item/README.md)
 - [TextBlock Vertical Align](test/features/section_report_text_block_vertical_align/README.md)
 
-## Current Implementation Status
+## Implementation Status
 
 Here is the current implementation status based on [the feature concept by Thinreports community](https://github.com/thinreports/thinreports/issues/7)
 
@@ -76,15 +76,15 @@ Here is the current implementation status based on [the feature concept by Thinr
   - See [StackView](test/features/section_report_stack_view/README.md) for details
 - `offset_x` and `offset_y` parameters for item position translation
   - See [Item Parameter](test/features/section_report_item_parameters/README.md) for details
-  - Limitation: Currently only image-blocks are supported
-- automatic stretch feature that supports not only extension but also shrink
+  - Limitation: only supports image-block items
+- automatic shrink
   - See [Section Auto Stretch](test/features/section_report_section_auto_stretch/README.md) and [StackViewRow Auto Stretch](test/features/section_report_stack_view_row_auto_stretch/README.md) for details
-  - Limitation: The shrink of a section or a stack-view by image-blocks works only when its `vertical-align` property is `top`. That shrink occurs when the height of a drawn image is lower than the height of the image-block.
-- `follow-stretch` property, by which item layout changes automatically when the height of the section or the stack-view-row changes
+  - Limitation: Sections and stack-view-rows shrink only by image-block items whose `vertical-align` property is `top`.
+- `follow-stretch` property, which specifies how to change the layout of an item according to the stretch of the section or the stack-view-row
   - See [Item Follow Stretch](test/features/section_report_item_follow_stretch/README.md) for details
-  - Limitation: Currently some types of items are not supported
+  - Limitation: Some item types are not supported
 
 ### Known Issues
 
 - performance problem
-  - The height calculations of sections or stack-view-rows are called several times for a single PDF rendering
+  - The height calculations of sections or stack-view-rows are called several times
