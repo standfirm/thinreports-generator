@@ -69,7 +69,7 @@ Thinreports.generate(params, filename: 'sample.pdf')
 - フッターの「下部に固定」プロパティ
 - page-number のサポート
 
-### Original Implementation
+### Additional Features
 
 - stack-view のサポート
   - 詳細は [StackView](test/features/section_report_stack_view/README.md) を参照
