@@ -6,13 +6,14 @@
 
 ## About This Version
 
-この thinreports-generator は thinreports/thinreports-generator をフォークし、Thinreports コミュニティの機能コンセプトである [section-report 形式](https://github.com/thinreports/thinreports/issues/7) を実装したバージョンです。それに加え、stack-view のサポートなどのいくつかの独自機能も追加しています。
+This version of thinreports-generator was forked from [thinreports/thinreports-generator](https://github.com/thinreports/thinreports-generator), and has been implemented the [section-report format](https://github.com/thinreports/thinreports/issues/7) proposed by Thinreports community.
+We also added some additional features such as stack-view.
 
-section-report 形式の詳細と使い方は [README_FOR_SECTION_REPORT.md](README_FOR_SECTION_REPORT.md) を参照してください。
+See [README_FOR_SECTION_REPORT.md](README_FOR_SECTION_REPORT.md) for details and usage of the section-report format.
 
 ## Our Plan
 
-私たちは、この section-report 形式を Thinreports コミュニティに提案し、コミュニティと協力して thinreports-generator に取り込むことを目指します。
+We propose this section-report format to Thinreports community, and have planned to merge it into the original Thinreports repository in cooperation with the community.
 
 ---
 
