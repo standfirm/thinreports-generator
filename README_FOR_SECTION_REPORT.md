@@ -1,22 +1,23 @@
 # SectionReport
 
-section-report 形式は [Thinreports コミュニティの機能コンセプト](https://github.com/thinreports/thinreports/issues/7) で提案されている新しい tlf ファイルの形式です。
+A section-report format is a new template file format that is proposed at [the feature concept by Thinreports community](https://github.com/thinreports/thinreports/issues/7).
 
 ## Getting Started
 
 ### Prerequisites
 
-section-report 形式の PDF を生成するためには、section-report 形式のテンプレートファイルが必要です。section-report 形式のテンプレートは [対応した Editor](https://github.com/misoca/thinreports-editor) を使って作成することができます。
+To generate PDF with the section-report format, you need a template (tlf) file for the section-report format.
+You have to use [this new Thinreports Editor](https://github.com/misoca/thinreports-editor) to create a template file for the section-report format.
 
-### Installing
+### Installation
 
-以下の行をあなたの Gemfile に追加します。
+Add the line below to your Gemfile.
 
 ```ruby
 gem 'thinreports-generator', github: 'misoca/thinreports-generator', branch: 'section-report'
 ```
 
-そして、 `bundle install` を実行します。
+Then, execute `bundle install`.
 
 ### Generating PDF
 
@@ -42,7 +43,7 @@ params = {
 Thinreports.generate(params, filename: 'sample.pdf')
 ```
 
-詳細は [features/section_report_basic](test/features/section_report_basic/README.md) を参照してください。
+See [features/section_report_basic](test/features/section_report_basic/README.md) for details.
 
 ## Examples
 
@@ -60,30 +61,30 @@ Thinreports.generate(params, filename: 'sample.pdf')
 - [StackView with Floating Item](test/features/section_report_stack_view_with_floating_item/README.md)
 - [TextBlock Vertical Align](test/features/section_report_text_block_vertical_align/README.md)
 
-## Current Status
+## Current Implementation Status
 
-[Thinreports コミュニティの機能コンセプト](https://github.com/thinreports/thinreports/issues/7) を基準とした実装ステータス
+Here is the current implementation status based on [the feature concept by Thinreports community](https://github.com/thinreports/thinreports/issues/7)
 
 ### Not Implemented
 
-- フッターの「下部に固定」プロパティ
-- page-number のサポート
+- `fixed at the bottom` property for footer sections
+- page-number item
 
 ### Additional Features
 
-- stack-view のサポート
-  - 詳細は [StackView](test/features/section_report_stack_view/README.md) を参照
-- 位置の移動先を設定する `offset_x` 及び `offset_y` プロパティのサポート
-  - 詳細は [Item Parameter](test/features/section_report_item_parameters/README.md) を参照
-  - ただし、image-block のみサポート
-- 自動拡張に加えて自動縮小のサポート (自動伸縮)
-  - 詳細は [Section Auto Stretch](test/features/section_report_section_auto_stretch/README.md) と [StackViewRow Auto Stretch](test/features/section_report_stack_view_row_auto_stretch/README.md) を参照
-  - ただし、image-block の定義領域の高さよりも小さな画像が指定された場合の section 又は stack-view-row の縮小は、image-block の「縦位置」プロパティが「上揃え」の場合のみサポート
-- section の高さが伸縮したときに item の高さ又は上位置を自動的に変更する「伸縮に追従」プロパティのサポート
-  - 詳細は [Item Follow Stretch](test/features/section_report_item_follow_stretch/README.md) を参照
-  - ただし、一部の item は未サポート
+- stack-view item
+  - See [StackView](test/features/section_report_stack_view/README.md) for details
+- `offset_x` and `offset_y` parameters for item position translation
+  - See [Item Parameter](test/features/section_report_item_parameters/README.md) for details
+  - Limitation: Currently only image-blocks are supported
+- automatic stretch feature that supports not only extension but also shrink
+  - See [Section Auto Stretch](test/features/section_report_section_auto_stretch/README.md) and [StackViewRow Auto Stretch](test/features/section_report_stack_view_row_auto_stretch/README.md) for details
+  - Limitation: The shrink of a section or a stack-view by image-blocks works only when its `vertical-align` property is `top`. That shrink occurs when the height of a drawn image is lower than the height of the image-block.
+- `follow-stretch` property, by which item layout changes automatically when the height of the section or the stack-view-row changes
+  - See [Item Follow Stretch](test/features/section_report_item_follow_stretch/README.md) for details
+  - Limitation: Currently some types of items are not supported
 
 ### Known Issues
 
-- パフォーマンスの課題
-  - section 又は stack-view-row の高さ計算は重く、その計算を複数回実行している
+- performance problem
+  - The height calculations of sections or stack-view-rows are called several times for a single PDF rendering
