@@ -76,7 +76,7 @@ Here is the current implementation status based on [the feature concept by Thinr
   - See [StackView](test/features/section_report_stack_view/README.md) for details
 - `offset_x` and `offset_y` parameters for item position translation
   - See [Item Parameter](test/features/section_report_item_parameters/README.md) for details
-  - Limitation: only supports image-block items
+  - Limitation: Only supports image-block items
 - automatic shrink
   - See [Section Auto Stretch](test/features/section_report_section_auto_stretch/README.md) and [StackViewRow Auto Stretch](test/features/section_report_stack_view_row_auto_stretch/README.md) for details
   - Limitation: Sections and stack-view-rows shrink only by image-block items whose `vertical-align` property is `top`.
