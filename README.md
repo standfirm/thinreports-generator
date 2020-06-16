@@ -4,6 +4,18 @@
 [![Test](https://github.com/thinreports/thinreports-generator/workflows/Test/badge.svg)](https://github.com/thinreports/thinreports-generator/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/054b400031608957ec4a/maintainability)](https://codeclimate.com/github/thinreports/thinreports-generator/maintainability)
 
+## About This Version
+
+この thinreports-generator は thinreports/thinreports-generator をフォークし、Thinreports コミュニティの機能コンセプトである [section-report 形式](https://github.com/thinreports/thinreports/issues/7) を実装したバージョンです。それに加え、stack-view のサポートなどのいくつかの独自機能も追加しています。
+
+section-report 形式の詳細と使い方は [README_FOR_SECTION_REPORT.md](README_FOR_SECTION_REPORT.md) を参照してください。
+
+## Our Plan
+
+私たちは、この section-report 形式を Thinreports コミュニティに提案し、コミュニティと協力して thinreports-generator に取り込むことを目指します。
+
+---
+
 [Thinreports](http://www.thinreports.org) is an open source report generating tool for Ruby.
 
   * Thinreports Editor (GUI Designer)
